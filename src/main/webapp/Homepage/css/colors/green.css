@@ -1,0 +1,46 @@
+ul.nav.red2 > li > a.active {
+    color: #3fc35f;
+}
+ul.nav.red2 > li > a.active:hover {
+    color: #3fc35f;
+}
+.navbar-default.red2 .navbar-nav > li > a:focus, .navbar-default.red2 .navbar-nav > li > a:hover {
+    color: #3fc35f;
+}
+.text-red-2 {
+    color: #3fc35f;
+}
+.title-line-8.red2 {
+    background-color: #3fc35f;
+}
+.feature-box31 .image-holder .price {
+    background-color: #3fc35f;
+}
+.feature-box31 .divider-line {
+    border-bottom: 1px solid #3fc35f;
+}
+.btn.btn-border.light.red-2:hover {
+    background-color: #3fc35f;
+    border-color: #3fc35f;
+}
+.feature-box32 .iconbox-large {
+    color: #3fc35f;
+}
+a.read-more {
+    color: #3fc35f;
+}
+.feature-box33 .post-date-box {
+    background-color: #3fc35f;
+}
+.divider-line.red2 {
+    border-bottom-color: #3fc35f;
+}
+.scrollup.red2 {
+    background-color: #3fc35f;
+}
+.res-form-holder .btn-res {
+    background-color: #3fc35f;
+}
+.smart-forms .btn-primary.red-2 {
+    background-color: #3fc35f;
+}

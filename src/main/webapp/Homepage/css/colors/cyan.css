@@ -1,0 +1,46 @@
+ul.nav.red2 > li > a.active {
+    color: #17c9e3;
+}
+ul.nav.red2 > li > a.active:hover {
+    color: #17c9e3;
+}
+.navbar-default.red2 .navbar-nav > li > a:focus, .navbar-default.red2 .navbar-nav > li > a:hover {
+    color: #17c9e3;
+}
+.text-red-2 {
+    color: #17c9e3;
+}
+.title-line-8.red2 {
+    background-color: #17c9e3;
+}
+.feature-box31 .image-holder .price {
+    background-color: #17c9e3;
+}
+.feature-box31 .divider-line {
+    border-bottom: 1px solid #17c9e3;
+}
+.btn.btn-border.light.red-2:hover {
+    background-color: #17c9e3;
+    border-color: #17c9e3;
+}
+.feature-box32 .iconbox-large {
+    color: #17c9e3;
+}
+a.read-more {
+    color: #17c9e3;
+}
+.feature-box33 .post-date-box {
+    background-color: #17c9e3;
+}
+.divider-line.red2 {
+    border-bottom-color: #17c9e3;
+}
+.scrollup.red2 {
+    background-color: #17c9e3;
+}
+.res-form-holder .btn-res {
+    background-color: #17c9e3;
+}
+.smart-forms .btn-primary.red-2 {
+    background-color: #17c9e3;
+}
