@@ -941,7 +941,7 @@ ul.nav>li>a:hover.active {
 
 	@media (max-width:999px) {
 		.container {
-			100%
+			width:100%;
 		}
 
 		.yamm.dark ul.nav>li>a {
