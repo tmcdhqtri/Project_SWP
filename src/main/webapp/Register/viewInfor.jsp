@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +35,7 @@
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                    <!-- Infomation of (truyền username vào)  -->
+                    <!-- Infomation of (truyá»n username vÃ o)  -->
                     <h2 class="title">Information of</h2> 
                     <form method="POST">
                         <div class="row row-space">

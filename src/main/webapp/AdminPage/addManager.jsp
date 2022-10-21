@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -263,7 +264,7 @@
                                                                 </div>
                                                         </div>
                                                     </div>
-                                                    <!-- Nếu save change thì hiện alert -->
+                                                    <!-- Náº¿u save change thÃ¬ hiá»n alert -->
                                                     <!-- <div class="col-12 mt-75">
                                                         <div class="alert alert-warning mb-50" role="alert">
                                                             <h4 class="alert-heading">Saved Sucsess</h4>

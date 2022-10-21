@@ -1,4 +1,5 @@
-<!doctype html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
@@ -200,18 +201,18 @@
                 <span>Payment: </span>
                 <span class="choose4"> </span>
                 <input type="radio" id="html" name="payment" value="HTML">
-                  <label for="html">VNPAY</label>
+                Â  <label for="html">VNPAY</label>
                 <span class="choose5"> </span>
                 <input type="radio" id="html" name="payment" value="HTML">
-                  <label class="choose3" for="html">Cash</label>
+                Â  <label class="choose3" for="html">Cash</label>
             </div>
             <div class="col-md-12">
                 <span>Delivery: </span>
                 <span class="choose2"> </span>
                 <input type="radio" id="html" name="delivery" value="HTML">
-                  <label for="html">Restaurant</label>
+                Â  <label for="html">Restaurant</label>
                 <input type="radio" id="html" name="delivery" value="HTML">
-                  <label for="html">Home Delivery</label>
+                Â  <label for="html">Home Delivery</label>
             </div>
         </div>
         <div class="totalmoneyy">$ 444.34</div>
@@ -306,7 +307,7 @@
     <section class="section-copyrights sec-moreless-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-12"> <span>Copyright © 2020 <a
+                <div class="col-md-12"> <span>Copyright Â© 2020 <a
                             href="https://1.envato.market/hasta-html-by-codelayers">hasta</a> By <a
                             href="https://1.envato.market/codelayers">Codelayers</a> | All rights reserved.</span></div>
             </div>

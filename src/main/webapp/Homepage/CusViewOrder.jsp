@@ -1,4 +1,5 @@
-<!doctype html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="en-gb" class="isie ie9 no-js"> <![endif]-->
@@ -298,7 +299,7 @@
     <section class="section-copyrights sec-moreless-padding">
         <div class="container">
             <div class="row">
-                <div class="col-md-12"> <span>Copyright © 2020 <a
+                <div class="col-md-12"> <span>Copyright Â© 2020 <a
                             href="https://1.envato.market/hasta-html-by-codelayers">hasta</a> By <a
                             href="https://1.envato.market/codelayers">Codelayers</a> | All rights reserved.</span></div>
             </div>
