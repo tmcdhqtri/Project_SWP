@@ -1,87 +1,113 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Model;
-
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "User", urlPatterns = {"/User"})
-public class User extends HttpServlet {
+public class User {
+    private String personnelName;
+    private int role;
+    private String personnelPhone;
+    private String personnelEmail;
+    private String personnelAddress;
+    private String personnelDateOfBirth;
+    private String personnelUsername;
+    private String personnelPassword;
+    private String personnelImageUrl;   
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet User</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet User at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+    public User(String personnelName, int role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl) {
+        this.personnelName = personnelName;
+        this.role = role;
+        this.personnelPhone = personnelPhone;
+        this.personnelEmail = personnelEmail;
+        this.personnelAddress = personnelAddress;
+        this.personnelDateOfBirth = personnelDateOfBirth;
+        this.personnelUsername = personnelUsername;
+        this.personnelPassword = personnelPassword;
+        this.personnelImageUrl = personnelImageUrl;
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    public User(String personnelUsername, String personnelPassword) {
+        this.personnelUsername = personnelUsername;
+        this.personnelPassword = personnelPassword;
+    }
+    
+    public User(){
+    }
+    public String getPersonnelName() {
+        return personnelName;
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    public void setPersonnelName(String personnelName) {
+        this.personnelName = personnelName;
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    public int getRole() {
+        return role;
+    }
 
+    public void setRole(int role) {
+        this.role = role;
+    }
+
+    public String getPersonnelPhone() {
+        return personnelPhone;
+    }
+
+    public void setPersonnelPhone(String personnelPhone) {
+        this.personnelPhone = personnelPhone;
+    }
+
+    public String getPersonnelEmail() {
+        return personnelEmail;
+    }
+
+    public void setPersonnelEmail(String personnelEmail) {
+        this.personnelEmail = personnelEmail;
+    }
+
+    public String getPersonnelAddress() {
+        return personnelAddress;
+    }
+
+    public void setPersonnelAddress(String personnelAddress) {
+        this.personnelAddress = personnelAddress;
+    }
+
+    public String getPersonnelDateOfBirth() {
+        return personnelDateOfBirth;
+    }
+
+    public void setPersonnelDateOfBirth(String personnelDateOfBirth) {
+        this.personnelDateOfBirth = personnelDateOfBirth;
+    }
+
+    public String getPersonnelUsername() {
+        return personnelUsername;
+    }
+
+    public void setPersonnelUsername(String personnelUsername) {
+        this.personnelUsername = personnelUsername;
+    }
+
+    public String getPersonnelPassword() {
+        return personnelPassword;
+    }
+
+    public void setPersonnelPassword(String personnelPassword) {
+        this.personnelPassword = personnelPassword;
+    }
+
+    public String getPersonnelImageUrl() {
+        return personnelImageUrl;
+    }
+
+    public void setPersonnelImageUrl(String personnelImageUrl) {
+        this.personnelImageUrl = personnelImageUrl;
+    }
+    
 }

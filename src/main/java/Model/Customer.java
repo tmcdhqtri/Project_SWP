@@ -18,6 +18,22 @@ public class Customer {
     private String customerUsername;
     private String customerPassword;
 
+    public Customer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword) {
+        this.customerID = customerID;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerAddress = customerAddress;
+        this.customerBirthday = customerBirthday;
+        this.customerUsername = customerUsername;
+        this.customerPassword = customerPassword;
+    }
+
+    public Customer(String customerUsername, String customerPassword) {
+        this.customerUsername = customerUsername;
+        this.customerPassword = customerPassword;
+    }
+    public Customer(){}
     public int getCustomerID() {
         return customerID;
     }
