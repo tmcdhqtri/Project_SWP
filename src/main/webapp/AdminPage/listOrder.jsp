@@ -11,32 +11,32 @@
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>Admin King's Fast Food Page</title>
-    <link rel="apple-touch-icon" href="./app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="./app-assets/images/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="./AdminPage/app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./AdminPage/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
-    <link rel="stylesheet" type="text/css" href="./app-assets/vendors/css/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/vendors/css/tables/datatable/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/vendors/css/vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/vendors/css/tables/datatable/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/vendors/css/tables/datatable/responsive.bootstrap.min.css">
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/bootstrap-extended.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/colors.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/components.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/themes/dark-layout.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/themes/bordered-layout.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/themes/semi-dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/bootstrap-extended.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/colors.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/components.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/themes/dark-layout.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/themes/bordered-layout.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/themes/semi-dark-layout.css">
 
     <!-- BEGIN: Page CSS-->
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/core/menu/menu-types/vertical-menu.css">
-    <link rel="stylesheet" type="text/css" href="./app-assets/css/pages/app-invoice-list.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/app-assets/css/pages/app-invoice-list.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./AdminPage/assets/css/style.css">
     <!-- END: Custom CSS-->
 
 </head>
@@ -57,7 +57,7 @@
             <ul class="nav navbar-nav align-items-center ml-auto">
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li>
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="./app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="./AdminPage/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-account-settings.html"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="power"></i> Logout</a>
@@ -297,25 +297,25 @@
 
 
     <!-- BEGIN: Vendor JS-->
-    <script src="./app-assets/vendors/js/vendors.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/vendors.min.js"></script>
     <!-- BEGIN Vendor JS-->
 
     <!-- BEGIN: Page Vendor JS-->
-    <script src="./app-assets/vendors/js/extensions/moment.min.js"></script>
-    <script src="./app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
-    <script src="./app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
-    <script src="./app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
-    <script src="./app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
-    <script src="./app-assets/vendors/js/tables/datatable/responsive.bootstrap4.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/extensions/moment.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/tables/datatable/jquery.dataTables.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/tables/datatable/datatables.buttons.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/tables/datatable/datatables.bootstrap4.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/tables/datatable/dataTables.responsive.min.js"></script>
+    <script src="./AdminPage/app-assets/vendors/js/tables/datatable/responsive.bootstrap4.min.js"></script>
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
-    <script src="./app-assets/js/core/app-menu.js"></script>
-    <script src="./app-assets/js/core/app.js"></script>
+    <script src="./AdminPage/app-assets/js/core/app-menu.js"></script>
+    <script src="./AdminPage/app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
 
     <!-- BEGIN: Page JS-->
-    <script src="./app-assets/js/scripts/pages/app-invoice-list.js"></script>
+    <script src="./AdminPage/app-assets/js/scripts/pages/app-invoice-list.js"></script>
     <!-- END: Page JS-->
 
     <script>

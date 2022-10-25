@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="images/logo.ico">
+  <link rel="shortcut icon" href="./Homepage/images/logo.ico">
 
   <!-- Google fonts - witch you want to use - (rest you can just remove) -->
   <link
@@ -40,31 +40,17 @@
 <![endif]-->
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" media="screen" href="js/bootstrap/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="js/mainmenu/menu.css" type="text/css" />
-  <link rel="stylesheet" href="css/default.css" type="text/css" />
-  <link rel="stylesheet" href="css/layouts.css" type="text/css" />
-  <link rel="stylesheet" href="css/shortcodes.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
-  <link rel="stylesheet" type="text/css" href="css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
-  <link rel="stylesheet" href="css/et-line-font/et-line-font.css">
-  <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-
-
-  <!-- Remove the below comments to use your color option -->
-  <!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/green.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/pink.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/red.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/bridge.css" />-->
-  <link rel="stylesheet" href="css/colors/yellow.css" />
-  <!--<link rel="stylesheet" href="css/colors/violet.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/mossgreen.css" />-->
-
+  <link rel="stylesheet" media="screen" href="./Homepage/js/bootstrap/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/js/mainmenu/menu.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/default.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/layouts.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/shortcodes.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" media="screen" href="./Homepage/css/responsive-leyouts.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="./Homepage/css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
+  <link rel="stylesheet" href="./Homepage/css/et-line-font/et-line-font.css">
+  <link href="./Homepage/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link rel="stylesheet" href="./Homepage/css/colors/yellow.css" />
 </head>
 
 <body>
@@ -78,7 +64,7 @@
           <div class="navbar-header">
             <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span
                 class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            <a href="index.html" class="navbar-brand"><img src="images/Logo2.png" alt="" /></a>
+            <a href="index.html" class="navbar-brand"><img src="./Homepage/images/Logo2.png" alt="" /></a>
           </div>
           <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
             <ul class="nav red2 navbar-nav">
@@ -89,7 +75,7 @@
               <!-- <li> <a href="reservation.html" class="dropdown-toggle">Order Now</a></li> -->
               <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>
               <span class="hideres">
-                <a class="navbar-brand "><img src="images/Deliver.png" alt="" /></a>
+                <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
                 <li class="rightsec" style="width:150px;margin:0">
                   <div>Call and Oder in</div>
                   <strong style="color: #ffc222;font-size: 19px;font-weight: 900;">+84 905-999-999</strong>
@@ -125,7 +111,7 @@
           <h5 class="text-white uppercase">Get many More Features</h5>
         </div>
         <div class="overlay bg-opacity-5"></div>
-        <img src="images/menu1.jpg" alt="" class="img-responsive fit-image" />
+        <img src="./Homepage/images/menu1.jpg" alt="" class="img-responsive fit-image" />
       </div>
     </section>
     <!-- end header inner -->
@@ -162,7 +148,7 @@
         <div class="clearfix"></div>
         <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="images/menu1.jpg" alt="" class="img-responsive fit-image2" /></div>
+            <div class="image-holder"><img src="./Homepage/images/menu1.jpg" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
               <h4 class="old-standardtt less-mar1">Whole Wheat Waffles</h4>
               <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
@@ -175,7 +161,7 @@
 
         <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="images/h1.jpg" alt="" class="img-responsive fit-image2" /></div>
+            <div class="image-holder"><img src="./Homepage/images/h1.jpg" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
               <h4 class="old-standardtt less-mar1">Crepes</h4>
               <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
@@ -190,7 +176,7 @@
         <br />
         <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="images/h5.jpg" alt="" class="img-responsive fit-image2" /></div>
+            <div class="image-holder"><img src="./Homepage/images/h5.jpg" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
               <h4 class="old-standardtt less-mar1">Vegetable Salad</h4>
               <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
@@ -203,7 +189,7 @@
 
         <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="images/menu3.jpg" alt="" class="img-responsive fit-image2" /></div>
+            <div class="image-holder"><img src="./Homepage/images/menu3.jpg" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
               <h4 class="old-standardtt less-mar1">Macaroni Bolognese</h4>
               <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
@@ -300,7 +286,7 @@
     <div class="container ">
       <div class="row">
         <div class="col-md-3 clearfix">
-          <div class="footer-logo"><img src="images/Logo3.png" alt="" /></div>
+          <div class="footer-logo"><img src="./Homepage/images/Logo3.png" alt="" /></div>
           <ul class="address-info-2">
             <li>Address: No.28 - 63739 street lorem ipsum City, Country</li>
             <li><i class="fa fa-phone"></i> Phone: + 1 (234) 567 8901</li>
@@ -316,14 +302,14 @@
             <h4 class="uppercase less-mar3 old-standardtt">Recent Posts</h4>
             <div class="footer-title-bottomstrip dark"></div>
             <div class="clearfix"></div>
-            <div class="image-left"><img src="./images/food/Food13.png" alt="" class="img-responsive" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food13.png" alt="" class="img-responsive" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3 nopadding"><a href="#">Clean And Modern</a></h5>
               <p>Lorem ipsum dolor sit</p>
               <div class="footer-post-info"> <span>By John Doe</span><span> May 20</span> </div>
             </div>
             <div class="divider-line solid light margin"></div>
-            <div class="image-left"><img src="./images/food/Food14.png" alt="" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food14.png" alt="" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3"><a href="#">Layered PSD Files</a></h5>
               <p>Lorem ipsum dolor sit</p>
@@ -386,15 +372,15 @@
 
   <!-- ============ JS FILES ============ -->
 
-  <script type="text/javascript" src="js/universal/jquery.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-  <script src="js/mainmenu/customeUI.js"></script>
-  <script src="js/mainmenu/jquery.sticky.js"></script>
-  <script src="js/owl-carousel/owl.carousel.js"></script>
-  <script src="js/owl-carousel/custom.js"></script>
-  <script src="js/scrolltotop/totop.js"></script>
+  <script type="text/javascript" src="./Homepage/js/universal/jquery.js"></script>
+  <script src="./Homepage/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="./Homepage/js/mainmenu/customeUI.js"></script>
+  <script src="./Homepage/js/mainmenu/jquery.sticky.js"></script>
+  <script src="./Homepage/js/owl-carousel/owl.carousel.js"></script>
+  <script src="./Homepage/js/owl-carousel/custom.js"></script>
+  <script src="./Homepage/js/scrolltotop/totop.js"></script>
 
-  <script src="js/scripts/functions.js" type="text/javascript"></script>
+  <script src="./Homepage/js/scripts/functions.js" type="text/javascript"></script>
 </body>
 
 </html>
