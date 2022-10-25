@@ -20,7 +20,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="images/logo.ico">
+  <link rel="shortcut icon" href="./Homepage/images/logo.ico">
 
 <!-- Google fonts - witch you want to use - (rest you can just remove) -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -33,29 +33,16 @@
 <![endif]-->
 
 <!-- Stylesheets -->
-<link rel="stylesheet" media="screen" href="js/bootstrap/bootstrap.min.css" type="text/css" />
-<link rel="stylesheet" href="js/mainmenu/menu.css" type="text/css" />
-<link rel="stylesheet" href="css/default.css" type="text/css" />
-<link rel="stylesheet" href="css/layouts.css" type="text/css" />
-<link rel="stylesheet" href="css/shortcodes.css" type="text/css" />
-<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
-<link rel="stylesheet" type="text/css" href="css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
-<link rel="stylesheet" href="css/et-line-font/et-line-font.css">
-
-
-<!-- Remove the below comments to use your color option -->
-<!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->
-<!--<link rel="stylesheet" href="css/colors/orange.css" />-->
-<!--<link rel="stylesheet" href="css/colors/green.css" />-->
-<!--<link rel="stylesheet" href="css/colors/pink.css" />-->
-<!--<link rel="stylesheet" href="css/colors/red.css" />-->
-<!--<link rel="stylesheet" href="css/colors/purple.css" />-->
-<!--<link rel="stylesheet" href="css/colors/bridge.css" />-->
+<link rel="stylesheet" media="screen" href="./Homepage/js/bootstrap/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" href="./Homepage/js/mainmenu/menu.css" type="text/css" />
+<link rel="stylesheet" href="./Homepage/css/default.css" type="text/css" />
+<link rel="stylesheet" href="./Homepage/css/layouts.css" type="text/css" />
+<link rel="stylesheet" href="./Homepage/css/shortcodes.css" type="text/css" />
+<link rel="stylesheet" href="./Homepage/css/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" media="screen" href="./Homepage/css/responsive-leyouts.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="./Homepage/css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
+<link rel="stylesheet" href="./Homepage/css/et-line-font/et-line-font.css">
 <link rel="stylesheet" href="css/colors/yellow.css" />
-<!--<link rel="stylesheet" href="css/colors/violet.css" />-->
-<!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
-<!--<link rel="stylesheet" href="css/colors/mossgreen.css" />-->
 
 </head>
 <div id="header">
@@ -64,7 +51,7 @@
       <div class="navbar-header">
         <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span
             class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-        <a href="index.html" class="navbar-brand"><img src="images/Logo2.png" alt="" /></a>
+        <a href="index.html" class="navbar-brand"><img src="./Homepage/images/Logo2.png" alt="" /></a>
       </div>
       <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
         <ul class="nav red2 navbar-nav">
@@ -75,7 +62,7 @@
           <!-- <li> <a href="reservation.html" class="dropdown-toggle">Order Now</a></li> -->
           <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>
           <span class="hideres">
-            <a class="navbar-brand "><img src="images/Deliver.png" alt="" /></a>
+            <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
             <li class="rightsec" style="width:150px;margin:0">
               <div>Call and Oder in</div>
               <strong style="color: #ffc222;font-size: 19px;font-weight: 900;">+84 905-999-999</strong>
@@ -116,7 +103,7 @@
         <h5 class="text-white uppercase">Get many More Features</h5>
       </div>
       <div class="overlay bg-opacity-5"></div>
-      <img src="images/h4.jpg" alt="" class="img-responsive fit-image"/> </div>
+      <img src="./Homepage/images/h4.jpg" alt="" class="img-responsive fit-image"/> </div>
   </section>
   <!-- end header inner -->
   <div class="clearfix"></div>
@@ -147,7 +134,7 @@
           <p class="sub-title text-center">Lorem ipsum dolor sit amet consectetuer adipiscing.</p>
         </div>
         <div class="clearfix"></div>
-        <div class="col-md-6 bmargin"> <img src="images/h3.jpg" alt="" class="img-responsive"/> </div>
+        <div class="col-md-6 bmargin"> <img src="./Homepage/images/h3.jpg" alt="" class="img-responsive"/> </div>
         <!--end item-->
         
         <div class="col-md-6 bmargin">
@@ -177,7 +164,7 @@
         </div>
         <!--end item-->
         
-        <div class="col-md-6 bmargin"> <img src="images/h1.jpg" alt="" class="img-responsive"/> </div>
+        <div class="col-md-6 bmargin"> <img src="./Homepage/images/h1.jpg" alt="" class="img-responsive"/> </div>
         <!--end item--> 
       </div>
     </div>
@@ -208,7 +195,7 @@
     <div class="container ">
       <div class="row">
         <div class="col-md-3 clearfix">
-          <div class="footer-logo"><img src="images/Logo3.png" alt="" /></div>
+          <div class="footer-logo"><img src="./Homepage/images/Logo3.png" alt="" /></div>
           <ul class="address-info-2">
             <li>Address: No.28 - 63739 street lorem ipsum City, Country</li>
             <li><i class="fa fa-phone"></i> Phone: + 1 (234) 567 8901</li>
@@ -224,14 +211,14 @@
             <h4 class="uppercase less-mar3 old-standardtt">Recent Posts</h4>
             <div class="footer-title-bottomstrip dark"></div>
             <div class="clearfix"></div>
-            <div class="image-left"><img src="./images/food/Food13.png" alt="" class="img-responsive" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food13.png" alt="" class="img-responsive" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3 nopadding"><a href="#">Clean And Modern</a></h5>
               <p>Lorem ipsum dolor sit</p>
               <div class="footer-post-info"> <span>By John Doe</span><span> May 20</span> </div>
             </div>
             <div class="divider-line solid light margin"></div>
-            <div class="image-left"><img src="./images/food/Food14.png" alt="" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food14.png" alt="" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3"><a href="#">Layered PSD Files</a></h5>
               <p>Lorem ipsum dolor sit</p>
@@ -278,7 +265,7 @@
   <section class="section-copyrights sec-moreless-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-12"> <span>Copyright Â© 2020 <a href="https://1.envato.market/hasta-html-by-codelayers">hasta</a> By <a href="https://1.envato.market/codelayers">Codelayers</a> | All rights reserved.</span></div>
+        <div class="col-md-12"> <span>Copyright 2022 by team King's Fast Food | All rights reserved.</span></div>
       </div>
     </div>
   </section>
@@ -291,12 +278,12 @@
 
 <!-- ============ JS FILES ============ -->
  
-<script type="text/javascript" src="js/universal/jquery.js"></script> 
-<script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script> 
-<script src="js/mainmenu/customeUI.js"></script> 
-<script src="js/mainmenu/jquery.sticky.js"></script> 
-<script src="js/scrolltotop/totop.js"></script> 
+<script type="text/javascript" src="./Homepage/js/universal/jquery.js"></script> 
+<script src="./Homepage/js/bootstrap/bootstrap.min.js" type="text/javascript"></script> 
+<script src="./Homepage/js/mainmenu/customeUI.js"></script> 
+<script src="./Homepage/js/mainmenu/jquery.sticky.js"></script> 
+<script src="./Homepage/js/scrolltotop/totop.js"></script> 
 
-<script src="js/scripts/functions.js" type="text/javascript"></script> 
+<script src="./Homepage/js/scripts/functions.js" type="text/javascript"></script> 
 </body>
 </html>

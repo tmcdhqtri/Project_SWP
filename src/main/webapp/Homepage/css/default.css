@@ -100,11 +100,17 @@ Design and Developed by: Codelayers
 
 
 /* =========== General ============= */
-.fa-search{
-	position: absolute;
-	top:53.2%;
-	right:63.3%;
+.btn-search{
+	border:none;
+	background-color:white ;
+	font-size:150%;
+	margin-right:1%;
 }
+.btn-search:hover{
+	opacity:0.7;
+}
+.btn-search a:hover{
+color:orange;}
 .search input{
 	padding: 3px 30px 3px 80px;
     border-radius: 10px;

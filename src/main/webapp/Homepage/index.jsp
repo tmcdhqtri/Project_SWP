@@ -45,56 +45,20 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" media="screen" href="./Homepage/js/bootstrap/bootstrap.min.css" type="text/css" />
   <link rel="stylesheet" href="./Homepage/js/mainmenu/menu.css" type="text/css" />
-  <link rel="stylesheet" href="./Homepage/css/default.css" type="text/css" />
-  <link rel="stylesheet" href="./Homepage/css/layouts.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/default.css" type="text/css"/>
+  <link rel="stylesheet" href="./Homepage/css/layouts.css" type="text/css"/>
   <link rel="stylesheet" href="./Homepage/css/shortcodes.css" type="text/css" />
   <link rel="stylesheet" href="./Homepage/css/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" media="screen" href="./Homepage/css/responsive-leyouts.css" type="text/css" />
-  <link rel="stylesheet" href="./Homepage/js/masterslider/style/masterslider.css" />
+  <link rel="stylesheet" href="./Homepage/js/masterslider/style/masterslider.css"/>
   <link rel="stylesheet" type="text/css" href="./Homepage/css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
   <link rel="stylesheet" href="./Homepage/css/et-line-font/et-line-font.css">
   <link href="./Homepage/js/owl-carousel/owl.carousel.css" rel="stylesheet">
-
-
-  <!-- Remove the below comments to use your color option -->
-  <!--<link rel="stylesheet" href="css/colors/lightblue.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/orange.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/green.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/pink.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/red.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/bridge.css" />-->
   <link rel="stylesheet" href="./Homepage/css/colors/yellow.css" />
-  <!--<link rel="stylesheet" href="css/colors/violet.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
-  <!--<link rel="stylesheet" href="css/colors/mossgreen.css" />-->
 
 </head>
 
 <body>
-  <!-- <div class="site_wrapper">
-    <div class="topbar light topbar-padding">
-      <div class="container">
-        <div class="topbar-left-items">
-          <ul class="toplist toppadding pull-left paddtop1">
-            <li class="rightl"><i class="fa fa-phone"></i> 1234 - 5678 - 9012</li>
-            <li><i class="fa fa-envelope"></i> yourmail@domain.com</li>
-          </ul>
-        </div> -->
-  <!--end left-->
-  <!-- 
-        <div class="topbar-right-items pull-right">
-          <ul class="toplist toppadding">
-            <li class="lineright">Order Delivery</li>
-            <li>
-              <h5 class="text-red-2 nopadding">(888) 123-4567</h5>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="clearfix"></div> -->
-
   <div id="header">
     <div class="container" style="display: flex;">
       <div class="navbar yellow navbar-default red2 yamm">
@@ -108,8 +72,7 @@
             <li> <a href="index.html" class="dropdown-toggle active">Home</a></li>
             <li> <a href="about.html" class="dropdown-toggle">About</a></li>
             <li> <a href="menu.html" class="dropdown-toggle">Menu</a></li>
-            <li> <a href="#" class="dropdown-toggle">Special</a></li>
-            <!-- <li> <a href="reservation.html" class="dropdown-toggle">Order Now</a></li> -->
+            <li> <a href="./Login/Login.html" class="dropdown-toggle">My Order</a></li>
             <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>
             <span class="hideres">
               <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
@@ -121,11 +84,11 @@
 
             <span class="rightsec1">
               <span class="hideres2">
-                <li class="rightsec rightsecphone "> <a class="icon1" href="/Login/Login.html"><i class="fa fa-phone"
+                <li class="rightsec rightsecphone "> <a class="icon1" href="./Login/Login.html"><i class="fa fa-phone"
                       style="color:#000; font-size: 18px;"></i></a></li>
                 </li>
               </span>
-              <li class="rightsec "> <a class="icon1" href="/Login/Login.html"><i class="fa fa-user"
+              <li class="rightsec "> <a class="icon1" href="./Login/Login.html"><i class="fa fa-user"
                     style="color:#000; font-size: 18px;"></i></a></li>
               <li class="rightsec "> <a class="icon3" href="cart.html"><i class="fa fa-shopping-cart"
                     style="color:#000; font-size: 18px;"></i></a>
@@ -194,7 +157,7 @@
     <!-- slide 3 -->
     <div class="ms-slide slide-3" data-delay="9">
       <div class="slide-pattern"></div>
-      <img style="opacity: 0.7;" src="./Homepage/js/masterslider/blank.gif"
+      <img style="opacity: 0.7;" src="js/masterslider/blank.gif"
         data-src="https://images3.alphacoders.com/922/922680.jpg" alt="" />
 
       <h3 class="ms-layer text18" style="top: 200px; left:400px" data-type="text" data-delay="500"
@@ -767,8 +730,6 @@
   <script src="./Homepage/js/owl-carousel/owl.carousel.js"></script>
   <script src="./Homepage/js/owl-carousel/custom.js"></script>
   <script src="./Homepage/js/scrolltotop/totop.js"></script>
-
   <script src="./Homepage/js/scripts/functions.js" type="text/javascript"></script>
 </body>
-
 </html>

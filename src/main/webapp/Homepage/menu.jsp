@@ -140,8 +140,8 @@
   </div>
   </section>
   <div class="search">
+    <button class="btn-search"><a href=""><i class="fa fa-search" id="search_icon"></i></a></button>
     <input type="text" placeholder="Type foods you are looking for..." id="search">
-    <i class="fa fa-search" id="search_icon"></i>
     <div class="search_bx2">
       <!-- <a href="#">
             <img src="mimg/a perfact.jpg" alt="">
@@ -370,7 +370,7 @@
   <section class="section-copyrights sec-moreless-padding">
     <div class="container">
       <div class="row">
-        <div class="col-md-12"> <span>Copyright Â© 2020 <a
+        <div class="col-md-12"> <span>Copyright © 2020 <a
               href="https://1.envato.market/hasta-html-by-codelayers">hasta</a> By <a
               href="https://1.envato.market/codelayers">Codelayers</a> | All rights reserved.</span></div>
       </div>
