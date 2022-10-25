@@ -216,8 +216,18 @@
         </div>
 
 
-        <button type="submit" class="btn btnorder"><a class="orderbtt" href="viewOrderHisStaff.html">Return</a></button>
-    </div>
+<div class="row align-items-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btnorder"><a class="orderbtt" href="viewOrderHisStaff.html">Return</a></button>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btnorder1"><a class="orderbtt" href="#">Delivery Success</a></button>
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btnorder2"><a class="orderbtt" href="#">Cancel</a></button>
+        </div>
+     </div>    </div>
     <!--end section-->
     <div class="clearfix"></div>
 
