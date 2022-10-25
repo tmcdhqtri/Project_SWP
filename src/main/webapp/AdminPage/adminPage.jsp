@@ -111,8 +111,6 @@
                 </li>
                 <li class="nav-item"><a class="d-flex align-items-center" href="listFood.html"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listManager.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Manager</span></a>
-                </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="listMembers.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
@@ -148,7 +146,7 @@
                                 </div>
                                 <div class="card-body statistics-body">
                                     <div class="row">
-                                        <div class="offset-md-1 col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-primary mr-2">
                                                     <div class="avatar-content">
@@ -161,20 +159,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
-                                            <div class="media">
-                                                <div class="avatar bg-light-success mr-2">
-                                                    <div class="avatar-content">
-                                                        <i data-feather="user" class="avatar-icon"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="media-body my-auto">
-                                                    <h4 class="font-weight-bolder mb-0">6</h4>
-                                                    <p class="card-text font-small-3 mb-0">Managers</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-info mr-2">
                                                     <div class="avatar-content">
@@ -187,7 +172,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-xl-0">
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-xl-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-secondary mr-2">
                                                     <div class="avatar-content">
@@ -200,7 +185,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-2 col-sm-6 col-12 mb-2 mb-sm-0">
+                                        <div class="col-xl-3 col-sm-6 col-12 mb-2 mb-sm-0">
                                             <div class="media">
                                                 <div class="avatar bg-light-danger mr-2">
                                                     <div class="avatar-content">

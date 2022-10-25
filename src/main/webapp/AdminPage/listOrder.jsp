@@ -109,8 +109,6 @@
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="listFood.html"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
                 </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listManager.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Manager</span></a>
-                </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
                 </li>
                 <li class=" nav-item"><a class="d-flex align-items-center" href="listMembers.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
