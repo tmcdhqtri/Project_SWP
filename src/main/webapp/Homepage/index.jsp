@@ -21,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="images/logo.ico">
+  <link rel="shortcut icon" href="./Homepage/images/logo.ico">
 
   <!-- Google fonts - witch you want to use - (rest you can just remove) -->
   <link
@@ -43,17 +43,17 @@
 <![endif]-->
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" media="screen" href="js/bootstrap/bootstrap.min.css" type="text/css" />
-  <link rel="stylesheet" href="js/mainmenu/menu.css" type="text/css" />
-  <link rel="stylesheet" href="css/default.css" type="text/css" />
-  <link rel="stylesheet" href="css/layouts.css" type="text/css" />
-  <link rel="stylesheet" href="css/shortcodes.css" type="text/css" />
-  <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" media="screen" href="css/responsive-leyouts.css" type="text/css" />
-  <link rel="stylesheet" href="js/masterslider/style/masterslider.css" />
-  <link rel="stylesheet" type="text/css" href="css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
-  <link rel="stylesheet" href="css/et-line-font/et-line-font.css">
-  <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="./Homepage/js/bootstrap/bootstrap.min.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/js/mainmenu/menu.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/default.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/layouts.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/shortcodes.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" media="screen" href="./Homepage/css/responsive-leyouts.css" type="text/css" />
+  <link rel="stylesheet" href="./Homepage/js/masterslider/style/masterslider.css" />
+  <link rel="stylesheet" type="text/css" href="./Homepage/css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
+  <link rel="stylesheet" href="./Homepage/css/et-line-font/et-line-font.css">
+  <link href="./Homepage/js/owl-carousel/owl.carousel.css" rel="stylesheet">
 
 
   <!-- Remove the below comments to use your color option -->
@@ -64,7 +64,7 @@
   <!--<link rel="stylesheet" href="css/colors/red.css" />-->
   <!--<link rel="stylesheet" href="css/colors/purple.css" />-->
   <!--<link rel="stylesheet" href="css/colors/bridge.css" />-->
-  <link rel="stylesheet" href="css/colors/yellow.css" />
+  <link rel="stylesheet" href="./Homepage/css/colors/yellow.css" />
   <!--<link rel="stylesheet" href="css/colors/violet.css" />-->
   <!--<link rel="stylesheet" href="css/colors/cyan.css" />-->
   <!--<link rel="stylesheet" href="css/colors/mossgreen.css" />-->
@@ -101,7 +101,7 @@
         <div class="navbar-header">
           <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span
               class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-          <a href="index.html" class="navbar-brand"><img src="images/Logo2.png" alt="" /></a>
+          <a href="index.html" class="navbar-brand"><img src="./Homepage/images/Logo2.png" alt="" /></a>
         </div>
         <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
           <ul class="nav red2 navbar-nav">
@@ -112,7 +112,7 @@
             <!-- <li> <a href="reservation.html" class="dropdown-toggle">Order Now</a></li> -->
             <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>
             <span class="hideres">
-              <a class="navbar-brand "><img src="images/Deliver.png" alt="" /></a>
+              <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
               <li class="rightsec" style="width:150px;margin:0">
                 <div>Call and Oder in</div>
                 <strong style="color: #ffc222;font-size: 19px;font-weight: 900;">+84 905-999-999</strong>
@@ -147,7 +147,7 @@
     <!-- slide 1 -->
     <div class="ms-slide slide-1" data-delay="9">
       <div class="slide-pattern"></div>
-      <img style="opacity: 0.7;" src="js/masterslider/blank.gif"
+      <img style="opacity: 0.7;" src="./Homepage/js/masterslider/blank.gif"
         data-src="https://theme.hstatic.net/200000232135/1000682292/14/slideshow_1.jpg?v=274" alt="" />
 
       <h3 class="ms-layer text18" style="top: 200px; left:400px" data-type="text" data-delay="500"
@@ -170,7 +170,7 @@
     <!-- slide 2 -->
     <div class="ms-slide slide-2" data-delay="9">
       <div class="slide-pattern"></div>
-      <img style="opacity: 0.7;" src="js/masterslider/blank.gif"
+      <img style="opacity: 0.7;" src="./Homepage/js/masterslider/blank.gif"
         data-src="https://media.gq.com/photos/5b4fb4c9b3161f214d1a079e/64:25/w_1920,h_750,c_limit/fried-chicken-summer-gq.jpg"
         alt="" />
 
@@ -194,7 +194,7 @@
     <!-- slide 3 -->
     <div class="ms-slide slide-3" data-delay="9">
       <div class="slide-pattern"></div>
-      <img style="opacity: 0.7;" src="js/masterslider/blank.gif"
+      <img style="opacity: 0.7;" src="./Homepage/js/masterslider/blank.gif"
         data-src="https://images3.alphacoders.com/922/922680.jpg" alt="" />
 
       <h3 class="ms-layer text18" style="top: 200px; left:400px" data-type="text" data-delay="500"
@@ -230,7 +230,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -248,7 +248,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food1.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food1.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -266,7 +266,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food2.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food2.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -284,7 +284,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food3.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food3.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -386,7 +386,7 @@
         </div>
         <div class="clearfix"></div>
         <div class="col-md-6 bmargin">
-          <div class="image-holder"><img src="./images/food/Food4.png" alt="" class="img-responsive" /></div>
+          <div class="image-holder"><img src="./Homepage/images/food/Food4.png" alt="" class="img-responsive" /></div>
         </div>
         <!--end item-->
 
@@ -431,14 +431,14 @@
           <div class="col-md-8 col-centered">
             <div class="title-line-8 white"></div>
             <h1 class="section-title-4 great-vibes text-center text-white">Customer Review</h1>
-            <div class="text-left"><img src="images/197.png" alt="" /></div>
+            <div class="text-left"><img src="./Homepage/images/197.png" alt="" /></div>
             <br />
             <p class="text-white">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse et justo.
               Praesent mattis commodo augue. Aliquam ornare hendrerit augue. Cras tellus. In pulvinar lectus a est.
               Curabitur eget orci. Cras laoreet <br />
               consectetuer ligula. Etiam sit amet dolor. </p>
-            <div class="text-right"><img src="images/198.png" alt="" /></div>
-            <div class="iconbox-medium round overflow-hidden"><img src="./images/chef.jpg" alt="" /></div>
+            <div class="text-right"><img src="./Homepage/images/198.png" alt="" /></div>
+            <div class="iconbox-medium round overflow-hidden"><img src="./Homepage/images/chef.jpg" alt="" /></div>
             <h6 class="text-white less-mar1">John Doe, Chef cook</h6>
           </div>
         </div>
@@ -460,7 +460,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food5.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food5.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -478,7 +478,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food6.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food6.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -496,7 +496,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food7.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food7.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -514,7 +514,7 @@
           <div class="feature-box31 text-center bmargin">
             <div class="image-holder">
               <div class="price">$29.9</div>
-              <img src="./images/food/Food8.png" alt="" class="img-responsive" />
+              <img src="./Homepage/images/food/Food8.png" alt="" class="img-responsive" />
             </div>
             <div class="divider-line solid margin light"></div>
             <div class="clearfix"></div>
@@ -549,7 +549,7 @@
                   <div class="col-md-6 col-sm-6 nopadding">
                     <div class="image-holder">
                       <div class="post-date-box"> 25 <span>May, 2020</span> </div>
-                      <img src="./images/food/Food9.png" class="img-responsive" alt="" />
+                      <img src="./Homepage/images/food/Food9.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 nopadding">
@@ -571,7 +571,7 @@
                   <div class="col-md-6 col-sm-6 nopadding">
                     <div class="image-holder">
                       <div class="post-date-box"> 25 <span>May, 2020</span> </div>
-                      <img src="./images/food/Food10.png" class="img-responsive" alt="" />
+                      <img src="./Homepage/images/food/Food10.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 nopadding">
@@ -597,7 +597,7 @@
                   <div class="col-md-6 col-sm-6 nopadding">
                     <div class="image-holder">
                       <div class="post-date-box"> 25 <span>May, 2020</span> </div>
-                      <img src="./images/food/Food11.png" class="img-responsive" alt="" />
+                      <img src="./Homepage/images/food/Food11.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 nopadding">
@@ -619,7 +619,7 @@
                   <div class="col-md-6 col-sm-6 nopadding">
                     <div class="image-holder">
                       <div class="post-date-box"> 25 <span>May, 2020</span> </div>
-                      <img src="./images/food/Food12.png" class="img-responsive" alt="" />
+                      <img src="./Homepage/images/food/Food12.png" class="img-responsive" alt="" />
                     </div>
                   </div>
                   <div class="col-md-6 col-sm-6 nopadding">
@@ -653,7 +653,7 @@
     <div class="container ">
       <div class="row">
         <div class="col-md-3 clearfix">
-          <div class="footer-logo"><img src="images/Logo3.png" alt="" /></div>
+          <div class="footer-logo"><img src="./Homepage/images/Logo3.png" alt="" /></div>
           <ul class="address-info-2">
             <li>Address: No.28 - 63739 street lorem ipsum City, Country</li>
             <li><i class="fa fa-phone"></i> Phone: + 1 (234) 567 8901</li>
@@ -669,14 +669,14 @@
             <h4 class="uppercase less-mar3 old-standardtt">Recent Posts</h4>
             <div class="footer-title-bottomstrip dark"></div>
             <div class="clearfix"></div>
-            <div class="image-left"><img src="./images/food/Food13.png" alt="" class="img-responsive" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food13.png" alt="" class="img-responsive" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3 nopadding"><a href="#">Clean And Modern</a></h5>
               <p>Lorem ipsum dolor sit</p>
               <div class="footer-post-info"> <span>By John Doe</span><span> May 20</span> </div>
             </div>
             <div class="divider-line solid light margin"></div>
-            <div class="image-left"><img src="./images/food/Food14.png" alt="" /></div>
+            <div class="image-left"><img src="./Homepage/images/food/Food14.png" alt="" /></div>
             <div class="text-box-right">
               <h5 class="less-mar3"><a href="#">Layered PSD Files</a></h5>
               <p>Lorem ipsum dolor sit</p>
@@ -736,10 +736,10 @@
 
 
   <!-- ============ JS FILES ============ -->
-  <script type="text/javascript" src="js/universal/jquery.js"></script>
-  <script src="js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
-  <script src="js/masterslider/jquery.easing.min.js"></script>
-  <script src="js/masterslider/masterslider.min.js"></script>
+  <script type="text/javascript" src="./Homepage/js/universal/jquery.js"></script>
+  <script src="./Homepage/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+  <script src="./Homepage/js/masterslider/jquery.easing.min.js"></script>
+  <script src="./Homepage/js/masterslider/masterslider.min.js"></script>
   <script type="text/javascript">
     (function ($) {
       "use strict";
@@ -762,13 +762,13 @@
 
     })(jQuery);
   </script>
-  <script src="js/mainmenu/customeUI.js"></script>
-  <script src="js/mainmenu/jquery.sticky.js"></script>
-  <script src="js/owl-carousel/owl.carousel.js"></script>
-  <script src="js/owl-carousel/custom.js"></script>
-  <script src="js/scrolltotop/totop.js"></script>
+  <script src="./Homepage/js/mainmenu/customeUI.js"></script>
+  <script src="./Homepage/js/mainmenu/jquery.sticky.js"></script>
+  <script src="./Homepage/js/owl-carousel/owl.carousel.js"></script>
+  <script src="./Homepage/js/owl-carousel/custom.js"></script>
+  <script src="./Homepage/js/scrolltotop/totop.js"></script>
 
-  <script src="js/scripts/functions.js" type="text/javascript"></script>
+  <script src="./Homepage/js/scripts/functions.js" type="text/javascript"></script>
 </body>
 
 </html>
