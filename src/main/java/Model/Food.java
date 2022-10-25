@@ -15,6 +15,14 @@ public class Food {
     private String foodImage;
     private float foodPrice;
 
+    public Food(int foodID, String foodName, String foodDescription, String foodImage, float foodPrice) {
+        this.foodID = foodID;
+        this.foodName = foodName;
+        this.foodDescription = foodDescription;
+        this.foodImage = foodImage;
+        this.foodPrice = foodPrice;
+    }
+    
     public int getFoodID() {
         return foodID;
     }

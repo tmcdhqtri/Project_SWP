@@ -15,12 +15,12 @@ public class DBContext{
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         return DriverManager.getConnection(url, userID, password);
     }
-    private final String serverName = "CUONGTM\\CUONGTM";
-    private final String dbName = "MyShop";
+    private final String serverName = "jdbc:sqlserver://localhost:1433;";
+    private final String dbName = "ProjectSWP";
     private final String portNumber = "1433";
     private final String instance = "";//LEAVE THIS ONE EMPTY IF YOUR SQL IS A SINGLE INSTANCE
     private final String userID = "sa";
-    private final String password = "123456";
+    private final String password = "nhan203";
     public static void main(String[] args) {
         try {
             System.out.println(new DBContext().getConnection());

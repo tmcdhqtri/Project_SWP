@@ -5,6 +5,15 @@ public class OrderDetail {
     private int foodID;
     private int quantity;
 
+    public OrderDetail(int orderID, int foodID, int quantity) {
+        this.orderID = orderID;
+        this.foodID = foodID;
+        this.quantity = quantity;
+    }
+
+    public OrderDetail() {
+    }
+    
     public int getOrderID() {
         return orderID;
     }
