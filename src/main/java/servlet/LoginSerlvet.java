@@ -1,18 +1,19 @@
+
 package servlet;
 
-import DAO.DAO;
+import com.google.common.hash.Hashing;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
+import java.nio.charset.StandardCharsets;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import Model.Food;
 
 
-@WebServlet(name = "DisplayMenuServlet", urlPatterns = {"/menu"})
-public class DisplayMenuServlet extends HttpServlet {
+@WebServlet(name = "LoginSerlvet", urlPatterns = {"/login"})
+public class LoginSerlvet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -20,13 +21,13 @@ public class DisplayMenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        DAO dao = new DAO();
-        List<Food> aAllFood = dao.getAllFood();
+        String originalString = "abc";
+        String sha256hex = Hashing.sha256()
+                .hashString(originalString, StandardCharsets.UTF_8)
+                .toString();
+        System.out.println("Hash: " + sha256hex);
         
-        request.setAttribute("aAllFood", aAllFood);
-        
-        request.getRequestDispatcher("./Homepage/menu.jsp").forward(request, response);
-        
+        request.getRequestDispatcher("./Login/Login.jsp").forward(request, response);
     }
 
 
@@ -36,8 +37,17 @@ public class DisplayMenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
+        String password = request.getParameter("password");
+        
+        
+        
+        
     }
 
 
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }
