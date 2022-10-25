@@ -177,7 +177,7 @@
                             <div class="dropdown-menu dd3cham1" aria-labelledby="dropdownMenuButton2">
                                 <a class="dropdown-item  dd3cham" href="viewDetailOrder.html">View Detail</a><br>
                                 <a class="dropdown-item dd3cham dd3cham2" href="#">Delete Order</a><br>
-                                <a class="dropdown-item dd3cham dd3cham3" href="#">Delivery Success</a><br>
+                             
                             </div>
                         </div></i>
                     </td>
@@ -203,7 +203,7 @@
                             <div class="dropdown-menu dd3cham1" aria-labelledby="dropdownMenuButton2">
                                 <a class="dropdown-item  dd3cham" href="#">View Detail</a><br>
                                 <a class="dropdown-item dd3cham" href="#">Delete Order</a><br>
-                                <a class="dropdown-item dd3cham" href="#">Delivery Success</a><br>
+                          
                             </div>
                         </div></i>
                     </td>
@@ -229,7 +229,7 @@
                             <div class="dropdown-menu dd3cham1" aria-labelledby="dropdownMenuButton2">
                                 <a class="dropdown-item  dd3cham" href="#">View Detail</a><br>
                                 <a class="dropdown-item dd3cham" href="#">Delete Order</a><br>
-                                <a class="dropdown-item dd3cham" href="#">Delivery Success</a><br>
+                         
                             </div>
                         </div></i>
                     </td>
