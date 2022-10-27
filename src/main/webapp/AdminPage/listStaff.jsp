@@ -125,7 +125,7 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
+     <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
@@ -144,6 +144,7 @@
                                             <th>Full Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -153,13 +154,45 @@
                                                 <span class="font-weight-bold">#12345</span>
                                             </td>
                                             <td>
-                                                <img src="./AdminPage/app-assets/images/portrait/small/avatar-s-7.jpg" class="mr-75" height="50" width="50" alt="Peter" />
+                                                <img src="./app-assets/images/portrait/small/avatar-s-7.jpg" class="mr-75" height="50" width="50" alt="Peter" />
                                                 <span class="font-weight-bold">Peter Charls</span>
                                             </td>
                                             <td>
                                                 <span class="font-weight-bold">member@gmail.com</span>
                                             </td>
                                             <td><span class="font-weight-bold">09091234567</span></td>
+                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
+                                                        <i data-feather="more-vertical"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="updateStaff.html">
+                                                            <i data-feather="edit-2" class="mr-50"></i>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">
+                                                            <i data-feather="trash" class="mr-50"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="font-weight-bold">#12345</span>
+                                            </td>
+                                            <td>
+                                                <img src="./app-assets/images/portrait/small/avatar-s-26.jpg" class="mr-75" height="50" width="50" alt="Peter" />
+                                                <span class="font-weight-bold">Kara Charls</span>
+                                            </td>
+                                            <td>
+                                                <span class="font-weight-bold">staff@gmail.com</span>
+                                            </td>
+                                            <td><span class="font-weight-bold">09091234567</span></td>
+                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
