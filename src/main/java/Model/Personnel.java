@@ -11,7 +11,7 @@ package Model;
 public class Personnel {
     private int personnelID;
     private String personnelName;
-    private int role;
+    private int role; //0: Admin
     private String personnelPhone;
     private String personnelEmail;
     private String personnelAddress;
