@@ -201,6 +201,7 @@ public class DAO {
 
     //END DAO Food
     //BEGIN DAO Order
+    
     public boolean addOrder(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
         try {
             String sql = "insert into Order values(?, ?, ?, ?, 1)";
@@ -239,7 +240,19 @@ public class DAO {
         }
         return null;
     }
-
+    public Order getOrder(int orderID) {
+        try {
+            String query = "select * from Order where orderID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, orderID);
+            rs = stm.executeQuery();
+            return new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5),rs.getInt(6),rs.getBoolean(7));
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
     public void deleteOrder(int orderID) {
         try {
             String query = "update Order set orderIsActive=0 where orderID = ?";
