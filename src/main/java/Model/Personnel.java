@@ -9,6 +9,7 @@ package Model;
  * @author Admin
  */
 public class Personnel {
+    private int personnelID;
     private String personnelName;
     private int role;
     private String personnelPhone;
@@ -19,6 +20,20 @@ public class Personnel {
     private String personnelPassword;
     private String personnelImageUrl;   
     private boolean personnelStatus;
+
+    public Personnel(int personnelID, String personnelName, int role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
+        this.personnelID = personnelID;
+        this.personnelName = personnelName;
+        this.role = role;
+        this.personnelPhone = personnelPhone;
+        this.personnelEmail = personnelEmail;
+        this.personnelAddress = personnelAddress;
+        this.personnelDateOfBirth = personnelDateOfBirth;
+        this.personnelUsername = personnelUsername;
+        this.personnelPassword = personnelPassword;
+        this.personnelImageUrl = personnelImageUrl;
+        this.personnelStatus = personnelStatus;
+    }
     
     public Personnel(String personnelName, int role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
         this.personnelName = personnelName;
@@ -40,6 +55,15 @@ public class Personnel {
     
     public Personnel(){
     }
+
+    public int getPersonnelID() {
+        return personnelID;
+    }
+
+    public void setPersonnelID(int personnelID) {
+        this.personnelID = personnelID;
+    }
+    
     public String getPersonnelName() {
         return personnelName;
     }

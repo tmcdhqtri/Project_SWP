@@ -3,6 +3,7 @@ package DAO;
 import Context.DBContext;
 import Model.Customer;
 import Model.Food;
+import Model.Personnel;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,18 +43,18 @@ public class DAO {
         }
         return false;
     }
-    public void deleteCustomer(int customerID) throws Exception {
+    public void deleteCustomer(int customerID){
         try {
             String query = "update CustomerInfo set cusStatus=0 where cusID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, customerID);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
     }
 
-    public Customer getCustomer(int customerID) throws Exception {
+    public Customer getCustomer(int customerID){
         try {
             String query = "select * from CustomerInfo where cusID = ?";
             con = new DBContext().getConnection();
@@ -61,13 +62,13 @@ public class DAO {
             stm.setInt(1, customerID);
             rs = stm.executeQuery();
             return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
     }
 
-    public List<Customer> getAllCustomers() throws Exception {
+    public List<Customer> getAllCustomers(){
         try {
             String query = "select * from CustomerInfo";
             con = new DBContext().getConnection();
@@ -79,7 +80,7 @@ public class DAO {
                 listCustomers.add(new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
             }
             return listCustomers;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
@@ -136,18 +137,18 @@ public class DAO {
         }
         return false;
     }
-    public void deleteFood(int foodID) throws Exception {
+    public void deleteFood(int foodID){
         try {
             String query = "update Food set cusStatus=0 where foodID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, foodID);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
     }
 
-    public Food getFood(int foodID) throws Exception {
+    public Food getFood(int foodID){
         try {
             String query = "select * from Food where foodID = ?";
             con = new DBContext().getConnection();
@@ -155,13 +156,13 @@ public class DAO {
             stm.setInt(1, foodID);
             rs = stm.executeQuery();
             return new Food(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5));
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
     }
 
-    public List<Food> getAllFoods() throws Exception {
+    public List<Food> getAllFoods(){
         try {
             String query = "select * from Food";
             con = new DBContext().getConnection();
@@ -173,7 +174,7 @@ public class DAO {
                 listFoods.add(new Food(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5)));
             }
             return listFoods;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
@@ -212,23 +213,39 @@ public class DAO {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
     }
-    public void deletePersonnel(int personnelID) throws Exception {
+    public void deletePersonnel(int personnelID){
         try {
             String query = "update Personnel set perStatus=0 where perID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, personnelID);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
     }
-    //END DAO Personnel
+    public List<Personnel> getAllPersonnel(){
+        try {
+            String query = "select * from Personnel";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
 
+            List<Personnel> listPersonnels = new ArrayList<Personnel>();
+            while (rs.next()) {
+                listPersonnels.add(new Personnel(rs.getInt(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8),rs.getString(9), rs.getString(10), rs.getBoolean(11)));
+            }
+            return listPersonnels;
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
+    //END DAO Personnel
+    
     public static void main(String[] args) throws Exception {
         DAO dao = new DAO();
         dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20","nhantv1","nhantv");
 //        List<Customer> list = dao.getAllCustomer();
 //        System.out.print(list);
     }
-
 }
