@@ -144,13 +144,43 @@
                                             <th>Full Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
+                                            <th>Status</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <!-- <img src="./AdminPage/app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" /> -->
+                                                <!-- <img src="./app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" /> -->
+                                                <span class="font-weight-bold">#15245</span>
+                                            </td>
+                                            <td>Haver Charls</td>
+                                            <td>
+                                                <span class="font-weight-bold">member@gmail.com</span>
+                                            </td>
+                                            <td><span class="font-weight-bold">09091234567</span></td>
+                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
+                                            <td>
+                                                <div class="dropdown">
+                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
+                                                        <i data-feather="more-vertical"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="viewMember.html">
+                                                            <i data-feather="edit-2" class="mr-50"></i>
+                                                            <span>Edit</span>
+                                                        </a>
+                                                        <a class="dropdown-item" href="javascript:void(0);">
+                                                            <i data-feather="trash" class="mr-50"></i>
+                                                            <span>Delete</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <!-- <img src="./app-assets/images/icons/angular.svg" class="mr-75" height="20" width="20" alt="Angular" /> -->
                                                 <span class="font-weight-bold">#12345</span>
                                             </td>
                                             <td>Peter Charls</td>
@@ -158,6 +188,7 @@
                                                 <span class="font-weight-bold">member@gmail.com</span>
                                             </td>
                                             <td><span class="font-weight-bold">09091234567</span></td>
+                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">

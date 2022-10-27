@@ -21,10 +21,9 @@ public class ViewMenuServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         
         DAO dao = new DAO();
-//        List<Food> aAllFood = dao.getAllFood();
+        List<Food> aAllFood = dao.getAllFoods();
         
-//        request.setAttribute("aAllFood", aAllFood);
-        
+        request.setAttribute("aAllFood", aAllFood);
         request.getRequestDispatcher("./Homepage/menu.jsp").forward(request, response);
         
     }

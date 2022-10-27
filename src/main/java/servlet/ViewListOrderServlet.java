@@ -5,9 +5,10 @@
 package servlet;
 
 import DAO.DAO;
-import Model.Food;
+import Model.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,33 +19,27 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author This PC
  */
-@WebServlet(name = "ViewFoodServlet", urlPatterns = {"/viewfood"})
-public class ViewFoodServlet extends HttpServlet {
+@WebServlet(name = "ViewListOrderServlet", urlPatterns = {"/listorder"})
+public class ViewListOrderServlet extends HttpServlet {
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        int  foodID = Integer.parseInt(request.getParameter("foodID"));
         DAO dao = new DAO();
+        List<Order> aAllOrder = dao.getAllOrder();
         
-        Food food = dao.getFood(foodID); 
- 
-        request.setAttribute("food", food); 
-        request.getRequestDispatcher("./Homepage/viewDetailFood.jsp").forward(request, response);
-        
+        request.setAttribute("aAllOrder", aAllOrder);
+        request.getRequestDispatcher("./Homepage/cusViewDetailOrder.jsp").forward(request, response);
     }
+
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("utf-8");
         
     }
-
 
 }

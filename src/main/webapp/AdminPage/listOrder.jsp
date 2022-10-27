@@ -123,7 +123,7 @@
     <!-- END: Main Menu-->
 
     <!-- BEGIN: Content-->
-    <div class="app-content content ">
+   <div class="app-content content ">
         <div class="content-overlay"></div>
         <div class="header-navbar-shadow"></div>
         <div class="content-wrapper container-xxl p-0">
@@ -144,6 +144,7 @@
                                             <th>Time</th>
                                             <th>Status</th>
                                             <th>Name</th>
+                                            <th>Active</th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
@@ -172,6 +173,7 @@
                                                 <span class="badge badge-pill badge-light-warning" text-capitalized="">Delivery</span>
                                             </td>
                                             <td>Hieu</td>
+                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -214,6 +216,7 @@
                                                 <span class="badge badge-pill badge-light-danger" text-capitalized="">Canceled</span>
                                             </td>
                                             <td>Hieu</td>
+                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -256,6 +259,7 @@
                                                 <span class="badge badge-pill badge-light-success" text-capitalized="">Delivered</span>
                                             </td>
                                             <td>Hieu</td>
+                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
