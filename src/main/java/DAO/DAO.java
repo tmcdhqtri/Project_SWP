@@ -1,32 +1,82 @@
-
 package DAO;
 
 import Context.DBContext;
 import Model.Customer;
+import Model.Food;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class DAO {
+
     Connection con = null;
     PreparedStatement stm = null;
     ResultSet rs = null;
+
+    //BEGIN DAO Customer  
     
-    //BEGIN DAO Customer   
-    public List<Customer> getAllCustomer() throws Exception {
+    public boolean registeredCustomer(String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword) {
         try {
-            String sql = "select * from [CustomerInfo]";
+            String sql = "insert into CustomerInfo values(?, ?, ?, ?, ?, ?, ?, 0)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
+            stm.setString(1, customerName);
+            stm.setString(2, customerPhone);
+            stm.setString(3, customerEmail);
+            stm.setString(4, customerAddress);
+            stm.setString(5, customerBirthday);
+            stm.setString(6, customerUsername);
+            stm.setString(7, customerPassword);
+            int row = stm.executeUpdate();
+            if (row > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return false;
+    }
+    public void deleteCustomer(int customerID) throws Exception {
+        try {
+            String query = "update CustomerInfo set cusStatus=0 where cusID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, customerID);
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+    }
+
+    public Customer getCustomer(int customerID) throws Exception {
+        try {
+            String query = "select * from CustomerInfo where cusID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, customerID);
+            rs = stm.executeQuery();
+            return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Customer> getAllCustomers() throws Exception {
+        try {
+            String query = "select * from CustomerInfo";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
             rs = stm.executeQuery();
 
             List<Customer> listCustomers = new ArrayList<Customer>();
             while (rs.next()) {
-                listCustomers.add(new Customer(rs.getInt(1), rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8)));
+                listCustomers.add(new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
             }
             return listCustomers;
         } catch (SQLException e) {
@@ -34,9 +84,10 @@ public class DAO {
         }
         return null;
     }
-    public void updateCustomer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerDateOfBirth){
-        String query = "update CustomerInfor set cusName= ?,cusPhone= ?, Email=?, CusAddress=?, DateOfBirth=? where customerID= ?";
+
+    public void updateCustomer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerDateOfBirth) {
         try {
+            String query = "update CustomerInfo set cusName= ?,cusPhone= ?, cusEmail=?, cusAddress=?, cusDateOfBirth=? where cusID= ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, customerName);
@@ -44,25 +95,140 @@ public class DAO {
             stm.setString(3, customerEmail);
             stm.setString(4, customerAddress);
             stm.setString(5, customerDateOfBirth);
-            stm.setInt(7, customerID);
+            stm.setInt(6, customerID);
             stm.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
-        catch (Exception e) {
+    }
+
+    public void updateAccountCustomer(String username, String password) {
+        String query = "update CustomerInfo set password = ? where username =?";
+        try {
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, password);
+            stm.setString(2, username);
+        } catch (Exception e) {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
     }
     //END DAO Customer
-    
+
     //BEGIN DAO Food 
+    public boolean addFood(String foodName, String foodDescription, String foodImage, float foodPrice) {
+        try {
+            String sql = "insert into Food values(?, ?, ?, ?)";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setString(1, foodName);
+            stm.setString(2, foodDescription);
+            stm.setString(3, foodImage);
+            stm.setFloat(4, foodPrice);
+            int row = stm.executeUpdate();
+            if (row > 0) {
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return false;
+    }
+    public void deleteFood(int foodID) throws Exception {
+        try {
+            String query = "update Food set cusStatus=0 where foodID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, foodID);
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+    }
+
+    public Food getFood(int foodID) throws Exception {
+        try {
+            String query = "select * from Food where foodID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, foodID);
+            rs = stm.executeQuery();
+            return new Food(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5));
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Food> getAllFoods() throws Exception {
+        try {
+            String query = "select * from Food";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+
+            List<Food> listFoods = new ArrayList<Food>();
+            while (rs.next()) {
+                listFoods.add(new Food(rs.getInt(1),rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5)));
+            }
+            return listFoods;
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
+
+    public void updateFood(int foodID, String foodName, String foodDescription, String foodImage, float foodPrice) {
+        try {
+            String query = "update CustomerInfo set cusName= ?,cusPhone= ?, cusEmail=?, cusAddress=?, cusDateOfBirth=? where cusID= ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, foodName);
+            stm.setString(2, foodDescription);
+            stm.setString(3, foodImage);
+            stm.setFloat(4, foodPrice);
+            stm.setInt(5, foodID);
+            stm.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
+        }
+    }
     //END DAO Food
-    
     //BEGIN DAO Order
-    //END DAO Order
     
+    //END DAO Order
     //BEGIN DAO OrderDetail
     //END DAO OrderDetail
-    
-    //BEGIN DAO User
-    //END DAO User
-    
+    //BEGIN DAO Personnel
+    public void updateAccountPersonnel(String username, String password, String confirmPassword) {
+        String query = "update Personnel set password = ? where username =?";
+        try {
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, password);
+            stm.setString(2, username);
+        } catch (Exception e) {
+            System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
+        }
+    }
+    public void deletePersonnel(int personnelID) throws Exception {
+        try {
+            String query = "update Personnel set perStatus=0 where perID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, personnelID);
+        } catch (SQLException e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+    }
+    //END DAO Personnel
+
+    public static void main(String[] args) throws Exception {
+        DAO dao = new DAO();
+        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20","nhantv1","nhantv");
+//        List<Customer> list = dao.getAllCustomer();
+//        System.out.print(list);
+    }
+
 }
