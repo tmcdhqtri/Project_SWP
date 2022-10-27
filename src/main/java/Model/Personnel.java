@@ -11,7 +11,7 @@ package Model;
 public class Personnel {
     private int personnelID;
     private String personnelName;
-    private int role;
+    private boolean role; //0 : Admin, 1: Staff
     private String personnelPhone;
     private String personnelEmail;
     private String personnelAddress;
@@ -21,7 +21,7 @@ public class Personnel {
     private String personnelImageUrl;   
     private boolean personnelStatus;
 
-    public Personnel(int personnelID, String personnelName, int role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
+    public Personnel(int personnelID, String personnelName, boolean role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
         this.personnelID = personnelID;
         this.personnelName = personnelName;
         this.role = role;
@@ -35,7 +35,7 @@ public class Personnel {
         this.personnelStatus = personnelStatus;
     }
     
-    public Personnel(String personnelName, int role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
+    public Personnel(String personnelName, boolean role, String personnelPhone, String personnelEmail, String personnelAddress, String personnelDateOfBirth, String personnelUsername, String personnelPassword, String personnelImageUrl, boolean personnelStatus) {
         this.personnelName = personnelName;
         this.role = role;
         this.personnelPhone = personnelPhone;
@@ -72,11 +72,11 @@ public class Personnel {
         this.personnelName = personnelName;
     }
 
-    public int getRole() {
+    public boolean getRole() {
         return role;
     }
 
-    public void setRole(int role) {
+    public void setRole(boolean role) {
         this.role = role;
     }
 

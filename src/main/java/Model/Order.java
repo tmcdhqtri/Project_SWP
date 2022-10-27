@@ -14,17 +14,19 @@ public class Order {
     private int orderID;
     private String orderDate;
     private float total;
-    private int status;
+    private int orderStatus;
+    private boolean isActive; //True === 1 === Active; False === 0 === inActive
 
-    public Order(int CusID, int ID, int orderID, String orderDate, float total, int status) {
+    public Order(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
         this.CusID = CusID;
         this.ID = ID;
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.total = total;
-        this.status = status;
+        this.orderStatus = status;
+        this.isActive = isActive;
     }
-
+    
     public int getCusID() {
         return CusID;
     }
@@ -60,19 +62,27 @@ public class Order {
     public float getTotal() {
         return total;
     }
-
+    
     public void setTotal(float total) {
         this.total = total;
     }
 
-    public int getStatus() {
-        return status;
+    public int getOrderStatus() {
+        return orderStatus;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setOrderStatus(int orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
+    public boolean getIsActive() {
+        return isActive;
+    }
 
+    public void setIsActive(boolean isActive) {
+        this.isActive = isActive;
+    }
+    
+    
    
 }
