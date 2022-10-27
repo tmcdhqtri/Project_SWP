@@ -29,7 +29,7 @@ public class ViewListOrderServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         
         DAO dao = new DAO();
-        List<Order> aAllOrder = dao.getAllOrder();
+        List<Order> aAllOrder = dao.getAllOrders();
         
         request.setAttribute("aAllOrder", aAllOrder);
         request.getRequestDispatcher("./Homepage/cusViewDetailOrder.jsp").forward(request, response);

@@ -69,7 +69,20 @@ public class DAO {
         }
         return null;
     }
-
+    public Customer loginCustomer(String username, String password) {
+        try {
+            String query = "select * from CustomerInfo where cusUsername = ? and cusPassword = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, username);
+            stm.setString(2, password);
+            rs = stm.executeQuery();
+            return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
     public List<Customer> getAllCustomers() {
         try {
             String query = "select * from CustomerInfo";
@@ -309,7 +322,7 @@ public class DAO {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
     }
-
+    
     public void deletePersonnel(int personnelID) {
         try {
             String query = "update Personnel set perStatus=0 where perID = ?";
@@ -358,6 +371,20 @@ public class DAO {
         } catch (Exception e) {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
+    }
+    public Personnel loginPersonnel(String username, String password){
+        try {
+           String query = "select * from Personnel where username=? and password = ?";
+        con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, username);
+           stm.setString(2, password);
+            rs = stm.executeQuery();
+            return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
     }
     //END DAO Personnel
 
