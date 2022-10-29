@@ -20,13 +20,13 @@ public class ViewInfoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
-        int  foodID = Integer.parseInt(request.getParameter("foodID"));
-        DAO dao = new DAO();
-        
-        Food food = dao.getFood(foodID); 
- 
-        request.setAttribute("food", food); 
+//        
+//        int  foodID = Integer.parseInt(request.getParameter("foodID"));
+//        DAO dao = new DAO();
+//        
+//        Food food = dao.getFood(foodID); 
+// 
+//        request.setAttribute("food", food); 
         
         request.getRequestDispatcher("./Register/viewInfor.jsp").forward(request, response);
     }

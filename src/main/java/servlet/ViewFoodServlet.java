@@ -28,13 +28,13 @@ public class ViewFoodServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        int  foodID = Integer.parseInt(request.getParameter("foodID"));
-        DAO dao = new DAO();
-        
-        Food food = dao.getFood(foodID); 
+//        int  foodID = Integer.parseInt(request.getParameter("foodID"));
+//        DAO dao = new DAO();
+//        
+//        Food food = dao.getFood(foodID); 
  
-        request.setAttribute("food", food); 
-        request.getRequestDispatcher("index.html").forward(request, response);
+//        request.setAttribute("food", food); 
+        request.getRequestDispatcher("./Homepage/viewDetailFood.jsp").forward(request, response);
         
     }
 
@@ -45,6 +45,12 @@ public class ViewFoodServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         
     }
+    
+    
+        @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 
 }
