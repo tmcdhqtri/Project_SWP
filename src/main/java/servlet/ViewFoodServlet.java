@@ -8,11 +8,11 @@ import DAO.DAO;
 import Model.Food;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -34,7 +34,7 @@ public class ViewFoodServlet extends HttpServlet {
         Food food = dao.getFood(foodID); 
  
         request.setAttribute("food", food); 
-        request.getRequestDispatcher("./Homepage/viewDetailFood.jsp").forward(request, response);
+        request.getRequestDispatcher("index.html").forward(request, response);
         
     }
 
