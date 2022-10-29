@@ -33,7 +33,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-size: cover; background-image: url(https://img.freepik.com/free-psd/arrangement-fast-food-wooden-background_23-2148321316.jpg?w=2000);">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="login" method ="post">
 					<span class="login100-form-title p-b-49">
 						Login
 					</span>
@@ -59,7 +59,7 @@
 					<div class="container-login100-form-btn mt-3">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button type ="submit" class="login100-form-btn">
 								Login
 							</button>
 						</div>

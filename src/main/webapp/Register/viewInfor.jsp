@@ -37,7 +37,7 @@
                 <div class="card-body">
                     <!-- Infomation of (truyá»n username vÃ o)  -->
                     <h2 class="title">Information of</h2> 
-                    <form method="POST">
+                    <form method="POST" action="">
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">

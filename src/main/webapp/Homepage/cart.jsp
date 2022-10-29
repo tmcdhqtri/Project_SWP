@@ -127,7 +127,15 @@
     </section>
     <div class="container">
 
-        <table class="table">
+      
+    </div>
+    <!--end section-->
+    <div class="clearfix"></div>
+
+    <!--end section-->
+    <div class="clearfix"></div>
+    <form action="" method="">
+          <table class="table">
             <thead>
                 <tr>
                     <th></th>
@@ -187,29 +195,23 @@
                 <span>Payment: </span>
                 <span class="choose4"> </span>
                 <input type="radio" id="html" name="payment" value="HTML">
-                Â  <label for="html">VNPAY</label>
+                  <label for="html">VNPAY</label>
                 <span class="choose5"> </span>
                 <input type="radio" id="html" name="payment" value="HTML">
-                Â  <label class="choose3" for="html">Cash</label>
+                  <label class="choose3" for="html">Cash</label>
             </div>
             <div class="col-md-12">
                 <span>Delivery: </span>
                 <span class="choose2"> </span>
                 <input type="radio" id="html" name="delivery" value="HTML">
-                Â  <label for="html">Restaurant</label>
+                 <label for="html">Restaurant</label>
                 <input type="radio" id="html" name="delivery" value="HTML">
-                Â  <label for="html">Home Delivery</label>
+                  <label for="html">Home Delivery</label>
             </div>
         </div>
         <div class="totalmoneyy">$ 444.34</div>
         <button type="submit" class="btn btnorder"><a class="orderbtt" href="PayForOrder.html">Order</a></button>
-    </div>
-    <!--end section-->
-    <div class="clearfix"></div>
-
-    <!--end section-->
-    <div class="clearfix"></div>
-
+    </form>
 
 
     <!--end section-->

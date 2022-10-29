@@ -175,7 +175,7 @@
                                             <!--/ header media -->
 
                                             <!-- form -->
-                                            <form class="validate-form mt-2">
+                                            <form action="" method ="" class="validate-form mt-2">
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
