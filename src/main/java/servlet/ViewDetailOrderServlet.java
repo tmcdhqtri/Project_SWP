@@ -4,11 +4,9 @@
  */
 package servlet;
 
-import DAO.DAO;
-import Model.Order;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,12 +15,11 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author This PC
  */
-@WebServlet(name = "ViewOrderServlet", urlPatterns = {"/vieworder"})
-public class ViewOrderServlet extends HttpServlet {
+public class ViewDetailOrderServlet extends jakarta.servlet.http.HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doGet(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response)
+            throws jakarta.servlet.ServletException, IOException {
 //        response.setContentType("text/html;charset=UTF-8");
 //        request.setCharacterEncoding("utf-8");
 
@@ -38,8 +35,8 @@ public class ViewOrderServlet extends HttpServlet {
 
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    protected void doPost(jakarta.servlet.http.HttpServletRequest request, jakarta.servlet.http.HttpServletResponse response)
+            throws jakarta.servlet.ServletException, IOException {
         
     }
     
@@ -48,7 +45,4 @@ public class ViewOrderServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-
-
 }
