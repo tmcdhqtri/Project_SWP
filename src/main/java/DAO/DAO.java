@@ -21,7 +21,7 @@ public class DAO {
     ResultSet rs = null;
 
     //BEGIN DAO Customer  
-    public boolean registeredCustomer(String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword) {
+    public boolean registeredCustomer(String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword, boolean cusStatus) {
         try {
             String sql = "insert into CustomerInfo values(?, ?, ?, ?, ?, ?, ?, 0)";
             con = new DBContext().getConnection();
@@ -92,7 +92,7 @@ public class DAO {
 
             List<Customer> listCustomers = new ArrayList<Customer>();
             while (rs.next()) {
-                listCustomers.add(new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8)));
+                listCustomers.add(new Customer(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getBoolean(9)));
             }
             return listCustomers;
         } catch (Exception e) {
@@ -134,7 +134,7 @@ public class DAO {
     //BEGIN DAO Food 
     public boolean addFood(String foodName, String foodDescription, String foodImage, float foodPrice) {
         try {
-            String sql = "insert into Food values(?, ?, ?, ?)";
+            String sql = "insert into Food values(?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
             stm.setString(1, foodName);
@@ -171,7 +171,7 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setInt(1, foodID);
             rs = stm.executeQuery();
-            return new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5));
+            return new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6));
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -187,7 +187,7 @@ public class DAO {
 
             List<Food> listFoods = new ArrayList<Food>();
             while (rs.next()) {
-                listFoods.add(new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5)));
+                listFoods.add(new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6)));
             }
             return listFoods;
         } catch (Exception e) {
@@ -388,10 +388,10 @@ public class DAO {
     }
     //END DAO Personnel
 
-    public static void main(String[] args) throws Exception {
-        DAO dao = new DAO();
-        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
-//        List<Customer> list = dao.getAllCustomer();
-//        System.out.print(list);
-    }
+//    public static void main(String[] args) throws Exception {
+//        DAO dao = new DAO();
+//        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
+////        List<Customer> list = dao.getAllCustomer();
+////        System.out.print(list);
+//    }
 }
