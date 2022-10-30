@@ -36,7 +36,7 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Update Password Form</h2>
-                    <form method="POST">
+                    <form method="POST" action="">
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">

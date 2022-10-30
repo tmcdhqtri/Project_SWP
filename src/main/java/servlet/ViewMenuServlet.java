@@ -3,11 +3,11 @@ package servlet;
 import DAO.DAO;
 import java.io.IOException;
 import java.util.List;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import Model.Food;
 
 
@@ -20,11 +20,11 @@ public class ViewMenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        DAO dao = new DAO();
-        List<Food> aAllFood = dao.getAllFoods();
-        
-        request.setAttribute("aAllFood", aAllFood);
-        request.getRequestDispatcher("./Homepage/menu.jsp").forward(request, response);
+//        DAO dao = new DAO();
+//        List<Food> aAllFood = dao.getAllFoods();
+//        
+//        request.setAttribute("aAllFood", aAllFood);
+        request.getRequestDispatcher("Homepage/menu.jsp").forward(request, response);
         
     }
 
@@ -34,7 +34,7 @@ public class ViewMenuServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
+
     }
 
 

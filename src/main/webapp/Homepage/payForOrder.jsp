@@ -149,7 +149,7 @@
            
                 <div class="col-md-12 rightbadge2 "></div>
                 
-                <form action="" class="row col-md-12" style="margin-top:5%;margin-left:28%;margin-bottom:5%;">
+                <div class="row col-md-12" style="margin-top:5%;margin-left:28%;margin-bottom:5%;">
                     <div class="col-md-3 " >
                       <button class="btn btnpay" style="background:black;border-radius: 5px;"><a href="cart.html" >Return</a></button>
                     </div>
@@ -157,7 +157,7 @@
                         <button class="btn btnpay" style="background:black;border-radius: 5px;"><a href="#" >Confirm</a></button>
                     </div>
 
-                </form>
+                </div>
 
             </div>
         </div>

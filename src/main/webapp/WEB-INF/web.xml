@@ -4,9 +4,33 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>servlet.HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>servlet.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewDetailOrderServlet</servlet-name>
+        <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddFoodServlet</servlet-name>
+        <servlet-class>servlet.AddFoodServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewDetailOrderServlet</servlet-name>
+        <url-pattern>/detailOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddFoodServlet</servlet-name>
+        <url-pattern>/addFood</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

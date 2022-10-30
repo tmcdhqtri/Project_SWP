@@ -8,11 +8,11 @@ import DAO.DAO;
 import Model.Food;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -28,12 +28,12 @@ public class ViewFoodServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        int  foodID = Integer.parseInt(request.getParameter("foodID"));
-        DAO dao = new DAO();
-        
-        Food food = dao.getFood(foodID); 
+//        int  foodID = Integer.parseInt(request.getParameter("foodID"));
+//        DAO dao = new DAO();
+//        
+//        Food food = dao.getFood(foodID); 
  
-        request.setAttribute("food", food); 
+//        request.setAttribute("food", food); 
         request.getRequestDispatcher("./Homepage/viewDetailFood.jsp").forward(request, response);
         
     }
@@ -45,6 +45,12 @@ public class ViewFoodServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         
     }
+    
+    
+        @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 
 }

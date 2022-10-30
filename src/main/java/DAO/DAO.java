@@ -375,10 +375,10 @@ public class DAO {
     public Personnel loginPersonnel(String username, String password){
         try {
            String query = "select * from Personnel where username=? and password = ?";
-        con = new DBContext().getConnection();
+            con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, username);
-           stm.setString(2, password);
+            stm.setString(2, password);
             rs = stm.executeQuery();
             return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
         } catch (Exception e) {
