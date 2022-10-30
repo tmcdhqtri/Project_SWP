@@ -16,6 +16,10 @@
         <servlet-name>AddFoodServlet</servlet-name>
         <servlet-class>servlet.AddFoodServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addStaffServlet</servlet-name>
+        <servlet-class>servlet.addStaffServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>AddFoodServlet</servlet-name>
         <url-pattern>/addFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addStaffServlet</servlet-name>
+        <url-pattern>/addStaff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

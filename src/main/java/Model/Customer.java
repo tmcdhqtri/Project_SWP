@@ -18,8 +18,9 @@ public class Customer {
     private String customerBirthday;
     private String customerUsername;
     private String customerPassword;
-
-    public Customer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword) {
+    private boolean cusStatus;
+    
+    public Customer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword, boolean cusStatus) {
         this.customerID = customerID;
         this.customerName = customerName;
         this.customerPhone = customerPhone;
@@ -28,8 +29,9 @@ public class Customer {
         this.customerBirthday = customerBirthday;
         this.customerUsername = customerUsername;
         this.customerPassword = customerPassword;
+        this.cusStatus = cusStatus;
     }
-
+    
     public Customer(String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday) {
         this.customerName = customerName;
         this.customerPhone = customerPhone;
@@ -105,6 +107,14 @@ public class Customer {
 
     public void setCustomerPassword(String customerPassword) {
         this.customerPassword = customerPassword;
+    }
+
+    public boolean isCusStatus() {
+        return cusStatus;
+    }
+
+    public void setCusStatus(boolean cusStatus) {
+        this.cusStatus = cusStatus;
     }
     
 }

@@ -158,24 +158,24 @@
                                     <div class="tab-content">
                                         <!-- general tab -->
                                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general" aria-labelledby="account-pill-general" aria-expanded="true">
-                                            <!-- header media -->
-                                            <div class="media">
-                                                <a href="javascript:void(0);" class="mr-25">
-                                                    <img src="/" id="account-upload-img" class="rounded mr-50" alt="profile image" height="100" width="100" />
-                                                </a>
-                                                <!-- upload and reset button -->
-                                                <div class="media-body mt-75 ml-1">
-                                                    <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
-                                                    <input type="file" id="account-upload" hidden accept="image/*" />
-                                                    <!-- <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> -->
-                                                    <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
-                                                </div>
-                                                <!--/ upload and reset button -->
-                                            </div>
-                                            <!--/ header media -->
-
+                                            
                                             <!-- form -->
-                                            <form class="validate-form mt-2">
+                                            <form action="addStaff" method="post" class="mt-2" enctype="multipart/form-data">
+                                                <!-- header media -->
+                                                <div class="media">
+                                                    <a href="javascript:void(0);" class="mr-25">
+                                                        <img src="/" id="account-upload-img" class="rounded mr-50" alt="profile image" height="100" width="100" />
+                                                    </a>
+                                                    <!-- upload and reset button -->
+                                                    <div class="media-body mt-75 ml-1">
+                                                        <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
+                                                        <input name="image" type="file" id="account-upload" hidden accept="image/*" />
+                                                        <!-- <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> -->
+                                                        <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
+                                                    </div>
+                                                    <!--/ upload and reset button -->
+                                                </div>
+                                                <!--/ header media -->
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
@@ -195,7 +195,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i data-feather="user"></i></span>
                                                                 </div>
-                                                                <input type="text" id="account-name" class="form-control" name="account-name" placeholder="Full Name"  required/>
+                                                                <input type="text" id="account-name" class="form-control" name="name" placeholder="Full Name"  required/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -203,7 +203,7 @@
                                                         <div class="form-group">
                                                             <label for="account-new-password">New Password</label>
                                                             <div class="input-group form-password-toggle input-group-merge">
-                                                                <input type="password" id="account-new-password" name="new-password" class="form-control" placeholder="New Password" />
+                                                                <input type="password" id="account-new-password" name="password" class="form-control" placeholder="New Password" />
                                                                 <div class="input-group-append">
                                                                     <div class="input-group-text cursor-pointer">
                                                                         <i data-feather="eye"></i>
@@ -216,7 +216,7 @@
                                                         <div class="form-group">
                                                             <label for="account-retype-new-password">Retype New Password</label>
                                                             <div class="input-group form-password-toggle input-group-merge">
-                                                                <input type="password" class="form-control" id="account-retype-new-password" name="confirm-new-password" placeholder="New Password" />
+                                                                <input type="password" class="form-control" id="account-retype-new-password" name="re-password" placeholder="New Password" />
                                                                 <div class="input-group-append">
                                                                     <div class="input-group-text cursor-pointer"><i data-feather="eye"></i></div>
                                                                 </div>
@@ -237,7 +237,7 @@
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-birth-date">Birth Date</label>
-                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="dob"/>
+                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="dateOfBirth"/>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
@@ -258,7 +258,7 @@
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i data-feather="smartphone"></i></span>
                                                                     </div>
-                                                                    <input type="number" id="contact-icon" class="form-control" name="contact-icon" placeholder="Mobile" />
+                                                                    <input type="number" id="contact-icon" class="form-control" name="phone" placeholder="Mobile" />
                                                                 </div>
                                                         </div>
                                                     </div>
@@ -268,10 +268,10 @@
                                                             <h4 class="alert-heading">Saved Sucsess</h4>
                                                         </div>
                                                     </div> -->
-                                                    <div class="col-12">
+                                                    
                                                         <button type="submit" class="btn btn-primary mt-2 mr-1">Submit</button>
                                                         <a href="listStaff.html" class="btn btn-outline-secondary mt-2">Cancel</a>
-                                                    </div>
+                                                    
                                                 </div>
                                             </form>
                                             <!--/ form -->

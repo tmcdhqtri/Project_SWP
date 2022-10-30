@@ -14,13 +14,22 @@ public class Food {
     private String foodDescription;
     private String foodImage;
     private float foodPrice;
-
-    public Food(int foodID, String foodName, String foodDescription, String foodImage, float foodPrice) {
+    private boolean foodIsActive;
+    public Food(int foodID, String foodName, String foodDescription, String foodImage, float foodPrice, boolean foodIsActive) {
         this.foodID = foodID;
         this.foodName = foodName;
         this.foodDescription = foodDescription;
         this.foodImage = foodImage;
         this.foodPrice = foodPrice;
+        this.foodIsActive = foodIsActive;
+    }
+
+    public Food(String foodName, String foodDescription, String foodImage, float foodPrice, boolean foodIsActive) {
+        this.foodName = foodName;
+        this.foodDescription = foodDescription;
+        this.foodImage = foodImage;
+        this.foodPrice = foodPrice;
+        this.foodIsActive = foodIsActive;
     }
     
     public int getFoodID() {
