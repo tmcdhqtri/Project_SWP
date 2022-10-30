@@ -311,6 +311,35 @@ public class DAO {
 
     //END DAO OrderDetail
     //BEGIN DAO Personnel
+    public boolean addPersonnel(String name, String role, String phone, String email, String address, String dateOfBirth,
+                            String username, String password, String image, String perStatus)
+    {
+        try {
+                String sql = "insert into Personnel values(?,?,?,?,?,?,?,?,?,?)";
+                con = new DBContext().getConnection();
+                stm = con.prepareStatement(sql);
+                stm.setString(1, name);
+                stm.setString(2, role);
+                stm.setString(3, phone);
+                stm.setString(4, email);
+                stm.setString(5, address);
+                stm.setString(6, dateOfBirth);
+                stm.setString(7, username);
+                stm.setString(8, password);
+                stm.setString(9, image);
+                stm.setString(10, perStatus);
+                int row = stm.executeUpdate();
+                if (row > 0) {
+                    return true;
+                }
+            } catch (SQLException e) {
+                System.out.println("SQL error in DAO " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println("SQL error in DAO " + e.getMessage());
+            }
+            return false;
+    }
+    
     public void updateAccountPersonnel(String username, String password, String confirmPassword) {
         String query = "update Personnel set password = ? where username =?";
         try {
@@ -390,7 +419,7 @@ public class DAO {
 
     public static void main(String[] args) throws Exception {
         DAO dao = new DAO();
-        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
+        dao.addPersonnel("Hieu", "1", "0868", "hieutran", "danang", "2022-01-06", "hieutran61", "123", "image", "1");
 //        List<Customer> list = dao.getAllCustomer();
 //        System.out.print(list);
     }
