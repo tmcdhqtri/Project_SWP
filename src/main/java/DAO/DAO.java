@@ -56,12 +56,12 @@ public class DAO {
         }
     }
 
-    public Customer getCustomer(int customerID) {
+    public Customer getCustomer(String customerID) {
         try {
             String query = "select * from CustomerInfo where cusID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setInt(1, customerID);
+            stm.setString(1, customerID);
             rs = stm.executeQuery();
             return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
         } catch (Exception e) {
@@ -118,13 +118,14 @@ public class DAO {
         }
     }
 
-    public void updateAccountCustomer(String username, String password) {
+    public void updatePasswordCustomer(String username, String password) {
         String query = "update CustomerInfo set password = ? where username =?";
         try {
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, password);
             stm.setString(2, username);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
@@ -311,6 +312,21 @@ public class DAO {
 
     //END DAO OrderDetail
     //BEGIN DAO Personnel
+    public Personnel getPersonnel(String personnelID) {
+        try {
+            String query = "select * from Personnel where perID=?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, personnelID);
+            rs = stm.executeQuery();
+
+            return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
+        } catch (Exception e) {
+            System.out.println("SQL er  ror in DAO " + e.getMessage());
+        }
+        return null;
+    }
+    
     public boolean addPersonnel(String name, String role, String phone, String email, String address, String dateOfBirth,
                             String username, String password, String image, String perStatus)
     {
@@ -340,13 +356,14 @@ public class DAO {
             return false;
     }
     
-    public void updateAccountPersonnel(String username, String password, String confirmPassword) {
+    public void updatePasswordPersonnel(String username, String password) {
         String query = "update Personnel set password = ? where username =?";
         try {
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, password);
             stm.setString(2, username);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
@@ -358,6 +375,7 @@ public class DAO {
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, personnelID);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -381,12 +399,14 @@ public class DAO {
         return null;
     }
 
-    public void updatePersonnnel(int personnelID, String personnelName,
+    public void updatePersonnnel(String personnelID, String personnelName,
             String personnelPhone, String personnelEmail,
             String personnelAddress, String personnelDateOfBirth,
-            String personnelImageUrl, boolean personnelStatus) {
-        try {
-            String query = "update Personnel set name= ?, phone=?, email=?, address =?, dateOfBirth=?, image =? where cusID= ?";
+            String personnelImageUrl) {
+        if (!personnelImageUrl.equals(""))
+        {
+            try {
+            String query = "update Personnel set name= ?, phone=?, email=?, address =?, dateOfBirth=?, image =? where perID= ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, personnelName);
@@ -395,11 +415,30 @@ public class DAO {
             stm.setString(4, personnelAddress);
             stm.setString(5, personnelDateOfBirth);
             stm.setString(6, personnelImageUrl);
-            stm.setInt(7, personnelID);
+            stm.setString(7, personnelID);
             stm.executeUpdate();
-        } catch (Exception e) {
-            System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
+            } catch (Exception e) {
+                System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
+            }
         }
+        else   
+        {
+            try {
+            String query = "update Personnel set name= ?, phone=?, email=?, address =?, dateOfBirth=? where perID= ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setString(1, personnelName);
+            stm.setString(2, personnelPhone);
+            stm.setString(3, personnelEmail);
+            stm.setString(4, personnelAddress);
+            stm.setString(5, personnelDateOfBirth);
+            stm.setString(6, personnelID);
+            stm.executeUpdate();
+            } catch (Exception e) {
+                System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
+            }
+        }
+        
     }
     public Personnel loginPersonnel(String username, String password){
         try {
@@ -417,19 +456,9 @@ public class DAO {
     }
     //END DAO Personnel
 
-<<<<<<< HEAD
     public static void main(String[] args) throws Exception {
         DAO dao = new DAO();
-        dao.addPersonnel("Hieu", "1", "0868", "hieutran", "danang", "2022-01-06", "hieutran61", "123", "image", "1");
-//        List<Customer> list = dao.getAllCustomer();
-//        System.out.print(list);
+        dao.deletePersonnel(12);
     }
-=======
-//    public static void main(String[] args) throws Exception {
-//        DAO dao = new DAO();
-//        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
-////        List<Customer> list = dao.getAllCustomer();
-////        System.out.print(list);
-//    }
->>>>>>> d0876aa77106ca07f176cf831114035937c4d506
+
 }
