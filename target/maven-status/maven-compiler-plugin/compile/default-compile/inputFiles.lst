@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\LoginServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Customer.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFood.java
@@ -20,3 +21,25 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\HomeServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailOrderServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewHomeAdminServlet.java
+=======
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\UpdatePasswordServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewDetailOrderServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewFoodServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewInfoServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\model\OrderDetail.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewHomeAdminServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewMenuServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\AddFoodServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\model\Order.java
+C:\xampp\htdocs\Project_SWP\src\main\java\helpers\DBUtils.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\ViewListOrderServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\DAO\DAO.java
+C:\xampp\htdocs\Project_SWP\src\main\java\model\Personnel.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\LoginServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\addStaffServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\Context\DBContext.java
+C:\xampp\htdocs\Project_SWP\src\main\java\model\Food.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\UpdateInfoServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\servlet\HomeServlet.java
+C:\xampp\htdocs\Project_SWP\src\main\java\model\Customer.java
+>>>>>>> 22bb1b4cd2f6ed977228c0d2b0498c10de6ce69d
