@@ -68,6 +68,10 @@
         <servlet-name>ViewDetailFoodServlet</servlet-name>
         <servlet-class>servlet.ViewDetailFoodServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewFoodListServlet</servlet-name>
+        <servlet-class>servlet.ViewFoodListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -133,8 +137,8 @@
         <url-pattern>/menu</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewDetailFoodServlet</servlet-name>
-        <url-pattern>/viewFood</url-pattern>
+        <servlet-name>ViewFoodListServlet</servlet-name>
+        <url-pattern>/viewfoodlist</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

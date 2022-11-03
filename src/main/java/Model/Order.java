@@ -26,6 +26,10 @@ public class Order {
         this.orderStatus = status;
         this.isActive = isActive;
     }
+
+    public Order() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     public int getCusID() {
         return CusID;

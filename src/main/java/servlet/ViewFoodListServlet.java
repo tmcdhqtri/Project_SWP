@@ -20,13 +20,14 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "viewfoodlist", urlPatterns = {"/ViewFoodList"})
+@WebServlet(name = "viewfoodlist", urlPatterns = {"/ViewFoodListServlet"})
 public class ViewFoodListServlet extends HttpServlet {
 
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         DAO dao = new DAO();
         List<Food> foodList = dao.getAllFoods();
         request.setAttribute("FOODLIST", foodList);
