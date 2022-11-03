@@ -2133,7 +2133,7 @@ ul.tabs8 {
 	font-size: 14px;
 	display: block;
 	cursor: pointer;
- border:
+/* border:*/
 }
 .smk_accordion .accordion_in.three.acc_active > .acc_head {
 	background: #fd602c;
