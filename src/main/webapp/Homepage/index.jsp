@@ -75,8 +75,8 @@
         </div>
         <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
           <ul class="nav red2 navbar-nav">
-            <li> <a href="index.html" class="dropdown-toggle active">Home</a></li>
-            <li> <a href="about.html" class="dropdown-toggle">About</a></li>
+            <li> <a href="home" class="dropdown-toggle active">Home</a></li>
+            <li> <a href="about" class="dropdown-toggle">About</a></li>
             <li> <a href="menu.html" class="dropdown-toggle">Menu</a></li>
             <li> <a href="./Login/Login.html" class="dropdown-toggle">My Order</a></li>
             <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>

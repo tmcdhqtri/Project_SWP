@@ -153,7 +153,7 @@
               <h4 class="old-standardtt less-mar1">Whole Wheat Waffles</h4>
               <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
               <h6 class="text-red-2">Price: $5</h6>
-              <button class="btn btn-vh"><a href="viewDetailFood.html">View Detail</a></button>
+              <button class="btn btn-vh"><a href="viewFood?foodID={}}">View Detail</a></button>
             </div>
           </div>
         </div>
