@@ -21,7 +21,7 @@ public class AccountAdminServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
+
         request.getRequestDispatcher("/AdminPage/page-account-settings.jsp").forward(request, response);
     }
 

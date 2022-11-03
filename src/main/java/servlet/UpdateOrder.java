@@ -55,7 +55,8 @@ public class UpdateOrder extends HttpServlet {
         int orderID = Integer.parseInt(request.getParameter(("ORDERID")));
         DAO dao = new DAO();
         dao.updateOrderStatus(orderID);
-        response.sendRedirect("./Homepage/viewDetailOrder.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("./Homepage/viewDetailOrder.jsp");
+        rd.forward(request, response);
     }
 
     @Override

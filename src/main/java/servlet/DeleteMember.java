@@ -5,6 +5,7 @@
 package servlet;
 
 import DAO.DAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -37,6 +38,8 @@ public class DeleteMember extends HttpServlet {
         
         DAO dao = new DAO();
         dao.deleteCustomer(cusID);
+        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/viewMember.jsp");
+        rd.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

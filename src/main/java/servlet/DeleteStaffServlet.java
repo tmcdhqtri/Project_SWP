@@ -2,6 +2,7 @@
 package servlet;
 
 import DAO.DAO;
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -23,6 +24,8 @@ public class DeleteStaffServlet extends HttpServlet {
         dao.deletePersonnel(personnelID);
         
         request.getRequestDispatcher("listStaff").forward(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/listStaff.jsp");
+        rd.forward(request, response);
     }
 
     @Override

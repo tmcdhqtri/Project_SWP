@@ -22,7 +22,7 @@ import java.nio.file.Path;
  *
  * @author Admin
  */
-@WebServlet(name = "updatememberadmin", urlPatterns = {"/UpdateMember"})
+@WebServlet(name = "updatememberadmin", urlPatterns = {"/UpdateMemberAdmin"})
 public class UpdateMemberAdmin extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
