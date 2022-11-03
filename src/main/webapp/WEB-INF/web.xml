@@ -20,6 +20,30 @@
         <servlet-name>addStaffServlet</servlet-name>
         <servlet-class>servlet.addStaffServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewListStaffServlet</servlet-name>
+        <servlet-class>servlet.ViewListStaffServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteStaffServlet</servlet-name>
+        <servlet-class>servlet.DeleteStaffServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateStaffServlet</servlet-name>
+        <servlet-class>servlet.UpdateStaffServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AccountAdminServlet</servlet-name>
+        <servlet-class>servlet.AccountAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePasswordServlet</servlet-name>
+        <servlet-class>servlet.UpdatePasswordServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdatePasswordAdminServlet</servlet-name>
+        <servlet-class>servlet.UpdatePasswordAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -39,6 +63,30 @@
     <servlet-mapping>
         <servlet-name>addStaffServlet</servlet-name>
         <url-pattern>/addStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListStaffServlet</servlet-name>
+        <url-pattern>/listStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteStaffServlet</servlet-name>
+        <url-pattern>/deleteStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateStaffServlet</servlet-name>
+        <url-pattern>/updateStaff</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountAdminServlet</servlet-name>
+        <url-pattern>/accountSetting</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePasswordServlet</servlet-name>
+        <url-pattern>/updatePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdatePasswordAdminServlet</servlet-name>
+        <url-pattern>/updatePasswordAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

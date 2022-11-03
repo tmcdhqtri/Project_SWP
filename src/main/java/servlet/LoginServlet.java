@@ -30,7 +30,6 @@ public class LoginServlet extends jakarta.servlet.http.HttpServlet {
         request.setCharacterEncoding("utf-8");
         
         
-        System.out.println("doGet");
         request.getRequestDispatcher("./Login/Login.jsp").forward(request, response);
     }
 
@@ -46,26 +45,26 @@ public class LoginServlet extends jakarta.servlet.http.HttpServlet {
         String password = request.getParameter("password");
         System.out.println("username: " + username);
         System.out.println("password: " + password);
-//        password = Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
-//        
-//        DAO dao = new DAO();
-//        Customer accCus = dao.loginCustomer(username, password);
-//        Personnel accPerson = dao.loginPersonnel(username, password);
-//        
-//        if (accCus!=null)
-//        {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("acc", accCus);
-//            response.sendRedirect("home");
-//        }
-//        else if (accPerson != null)
-//        {
-//            HttpSession session = request.getSession();
-//            session.setAttribute("acc", accPerson);
-//            if (accPerson.getRole()==true)
-//                response.sendRedirect("homeadmin");
-//            else response.sendRedirect("home");
-//        } 
+        password = Hashing.sha256().hashString(password, StandardCharsets.UTF_8).toString();
+        
+        DAO dao = new DAO();
+        Customer accCus = dao.loginCustomer(username, password);
+        Personnel accPerson = dao.loginPersonnel(username, password);
+        
+        if (accCus!=null)
+        {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", accCus);
+            response.sendRedirect("home");
+        }
+        else if (accPerson != null)
+        {
+            HttpSession session = request.getSession();
+            session.setAttribute("acc", accPerson);
+            if (accPerson.getRole()==true)
+                response.sendRedirect("homeadmin");
+            else response.sendRedirect("home");
+        } 
         if (username.equals("abc") && password.equals("123"))
         {
             response.sendRedirect("home");

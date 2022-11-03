@@ -166,7 +166,7 @@
                                                 <!-- upload and reset button -->
                                                 <div class="media-body mt-75 ml-1">
                                                     <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
-                                                    <input type="file" id="account-upload" hidden accept="image/*" />
+                                                    <input name="image" type="file" id="account-upload" hidden accept="image/*" />
                                                     <!-- <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> -->
                                                     <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
                                                 </div>
@@ -184,7 +184,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i data-feather="user"></i></span>
                                                                 </div>
-                                                                <input type="text" id="fname-icon" class="form-control" name="fname-icon" placeholder="Full Name" value="Holder Park" />
+                                                                <input type="text" id="fname-icon" class="form-control" name="name" placeholder="Full Name" value="Holder Park" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -217,14 +217,14 @@
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i data-feather="smartphone"></i></span>
                                                                     </div>
-                                                                    <input type="number" id="contact-icon" class="form-control" name="contact-icon" placeholder="Mobile" value="09999999"/>
+                                                                    <input type="number" id="contact-icon" class="form-control" name="phone" placeholder="Mobile" value="09999999"/>
                                                                 </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-birth-date">Birth Date</label>
-                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="dob" value="2002-10-05" />
+                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="dateOfBirth" value="2002-10-05" />
                                                         </div>
                                                     </div>
                                                     <!-- Náº¿u save change thÃ¬ hiá»n alert -->

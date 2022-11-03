@@ -27,7 +27,7 @@
     <link href="./Register/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="./Register/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
