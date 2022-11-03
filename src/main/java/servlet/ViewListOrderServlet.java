@@ -30,7 +30,7 @@ public class ViewListOrderServlet extends HttpServlet {
         
         DAO dao = new DAO();
         List<Order> aAllOrder = dao.getAllOrders();
-        
+            
         request.setAttribute("aAllOrder", aAllOrder);
         request.getRequestDispatcher("./Homepage/cusViewDetailOrder.jsp").forward(request, response);
     }

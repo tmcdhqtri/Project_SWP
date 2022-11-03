@@ -14,51 +14,43 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "updatememberadmin", urlPatterns = {"/UpdateMember"})
-public class UpdateMemberAdmin extends HttpServlet {
+@WebServlet(name = "updatemember", urlPatterns = {"/UpdateMember"})
+public class UpdateMember extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdateMember</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdateMember at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int cusID = Integer.parseInt(request.getParameter(("CUSID")));
+         int cusID = Integer.parseInt(request.getParameter(("CUSID")));
         DAO dao = new DAO();
         Customer Customer = dao.getCustomer(cusID);
-        
         request.setAttribute("c", Customer);
-        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/viewMember.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("./Register/updateInfor.jsp");
         rd.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int cusID = Integer.parseInt(request.getParameter(("CUSID")));
+int cusID = Integer.parseInt(request.getParameter(("CUSID")));
         String cusName = request.getParameter("CUSNAME");
         String cusPhone = request.getParameter("CUSPHONE");
         String cusEmail = request.getParameter("CUSEMAIL");
@@ -66,7 +58,11 @@ public class UpdateMemberAdmin extends HttpServlet {
         String cusDateOfBirth = request.getParameter("CUSDATEOFBIRTH");
         DAO dao = new DAO();
         dao.updateCustomer(cusID, cusName, cusPhone, cusEmail, cusAddress, cusDateOfBirth);
-        response.sendRedirect("./AdminPage/listMembers.jsp");
-    }
+        response.sendRedirect("./Register/viewInfor.jsp");    }
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }

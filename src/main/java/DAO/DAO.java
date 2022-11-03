@@ -23,7 +23,7 @@ public class DAO {
     //BEGIN DAO Customer  
     public boolean registeredCustomer(String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, String customerUsername, String customerPassword, boolean cusStatus) {
         try {
-            String sql = "insert into CustomerInfo values(?, ?, ?, ?, ?, ?, ?, 0)";
+            String sql = "insert into CustomerInfo values(?, ?, ?, ?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
             stm.setString(1, customerName);
@@ -277,13 +277,12 @@ public class DAO {
         }
     }
 
-    public void updateOrderStatus(int orderID, int orderStatus) {
+    public void updateOrderStatus(int orderID) {
         try {
-            String query = "update Order set orderStatus=? where orderID = ?";
+            String query = "update Order set orderStatus=1 where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setInt(1, orderStatus);
-            stm.setInt(2, orderID);
+            stm.setInt(1, orderID);
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -315,7 +314,7 @@ public class DAO {
                             String username, String password, String image, String perStatus)
     {
         try {
-                String sql = "insert into Personnel values(?,?,?,?,?,?,?,?,?,?)";
+                String sql = "insert into Personnel values(?,?,?,?,?,?,?,?,?,1)";
                 con = new DBContext().getConnection();
                 stm = con.prepareStatement(sql);
                 stm.setString(1, name);
@@ -327,7 +326,6 @@ public class DAO {
                 stm.setString(7, username);
                 stm.setString(8, password);
                 stm.setString(9, image);
-                stm.setString(10, perStatus);
                 int row = stm.executeUpdate();
                 if (row > 0) {
                     return true;
@@ -416,20 +414,10 @@ public class DAO {
         return null;
     }
     //END DAO Personnel
-
-<<<<<<< HEAD
-    public static void main(String[] args) throws Exception {
-        DAO dao = new DAO();
-        dao.addPersonnel("Hieu", "1", "0868", "hieutran", "danang", "2022-01-06", "hieutran61", "123", "image", "1");
-//        List<Customer> list = dao.getAllCustomer();
-//        System.out.print(list);
-    }
-=======
 //    public static void main(String[] args) throws Exception {
 //        DAO dao = new DAO();
 //        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
 ////        List<Customer> list = dao.getAllCustomer();
 ////        System.out.print(list);
 //    }
->>>>>>> d0876aa77106ca07f176cf831114035937c4d506
 }

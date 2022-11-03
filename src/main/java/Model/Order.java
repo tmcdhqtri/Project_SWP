@@ -14,7 +14,7 @@ public class Order {
     private int orderID;
     private String orderDate;
     private float total;
-    private int orderStatus;
+    private int orderStatus; //0 đang giao; 1: đã giao
     private boolean isActive; //True === 1 === Active; False === 0 === inActive
 
     public Order(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
