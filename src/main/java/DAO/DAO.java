@@ -186,9 +186,9 @@ public class DAO {
             stm = con.prepareStatement(query);
             rs = stm.executeQuery();
 
-            List<Food> listFoods = new ArrayList<Food>();
+            List<Food> listFoods = new ArrayList<>();
             while (rs.next()) {
-                listFoods.add(new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6)));
+                listFoods.add((Food) new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6)));
             }
             return listFoods;
         } catch (Exception e) {
@@ -237,14 +237,14 @@ public class DAO {
         return false;
     }
 
-    public List<Order> getAllOrders() {
+    public ArrayList<Order> getAllOrders() {
         try {
             String query = "select * from Order";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             rs = stm.executeQuery();
 
-            List<Order> listOrders = new ArrayList<Order>();
+            ArrayList<Order> listOrders = new ArrayList<Order>();
             while (rs.next()) {
                 listOrders.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5), rs.getInt(6), rs.getBoolean(7)));
             }

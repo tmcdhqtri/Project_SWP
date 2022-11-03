@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import jakarta.servlet.http.Part;
 
 @MultipartConfig
-public class addStaffServlet extends HttpServlet {
+public class AddStaffServlet extends HttpServlet {
 
     
     @Override

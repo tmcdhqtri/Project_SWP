@@ -18,7 +18,7 @@
     </servlet>
     <servlet>
         <servlet-name>addStaffServlet</servlet-name>
-        <servlet-class>servlet.addStaffServlet</servlet-class>
+        <servlet-class>servlet.AddStaffServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewListStaffServlet</servlet-name>
@@ -43,6 +43,30 @@
     <servlet>
         <servlet-name>UpdatePasswordAdminServlet</servlet-name>
         <servlet-class>servlet.UpdatePasswordAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewHomeAdminServlet</servlet-name>
+        <servlet-class>servlet.ViewHomeAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewAboutUsServlet</servlet-name>
+        <servlet-class>servlet.ViewAboutUsServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewContactServlet</servlet-name>
+        <servlet-class>servlet.ViewContactServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewListOrderServlet</servlet-name>
+        <servlet-class>servlet.ViewListOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewMenuServlet</servlet-name>
+        <servlet-class>servlet.ViewMenuServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewDetailFoodServlet</servlet-name>
+        <servlet-class>servlet.ViewDetailFoodServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -87,6 +111,30 @@
     <servlet-mapping>
         <servlet-name>UpdatePasswordAdminServlet</servlet-name>
         <url-pattern>/updatePasswordAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewHomeAdminServlet</servlet-name>
+        <url-pattern>/homeAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewAboutUsServlet</servlet-name>
+        <url-pattern>/about</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewContactServlet</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListOrderServlet</servlet-name>
+        <url-pattern>/listOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewMenuServlet</servlet-name>
+        <url-pattern>/menu</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewDetailFoodServlet</servlet-name>
+        <url-pattern>/viewFood</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

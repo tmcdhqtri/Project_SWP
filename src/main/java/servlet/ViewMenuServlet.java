@@ -1,17 +1,23 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package servlet;
 
 import DAO.DAO;
+import Model.Food;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import Model.Food;
 
-
-@WebServlet(name = "DisplayMenuServlet", urlPatterns = {"/menu"})
+/**
+ *
+ * @author This PC
+ */
 public class ViewMenuServlet extends HttpServlet {
 
     @Override
@@ -20,10 +26,10 @@ public class ViewMenuServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-//        DAO dao = new DAO();
-//        List<Food> aAllFood = dao.getAllFoods();
-//        
-//        request.setAttribute("aAllFood", aAllFood);
+        DAO dao = new DAO();
+        List<Food> aAllFood = dao.getAllFoods();
+        
+        request.setAttribute("aAllFood", aAllFood);
         request.getRequestDispatcher("Homepage/menu.jsp").forward(request, response);
         
     }
