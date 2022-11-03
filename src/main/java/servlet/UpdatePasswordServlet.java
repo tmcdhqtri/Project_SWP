@@ -38,7 +38,7 @@ public class UpdatePasswordServlet extends HttpServlet {
         
         HttpSession session = request.getSession();
         
-        String id = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
         String old_password = request.getParameter("old-password");
         String new_password = request.getParameter("new_password");

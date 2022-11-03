@@ -14,6 +14,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -39,9 +40,10 @@ public class UpdateMember extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         int cusID = Integer.parseInt(request.getParameter(("CUSID")));
+        HttpSession session = request.getSession();
+        Customer acc = (Customer) session.getAttribute("acc");
         DAO dao = new DAO();
-        Customer Customer = dao.getCustomer(cusID);
+        Customer Customer = dao.getCustomer(acc.getCustomerID());
         request.setAttribute("c", Customer);
         RequestDispatcher rd = request.getRequestDispatcher("./Register/updateInfor.jsp");
         rd.forward(request, response);
@@ -50,7 +52,7 @@ public class UpdateMember extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-int cusID = Integer.parseInt(request.getParameter(("CUSID")));
+        int cusID = Integer.parseInt(request.getParameter(("CUSID")));
         String cusName = request.getParameter("CUSNAME");
         String cusPhone = request.getParameter("CUSPHONE");
         String cusEmail = request.getParameter("CUSEMAIL");

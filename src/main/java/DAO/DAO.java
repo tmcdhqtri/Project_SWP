@@ -56,12 +56,12 @@ public class DAO {
         }
     }
 
-    public Customer getCustomer(String customerID) {
+    public Customer getCustomer(int customerID) {
         try {
             String query = "select * from CustomerInfo where cusID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setString(1, customerID);
+            stm.setInt(1, customerID);
             rs = stm.executeQuery();
             return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
         } catch (Exception e) {
@@ -311,12 +311,12 @@ public class DAO {
 
     //END DAO OrderDetail
     //BEGIN DAO Personnel
-    public Personnel getPersonnel(String personnelID) {
+    public Personnel getPersonnel(int personnelID) {
         try {
             String query = "select * from Personnel where perID=?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setString(1, personnelID);
+            stm.setInt(1, personnelID);
             rs = stm.executeQuery();
 
             return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
@@ -397,7 +397,7 @@ public class DAO {
         return null;
     }
 
-    public void updatePersonnnel(String personnelID, String personnelName,
+    public void updatePersonnnel(int personnelID, String personnelName,
             String personnelPhone, String personnelEmail,
             String personnelAddress, String personnelDateOfBirth,
             String personnelImageUrl) {
@@ -413,7 +413,7 @@ public class DAO {
             stm.setString(4, personnelAddress);
             stm.setString(5, personnelDateOfBirth);
             stm.setString(6, personnelImageUrl);
-            stm.setString(7, personnelID);
+            stm.setInt(7, personnelID);
             stm.executeUpdate();
             } catch (Exception e) {
                 System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
@@ -430,7 +430,7 @@ public class DAO {
             stm.setString(3, personnelEmail);
             stm.setString(4, personnelAddress);
             stm.setString(5, personnelDateOfBirth);
-            stm.setString(6, personnelID);
+            stm.setInt(6, personnelID);
             stm.executeUpdate();
             } catch (Exception e) {
                 System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
@@ -452,20 +452,6 @@ public class DAO {
         }
         return null;
     }
-    //END DAO Personnel
-<<<<<<< HEAD
-//    public static void main(String[] args) throws Exception {
-//        DAO dao = new DAO();
-//        dao.registeredCustomer("Tran Van Nhan", "0935044305", "nhantv0302@gmail.com", "Da Nang", "2002-03-20", "nhantv1", "nhantv");
-////        List<Customer> list = dao.getAllCustomer();
-////        System.out.print(list);
-//    }
-=======
 
-    public static void main(String[] args) throws Exception {
-        DAO dao = new DAO();
-        dao.deletePersonnel(12);
-    }
 
->>>>>>> 4b07564bcbeb82f12f7e2139062534badcebacb7
 }

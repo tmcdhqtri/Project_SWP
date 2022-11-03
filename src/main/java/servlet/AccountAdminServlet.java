@@ -32,7 +32,7 @@ public class AccountAdminServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        String personnelID  = request.getParameter("personnelID");
+        int personnelID  = Integer.parseInt(request.getParameter("personnelID"));
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");

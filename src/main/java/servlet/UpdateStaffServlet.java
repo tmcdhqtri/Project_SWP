@@ -22,7 +22,7 @@ public class UpdateStaffServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        String personnelID  = request.getParameter("personnelID");
+        int personnelID  = Integer.parseInt(request.getParameter("personnelID"));
         DAO dao = new DAO();
         Personnel personnel = dao.getPersonnel(personnelID);
         
@@ -38,7 +38,7 @@ public class UpdateStaffServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        String personnelID  = request.getParameter("personnelID");
+        int personnelID  = Integer.parseInt(request.getParameter("personnelID"));
         String name = request.getParameter("name");
         String phone = request.getParameter("phone");
         String email = request.getParameter("email");
@@ -59,7 +59,6 @@ public class UpdateStaffServlet extends HttpServlet {
             {
                 Files.createDirectory(Paths.get(realPath));
             }
-
             part.write(realPath + "/" + fileName);
             image = fileName;
             System.out.println("Image name:" + image);  //print image name
