@@ -11,7 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class DAO {
@@ -216,7 +218,7 @@ public class DAO {
     //END DAO Food
     //BEGIN DAO Order
     
-    public boolean addOrder(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
+    public boolean addOrder(int CusID, int ID, int orderID, LocalDate orderDate, float total, int status, boolean isActive) {
         try {
             String sql = "insert into Order values(?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();

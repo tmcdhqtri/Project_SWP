@@ -51,7 +51,7 @@ public class RegisterServlet extends HttpServlet {
         cusPassword = Hashing.sha256().hashString(cusPassword, StandardCharsets.UTF_8).toString();
         dao.registeredCustomer(cusName, cusPhone, cusEmail, cusAddress, cusDateOfBirth, cusUsername, cusPassword, true);
         request.setAttribute("MESSAGE2", "Success");
-        RequestDispatcher rd = request.getRequestDispatcher("LoginServlet");
+        RequestDispatcher rd = request.getRequestDispatcher("login");
         rd.forward(request, response);
         }
     }

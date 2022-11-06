@@ -4,14 +4,12 @@
  */
 package servlet;
 
-import DAO.DAO;
 import Model.Food;
-import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -20,26 +18,25 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "viewfoodlist", urlPatterns = {"/ViewFoodListServlet"})
-public class ViewFoodListServlet extends HttpServlet {
-
+public class AddFoodOrderServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+        
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-        DAO dao = new DAO();
-        List<Food> foodList = dao.getAllFoods();
-        request.setAttribute("FOODLIST", foodList);
-        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/listFood.jsp");
-        rd.forward(request, response);       
+            List<Food> listFoods = new ArrayList<>();    
+            int foodID = Integer.parseInt(request.getParameter("FOODID"));
+            int orderID = Integer.parseInt(request.getParameter("ORDERID"));
+            String image = request.getParameter("IMAGE");
+            String foodName = request.getParameter("FOODNAME");
+            float price = Float.parseFloat(request.getParameter("PRICE"));
+            int quantity = Integer.parseInt(request.getParameter("Quantity"));
+            int total = 
     }
 
     @Override

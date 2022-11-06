@@ -15,7 +15,7 @@ import java.nio.file.Paths;
 import jakarta.servlet.http.Part;
 
 @MultipartConfig
-public class addStaffServlet extends HttpServlet {
+public class AddStaffServlet extends HttpServlet {
 
     
     @Override
@@ -35,7 +35,6 @@ public class addStaffServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         System.out.println("doPost");
-        
         String name = request.getParameter("name");
         String role = "1";
         String phone = request.getParameter("phone");
@@ -73,11 +72,7 @@ public class addStaffServlet extends HttpServlet {
         
          request.getRequestDispatcher("AdminPage/adminPage.jsp").forward(request, response);
     }
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
     @Override
     public String getServletInfo() {
         return "Short description";

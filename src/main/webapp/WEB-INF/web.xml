@@ -9,12 +9,12 @@
         <servlet-class>servlet.LoginServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ViewDetailOrderServlet</servlet-name>
-        <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>servlet.RegisterServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddFoodServlet</servlet-name>
-        <servlet-class>servlet.AddFoodServlet</servlet-class>
+        <servlet-name>ViewDetailOrderServlet</servlet-name>
+        <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addStaffServlet</servlet-name>
@@ -72,6 +72,30 @@
         <servlet-name>ViewFoodListServlet</servlet-name>
         <servlet-class>servlet.ViewFoodListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddFoodServlet</servlet-name>
+        <servlet-class>servlet.AddFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFoodServlet</servlet-name>
+        <servlet-class>servlet.DeleteFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteMemberServlet</servlet-name>
+        <servlet-class>servlet.DeleteMemberServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewListMemberServlet</servlet-name>
+        <servlet-class>servlet.ViewListMemberServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addFoodOrder</servlet-name>
+        <servlet-class>servlet.AddFoodOrderServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>viewfoodlistmember</servlet-name>
+        <servlet-class>servlet.ViewFoodListMemberServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -81,12 +105,12 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>ViewDetailOrderServlet</servlet-name>
-        <url-pattern>/detailOrder</url-pattern>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddFoodServlet</servlet-name>
-        <url-pattern>/addFood</url-pattern>
+        <servlet-name>ViewDetailOrderServlet</servlet-name>
+        <url-pattern>/detailOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>addStaffServlet</servlet-name>
@@ -137,8 +161,36 @@
         <url-pattern>/menu</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>ViewDetailFoodServlet</servlet-name>
+        <url-pattern>/viewdetailfood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>ViewFoodListServlet</servlet-name>
-        <url-pattern>/viewfoodlist</url-pattern>
+        <url-pattern>/listFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddFoodServlet</servlet-name>
+        <url-pattern>/addFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFoodServlet</servlet-name>
+        <url-pattern>/deleteFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteMemberServlet</servlet-name>
+        <url-pattern>/deleteMember</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListMemberServlet</servlet-name>
+        <url-pattern>/listMember</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addFoodOrder</servlet-name>
+        <url-pattern>/AddFoodOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>viewfoodlistmember</servlet-name>
+        <url-pattern>/ViewFoodListMemberServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
