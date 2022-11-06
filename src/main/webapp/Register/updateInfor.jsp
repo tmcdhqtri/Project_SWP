@@ -83,7 +83,7 @@
                                 <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                             </div>
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--green" style="text-decoration: none;" href="/Register/viewInfor.html">Cancel</a>
+                                <a class="btn btn--radius-2 btn--green" style="text-decoration: none;" href="viewinfo">Cancel</a>
                             </div>
                         </div>
                     </form>

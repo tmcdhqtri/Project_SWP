@@ -85,10 +85,10 @@
                                 <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;padding: 0px 41px;" href="/Register/updateInfor.html">Update Information</a>
                             </div>
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;" href="/Register/updatePass.html">Update Password</a>
+                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;" href="updatePassword">Update Password</a>
                             </div>
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--green" style="text-decoration: none;" href="/Homepage/index.html">Back</a>
+                                <a class="btn btn--radius-2 btn--green" style="text-decoration: none;" href="home">Back</a>
                             </div>
 
                             <div class="p-t-15">
