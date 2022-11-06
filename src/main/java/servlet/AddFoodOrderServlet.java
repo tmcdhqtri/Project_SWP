@@ -29,14 +29,14 @@ public class AddFoodOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            List<Food> listFoods = new ArrayList<>();    
-            int foodID = Integer.parseInt(request.getParameter("FOODID"));
-            int orderID = Integer.parseInt(request.getParameter("ORDERID"));
-            String image = request.getParameter("IMAGE");
-            String foodName = request.getParameter("FOODNAME");
-            float price = Float.parseFloat(request.getParameter("PRICE"));
-            int quantity = Integer.parseInt(request.getParameter("Quantity"));
-            int total = 
+//            List<Food> listFoods = new ArrayList<>();    
+//            int foodID = Integer.parseInt(request.getParameter("FOODID"));
+//            int orderID = Integer.parseInt(request.getParameter("ORDERID"));
+//            String image = request.getParameter("IMAGE");
+//            String foodName = request.getParameter("FOODNAME");
+//            float price = Float.parseFloat(request.getParameter("PRICE"));
+//            int quantity = Integer.parseInt(request.getParameter("Quantity"));
+//            int total = 
     }
 
     @Override
