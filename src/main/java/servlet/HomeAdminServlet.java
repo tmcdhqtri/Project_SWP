@@ -3,42 +3,46 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 package servlet;
-
 import DAO.DAO;
-import Model.Order;
-import Model.OrderDetail;
 import java.io.IOException;
+import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
- * @author This PC
+ * @author Admin
  */
-public class ViewListOrderServlet extends HttpServlet {
+public class HomeAdminServlet extends HttpServlet {
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
         DAO dao = new DAO();
-        ArrayList<Order> aAllOrder = dao.getAllOrders();
-        
-        request.setAttribute("aAllOrder", aAllOrder);
-        request.getRequestDispatcher("./AdminPage/listOrder.jsp").forward(request, response);
+        int countAdmin = dao.countAdmin();
+        int countStaff = dao.countStaff();
+        int countCustomer = dao.countCustomer();
+        int countFood = dao.countFood();
+        request.setAttribute("COUNTADMIN", countAdmin);
+        request.setAttribute("COUNTSTAFF", countStaff);
+        request.setAttribute("COUNTCUSTOMER", countCustomer);
+        request.setAttribute("COUNTFOOD", countFood);
+        request.getRequestDispatcher("./AdminPage/adminPage.jsp").forward(request, response);
     }
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
     }
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
 
 }

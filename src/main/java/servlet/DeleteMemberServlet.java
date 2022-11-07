@@ -32,8 +32,6 @@ public class DeleteMemberServlet extends HttpServlet {
         dao.deleteCustomer(cusID);
         
         request.getRequestDispatcher("listMember").forward(request, response);
-        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/listMember.jsp");
-        rd.forward(request, response);
     }
 
     @Override

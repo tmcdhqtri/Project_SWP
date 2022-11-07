@@ -1,4 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="Model.Food"%>
+<%@page import="java.util.List"%>
+<%@page import="DAO.DAO"%>
+
 <!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -106,21 +111,21 @@
         </div>
         <div class="shadow-bottom"></div>
         <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="adminPage.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
-                </li>
-                <li class="active nav-item"><a class="d-flex align-items-center" href="listFood.html"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listMembers.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
-                </li>
-            </ul>
-        </div>
+                <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="HomeAdminServlet"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
+                    </li>
+                    <li class="nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    </li>
+                </ul>
+            </div>
     </div>
     <!-- END: Main Menu-->
 
@@ -148,18 +153,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <c:forEach items="${FOODLIST}" var="f">
                                         <tr>
                                             <td>
-                                                <span class="font-weight-bold">#12345</span>
+                                                <span class="font-weight-bold">${f.getFoodID()}</span>
                                             </td>
                                             <td>
-                                                <img src="https://assets.epicurious.com/photos/57c44636082060f11022b55e/16:9/w_1280,c_limit/shutterstock_368008064.jpg" class="mr-75" height="50" width="50" alt="Peter" />
-                                                <span class="font-weight-bold">Chicken Fried</span>
+                                                <img src="${f.getFoodImage()}" class="mr-75" height="50" width="50" alt="Peter" />
+                                                <span class="font-weight-bold">${f.getFoodName()}</span>
                                             </td>
                                             <td>
-                                                <span class="font-weight-bold">19.5$</span>
+                                                <span class="font-weight-bold">${f.getFoodPrice()}</span>
                                             </td>
-                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
+                                            <c:if test ="${f.isFoodIsActive()==true}">
+                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">active</div></td>
+                                            </c:if>
+                                            <c:if test ="${f.isFoodIsActive()==false}">
+                                            <td><div class="badge badge-glow badge-danger" style="padding: 4px 12px;">inactive</div></td>
+                                            </c:if>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -170,7 +181,7 @@
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
+                                                        <a class="dropdown-item" href="deleteFood?FOODID=${f.getFoodID()}">
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>Delete</span>
                                                         </a>
@@ -178,7 +189,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        </c:forEach>
+<!--                                        <tr>
                                             <td>
                                                 <span class="font-weight-bold">#12345</span>
                                             </td>
@@ -207,12 +219,12 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr>-->
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <a href="addFood.html" class="btn btn-primary mt-2 mr-1">Add Food</a>
+                        <a href="addFood" class="btn btn-primary mt-2 mr-1">Add Food</a>
                     </div>
                 </div>
                 <!-- users list ends -->

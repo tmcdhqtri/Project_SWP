@@ -17,17 +17,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Admin
- */
 @WebServlet(name = "listMember", urlPatterns = {"/ViewListMemberServlet"})
 public class ViewListMemberServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
         DAO dao = new DAO();
         List<Customer> listCustomer = dao.getAllCustomers();
         
@@ -40,9 +37,5 @@ public class ViewListMemberServlet extends HttpServlet {
             throws ServletException, IOException {
     }
 
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

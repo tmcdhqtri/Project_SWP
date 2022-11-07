@@ -62,7 +62,7 @@ public class LoginServlet extends jakarta.servlet.http.HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("acc", accPerson);
             if (accPerson.getRole()==true)
-                response.sendRedirect("homeadmin");
+                response.sendRedirect("HomeAdminServlet");
             else response.sendRedirect("home");
         } 
         if (username.equals("abc") && password.equals("123"))

@@ -71,5 +71,13 @@ public class Food {
     public void setFoodPrice(float foodPrice) {
         this.foodPrice = foodPrice;
     }
+
+    public boolean isFoodIsActive() {
+        return foodIsActive;
+    }
+
+    public void setFoodIsActive(boolean foodIsActive) {
+        this.foodIsActive = foodIsActive;
+    }
     
 }

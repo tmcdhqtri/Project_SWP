@@ -1,12 +1,17 @@
 
 package servlet;
 
+import DAO.DAO;
+import Model.Order;
+import Model.Personnel;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ViewListStaffServlet extends HttpServlet {
@@ -18,9 +23,10 @@ public class ViewListStaffServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
-        request.getRequestDispatcher("./AdminPage/listStaff.jsp").forward(request, response);
-        
+        DAO dao = new DAO();
+        List<Personnel> listStaff = dao.getAllPersonnel();
+        request.setAttribute("LISTSTAFF", listStaff);
+        request.getRequestDispatcher("./AdminPage/listStaff.jsp").forward(request, response);       
     }
 
 
@@ -30,11 +36,7 @@ public class ViewListStaffServlet extends HttpServlet {
         
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
     @Override
     public String getServletInfo() {
         return "Short description";

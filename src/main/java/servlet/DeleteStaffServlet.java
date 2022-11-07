@@ -24,8 +24,6 @@ public class DeleteStaffServlet extends HttpServlet {
         dao.deletePersonnel(personnelID);
         
         request.getRequestDispatcher("listStaff").forward(request, response);
-        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/listStaff.jsp");
-        rd.forward(request, response);
     }
 
     @Override

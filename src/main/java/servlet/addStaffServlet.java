@@ -68,7 +68,7 @@ public class AddStaffServlet extends HttpServlet {
         String perStatus = "1";
         
         DAO dao = new DAO();
-        dao.addPersonnel(name, role, phone, email, address, dateOfBirth, username, password, image, perStatus);
+        dao.addPersonnel(name, role, phone, email, address, dateOfBirth, username, password,"images/" + image, perStatus);
         
          request.getRequestDispatcher("AdminPage/adminPage.jsp").forward(request, response);
     }

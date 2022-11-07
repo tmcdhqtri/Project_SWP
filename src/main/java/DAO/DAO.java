@@ -53,6 +53,7 @@ public class DAO {
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, customerID);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -132,6 +133,23 @@ public class DAO {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
     }
+    public int countCustomer(){
+    try {
+           String query = "SELECT COUNT(cusID)\n" +
+"		FROM CustomerInfo\n" +
+"		WHERE cusStatus = 1;";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt(1);
+                return count;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return 0;
+    }
     //END DAO Customer
 
     //BEGIN DAO Food 
@@ -162,6 +180,7 @@ public class DAO {
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, foodID);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -214,13 +233,29 @@ public class DAO {
             System.out.println("SQL error in updateCustomerAcc " + e.getMessage());
         }
     }
-
+    public int countFood(){
+    try {
+           String query = "SELECT COUNT(foodID)\n" +
+"		FROM Food\n" +
+"		WHERE foodIsActive = 1;";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt(1);
+                return count;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return 0;
+    }
     //END DAO Food
     //BEGIN DAO Order
     
     public boolean addOrder(int CusID, int ID, int orderID, LocalDate orderDate, float total, int status, boolean isActive) {
         try {
-            String sql = "insert into Order values(?, ?, ?, ?, 1)";
+            String sql = "insert into [Order] values(?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
             stm.setInt(1, CusID);
@@ -241,7 +276,7 @@ public class DAO {
 
     public ArrayList<Order> getAllOrders() {
         try {
-            String query = "select * from Order";
+            String query = "select * from [Order]";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             rs = stm.executeQuery();
@@ -258,7 +293,7 @@ public class DAO {
     }
     public Order getOrder(int orderID) {
         try {
-            String query = "select * from Order where orderID = ?";
+            String query = "select * from [Order] where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, orderID);
@@ -271,10 +306,11 @@ public class DAO {
     }
     public void deleteOrder(int orderID) {
         try {
-            String query = "update Order set orderIsActive=0 where orderID = ?";
+            String query = "update [Order] set orderIsActive=0 where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, orderID);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -282,7 +318,7 @@ public class DAO {
 
     public void updateOrderStatus(int orderID) {
         try {
-            String query = "update Order set orderStatus=1 where orderID = ?";
+            String query = "update [Order] set orderStatus=1 where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, orderID);
@@ -310,7 +346,23 @@ public class DAO {
         }
         return null;
     }
+    public List<OrderDetail> getOrderDetail(int orderID){
+        try {
+            String query = "select foodID, quantity from OrderDetail where orderID=?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
 
+            List<OrderDetail> listOrderDetails = new ArrayList<OrderDetail>();
+            while (rs.next()) {
+                listOrderDetails.add(new OrderDetail(rs.getInt(2), rs.getInt(3)));
+            }
+            return listOrderDetails;
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
     //END DAO OrderDetail
     //BEGIN DAO Personnel
     public Personnel getPersonnel(int personnelID) {
@@ -454,6 +506,40 @@ public class DAO {
         }
         return null;
     }
-
-
+    
+    public int countStaff(){
+    try {
+           String query = "SELECT COUNT(role)\n" +
+"		FROM Personnel\n" +
+"		WHERE role = 1 and perStatus=1;";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt(1);
+                return count;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return 0;
+    }
+    public int countAdmin(){
+    try {
+           String query = "SELECT COUNT(role)\n" +
+"		FROM Personnel\n" +
+"		WHERE role = 0 and perStatus=1;";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+            while (rs.next()){
+                int count = rs.getInt(1);
+                return count;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return 0;
+    }
 }
+
