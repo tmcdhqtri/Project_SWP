@@ -14,7 +14,8 @@ public class Order {
     private int orderID;
     private String orderDate;
     private float total;
-    private int orderStatus; //0 đang giao; 1: đã giao
+    private boolean payment; // 0: Cash;    1: VNPAY
+    private int orderStatus; //0 đang giao; 1: đã giao; 2: hủy
     private boolean isActive; //True === 1 === Active; False === 0 === inActive
 
     public Order(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
@@ -85,6 +86,14 @@ public class Order {
 
     public void setIsActive(boolean isActive) {
         this.isActive = isActive;
+    }
+
+    public boolean isPayment() {
+        return payment;
+    }
+
+    public void setPayment(boolean payment) {
+        this.payment = payment;
     }
     
     

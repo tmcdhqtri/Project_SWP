@@ -108,6 +108,14 @@
         <servlet-name>UpdateInfoServlet</servlet-name>
         <servlet-class>servlet.UpdateInfoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <servlet-class>servlet.ViewCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateStatusOrderServlet</servlet-name>
+        <servlet-class>servlet.UpdateStatusOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -215,6 +223,14 @@
     <servlet-mapping>
         <servlet-name>UpdateInfoServlet</servlet-name>
         <url-pattern>/updateInfo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewCartServlet</servlet-name>
+        <url-pattern>/cart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateStatusOrderServlet</servlet-name>
+        <url-pattern>/updateStatus</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
