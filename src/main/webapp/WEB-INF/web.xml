@@ -101,12 +101,21 @@
         <servlet-class>servlet.DeleteOrderServlet</servlet-class>
     </servlet>
     <servlet>
+<<<<<<< HEAD
         <servlet-name>updateFood</servlet-name>
         <servlet-class>servlet.UpdateFoodServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>UpdateOrderAdminServlet</servlet-name>
         <servlet-class>servlet.UpdateOrderAdminServlet</servlet-class>
+=======
+        <servlet-name>ViewListOrderAdminServlet</servlet-name>
+        <servlet-class>servlet.ViewListOrderAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateInfoServlet</servlet-name>
+        <servlet-class>servlet.UpdateInfoServlet</servlet-class>
+>>>>>>> 16dbb7227178dc872aebac7e59a0c27978d30906
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -209,12 +218,21 @@
         <url-pattern>/DeleteOrderServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+<<<<<<< HEAD
         <servlet-name>updateFood</servlet-name>
         <url-pattern>/UpdateFoodServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>UpdateOrderAdminServlet</servlet-name>
         <url-pattern>/UpdateOrderAdminServlet</url-pattern>
+=======
+        <servlet-name>ViewListOrderAdminServlet</servlet-name>
+        <url-pattern>/listOrderAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateInfoServlet</servlet-name>
+        <url-pattern>/updateInfo</url-pattern>
+>>>>>>> 16dbb7227178dc872aebac7e59a0c27978d30906
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -485,6 +485,24 @@ public class DAO {
         }
         return null;
     }
+    
+    public List<Personnel> getAllStaff() {
+        try {
+            String query = "select * from Personnel where role=1";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+
+            List<Personnel> listStaff = new ArrayList<>();
+            while (rs.next()) {
+                listStaff.add(new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11)));
+            }
+            return listStaff;
+        } catch (Exception e) {
+            System.out.println("SQL er  ror in DAO " + e.getMessage());
+        }
+        return null;
+    }
 
     public void updatePersonnnel(int personnelID, String personnelName,
             String personnelPhone, String personnelEmail,
@@ -535,7 +553,8 @@ public class DAO {
             stm.setString(1, username);
             stm.setString(2, password);
             rs = stm.executeQuery();
-            return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
+            while (rs.next())
+                return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getBoolean(11));
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }

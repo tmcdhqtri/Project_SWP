@@ -31,7 +31,7 @@ public class ViewListOrderServlet extends HttpServlet {
         ArrayList<Order> aAllOrder = dao.getAllOrders();
         
         request.setAttribute("aAllOrder", aAllOrder);
-        request.getRequestDispatcher("./AdminPage/listOrder.jsp").forward(request, response);
+        request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
     }
 
 

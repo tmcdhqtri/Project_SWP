@@ -5,6 +5,7 @@ import DAO.DAO;
 import Model.Personnel;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,7 +13,7 @@ import jakarta.servlet.http.Part;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
+@MultipartConfig
 public class UpdateStaffServlet extends HttpServlet {
 
 
@@ -25,9 +26,7 @@ public class UpdateStaffServlet extends HttpServlet {
         int personnelID  = Integer.parseInt(request.getParameter("personnelID"));
         DAO dao = new DAO();
         Personnel personnel = dao.getPersonnel(personnelID);
-        
         request.setAttribute("personnel", personnel);
-        
         request.getRequestDispatcher("AdminPage/updateStaff.jsp").forward(request, response);
     }
 
@@ -66,6 +65,10 @@ public class UpdateStaffServlet extends HttpServlet {
         
         DAO dao = new DAO();
         dao.updatePersonnnel(personnelID, name, phone , email, address, dateOfBirth, "images/" + fileName);
+        
+        Personnel personnel = dao.getPersonnel(personnelID);
+        request.setAttribute("personnel", personnel);
+        request.getRequestDispatcher("AdminPage/updateStaff.jsp").forward(request, response);
         
     }
 
