@@ -94,7 +94,7 @@
                       style="color:#000; font-size: 18px;"></i></a></li>
                 </li>
               </span>
-              <li class="rightsec "> <a class="icon1" href="login"><i class="fa fa-user"
+              <li class="rightsec "> <a class="icon1" href="${sessionScope.acc==null ? "login":"info"}"><i class="fa fa-user"
                     style="color:#000; font-size: 18px;"></i></a></li>
               <li class="rightsec "> <a class="icon3" href="cart.html"><i class="fa fa-shopping-cart"
                     style="color:#000; font-size: 18px;"></i></a>

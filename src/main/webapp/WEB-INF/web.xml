@@ -108,7 +108,6 @@
         <servlet-name>ViewListOrderAdminServlet</servlet-name>
         <servlet-class>servlet.ViewListOrderAdminServlet</servlet-class>
     </servlet>
-
     <servlet>
         <servlet-name>UpdateInfoServlet</servlet-name>
         <servlet-class>servlet.UpdateInfoServlet</servlet-class>
@@ -132,6 +131,14 @@
     <servlet>
         <servlet-name>ViewDetailOrderAdminServlet</servlet-name>
         <servlet-class>servlet.ViewDetailOrderAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewInfoServlet</servlet-name>
+        <servlet-class>servlet.ViewInfoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>servlet.LogoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
@@ -237,7 +244,6 @@
         <servlet-name>updateFood</servlet-name>
         <url-pattern>/UpdateFoodServlet</url-pattern>
     </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>UpdateInfoServlet</servlet-name>
         <url-pattern>/updateInfo</url-pattern>
@@ -265,6 +271,14 @@
     <servlet-mapping>
         <servlet-name>ViewDetailOrderAdminServlet</servlet-name>
         <url-pattern>/viewDetailAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewInfoServlet</servlet-name>
+        <url-pattern>/info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
