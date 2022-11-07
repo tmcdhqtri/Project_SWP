@@ -66,7 +66,7 @@ public class CheckoutServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession(true);
         Order o = (Order) session.getAttribute("order");
-        int payment = o.getPayment();
+        boolean payment = o.isPayment();
         String payment_method = null;
         DAO dao = new DAO();
 
@@ -75,9 +75,9 @@ public class CheckoutServlet extends HttpServlet {
 
             int orderStatus = 0;
             boolean orderIsActive = true;
-            if (payment == 1) {
+            if (payment == true) {
                 payment_method = "vnpay";
-            } else if (payment == 0) {
+            } else if (payment == false) {
                 payment_method = "cash";
             }
             if (payment_method.equals("cash")) {

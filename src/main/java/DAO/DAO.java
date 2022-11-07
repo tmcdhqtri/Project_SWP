@@ -370,13 +370,13 @@ public class DAO {
         }
     }
 
-    public void updateOrderStatus(String orderID, String status) {
+    public void updateOrderStatus(int orderID, int status) {
         try {
             String query = "update [Order] set orderStatus=? where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setString(1, status);
-            stm.setString(2, orderID);
+            stm.setInt(1, status);
+            stm.setInt(2, orderID);
 
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());

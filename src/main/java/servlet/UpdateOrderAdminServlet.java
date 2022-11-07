@@ -41,12 +41,12 @@ public class UpdateOrderAdminServlet extends HttpServlet {
         int orderStatus;
         if (action.equals("success")){
            orderStatus = 1;
-           dao.updateOrderStatusAdmin(Integer.parseInt(orderID), orderStatus);
+           dao.updateOrderStatus(Integer.parseInt(orderID), orderStatus);
         }
         else 
         {            
             orderStatus = 2;
-            dao.updateOrderStatusAdmin(Integer.parseInt(orderID), orderStatus);
+            dao.updateOrderStatus(Integer.parseInt(orderID), orderStatus);
         }
            
         response.sendRedirect("listOrderAdmin");

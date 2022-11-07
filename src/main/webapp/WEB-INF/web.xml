@@ -132,6 +132,10 @@
         <servlet-name>CheckoutServlet</servlet-name>
         <servlet-class>servlet.CheckoutServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewDetailOrderAdminServlet</servlet-name>
+        <servlet-class>servlet.ViewDetailOrderAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -265,8 +269,8 @@
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>UpdateStatusOrderServlet</servlet-name>
-        <url-pattern>/updateStatus</url-pattern>
+        <servlet-name>ViewDetailOrderAdminServlet</servlet-name>
+        <url-pattern>/viewDetailAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

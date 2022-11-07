@@ -14,7 +14,6 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFoodOrderServl
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteMemberServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewListOrderServlet.java
-D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateOrder.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdatePasswordAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdatePasswordServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Food.java
@@ -27,6 +26,7 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewAboutUsServle
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewFoodListServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\GoogleAccess\GoogleUtils.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\LoginServlet.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateStatusOrderServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteOrderServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AccountAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddStaffServlet.java
@@ -38,6 +38,7 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewMenuServlet.j
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\RegisterServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Context\DBContext.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Personnel.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewCartServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailMemberServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewListOrderAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailOrderServlet.java
