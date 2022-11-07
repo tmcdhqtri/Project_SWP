@@ -8,6 +8,7 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\PaymentServlet.ja
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\VNPay\Config.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\GoogleAccess\GooglePojo.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateMemberAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewInfoServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFoodOrderServlet.java
@@ -31,7 +32,6 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteOrderServle
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AccountAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddStaffServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewContactServlet.java
-D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateMemberAdmin.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\DAO\DAO.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateInfoServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateStaffServlet.java
@@ -40,6 +40,7 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\RegisterServlet.j
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Context\DBContext.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Personnel.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailMemberServlet.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewListOrderAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailOrderServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewFoodListMemberServlet.java

@@ -49,7 +49,7 @@ public class UpdateOrderAdminServlet extends HttpServlet {
             dao.updateOrderStatusAdmin(Integer.parseInt(orderID), orderStatus);
         }
            
-        response.sendRedirect("listOrder");
+        response.sendRedirect("listOrderAdmin");
     }
     @Override
     public String getServletInfo() {

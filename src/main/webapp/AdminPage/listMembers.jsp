@@ -119,7 +119,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
@@ -155,10 +155,11 @@
                                     <tbody>
                                     <c:forEach items="${listC}" var="c">
                                         <tr>
-                                            <td>${c.getCustomerName()}</td>
+                                            <td>${c.getCustomerID()}</td>
                                             <td>
-                                                <span class="font-weight-bold">${c.getCustomerEmail()}</span>
+                                                <span class="font-weight-bold">${c.getCustomerName()}</span>
                                             </td>
+                                            <td><span class="font-weight-bold">${c.getCustomerEmail()}</span></td>
                                             <td><span class="font-weight-bold">${c.getCustomerPhone()}</span></td>
                                             <c:if test="${c.isCusStatus()==true}">
                                             <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">active</div></td>
@@ -172,7 +173,7 @@
                                                         <i data-feather="more-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="viewMember.html">
+                                                        <a class="dropdown-item" href="UpdateMemberAdminServlet?CUSID=${c.getCustomerID()}">
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
