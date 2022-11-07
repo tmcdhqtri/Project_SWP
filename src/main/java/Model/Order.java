@@ -18,19 +18,20 @@ public class Order {
     private int orderStatus; //0 đang giao; 1: đã giao; 2: hủy
     private boolean isActive; //True === 1 === Active; False === 0 === inActive
 
-    public Order(int CusID, int ID, int orderID, String orderDate, float total, int status, boolean isActive) {
+
+
+    public Order(int CusID, int ID, int orderID, String orderDate, float total, boolean payment, int orderStatus, boolean isActive) {
         this.CusID = CusID;
         this.ID = ID;
         this.orderID = orderID;
         this.orderDate = orderDate;
         this.total = total;
-        this.orderStatus = status;
+        this.payment = payment;
+        this.orderStatus = orderStatus;
         this.isActive = isActive;
     }
-
-    public Order() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
+    public Order(){}
     
     public int getCusID() {
         return CusID;
@@ -95,10 +96,4 @@ public class Order {
     public void setPayment(boolean payment) {
         this.payment = payment;
     }
-    
-    
-
-
-    
-   
 }

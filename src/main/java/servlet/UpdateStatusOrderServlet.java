@@ -19,7 +19,7 @@ public class UpdateStatusOrderServlet extends HttpServlet {
         
         
         DAO dao = new DAO();
-        dao.updateOrderStatus(orderId, status);
+        dao.updateOrderStatus(Integer.parseInt(orderId), Integer.parseInt(status));
         
         if (dao.getPersonnelByUsername(username) != null)
         {

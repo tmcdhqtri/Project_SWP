@@ -151,6 +151,7 @@
                                             <th>Time</th>
                                             <th>Status</th>
                                             <th>Name</th>
+                                            <th>Payment</th>
                                             <th>Active</th>
                                             <th>Actions</th>
                                         </tr>
@@ -216,6 +217,14 @@
                                                 </c:if>
                                             </c:forEach>
                                                     
+                                                    <td>
+                                                        <c:if test="${o.isPayment()==true}">
+                                                      <span class="font-weight-bold">VNPay</span>
+                                                        </c:if>
+                                                        <c:if test="${o.isPayment()==false}">
+                                                      <span class="font-weight-bold">Cash</span>
+                                                        </c:if>
+                                                    </td>        
                                             <td>
                                                 <c:if test="${o.isIsActive()==true}">
                                                 <div class="badge badge-glow badge-success" style="padding: 4px 12px;">active</div>
