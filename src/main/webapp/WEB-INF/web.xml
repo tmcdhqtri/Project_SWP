@@ -104,6 +104,10 @@
         <servlet-name>ViewListOrderAdminServlet</servlet-name>
         <servlet-class>servlet.ViewListOrderAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateInfoServlet</servlet-name>
+        <servlet-class>servlet.UpdateInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -207,6 +211,10 @@
     <servlet-mapping>
         <servlet-name>ViewListOrderAdminServlet</servlet-name>
         <url-pattern>/listOrderAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateInfoServlet</servlet-name>
+        <url-pattern>/updateInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
