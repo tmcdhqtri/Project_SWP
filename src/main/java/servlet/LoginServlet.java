@@ -11,6 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import Model.Item;
 
 public class LoginServlet extends HttpServlet {
 
@@ -44,14 +46,14 @@ public class LoginServlet extends HttpServlet {
         
         DAO dao = new DAO();
         Personnel accPerson = (Personnel) dao.loginPersonnel(username, password);
-        System.out.println("checked point");
         Customer accCus = dao.loginCustomer(username, password);
-        
+        ArrayList<Item> cart = new ArrayList<>();
         
         if (accCus != null)
         {
             HttpSession session = request.getSession();
             session.setAttribute("acc", accCus);
+            session.setAttribute("cart", cart);
             response.sendRedirect("home");
         }
         else if (accPerson != null)
@@ -59,6 +61,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println("accPerson");
             HttpSession session = request.getSession();
             session.setAttribute("acc", accPerson);
+            session.setAttribute("cart", cart);
             if (accPerson.getRole()==true)
                 response.sendRedirect("HomeAdminServlet");
             else response.sendRedirect("home");
