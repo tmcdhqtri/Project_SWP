@@ -20,14 +20,14 @@ public class ViewListStaffServlet extends HttpServlet {
         @Override
         protected void doGet(HttpServletRequest request, HttpServletResponse response)
                         throws ServletException, IOException {
-                response.setContentType("text/html;charset=UTF-8");
-                request.setCharacterEncoding("utf-8");
+            response.setContentType("text/html;charset=UTF-8");
+            request.setCharacterEncoding("utf-8");
 
-                DAO dao = new DAO();
-                List<Personnel> aAllStaff = dao.getAllStaff();
+            DAO dao = new DAO();
+            List<Personnel> aAllStaff = dao.getAllStaff();
 
-                request.setAttribute("aAllStaff", aAllStaff);
-                request.getRequestDispatcher("./AdminPage/listStaff.jsp").forward(request, response);
+            request.setAttribute("aAllStaff", aAllStaff);
+            request.getRequestDispatcher("./AdminPage/listStaff.jsp").forward(request, response);
 
         }
 

@@ -17,19 +17,11 @@ import jakarta.servlet.http.Part;
 @MultipartConfig
 public class AddStaffServlet extends HttpServlet {
 
-    /**
-     *
-     * @param request
-     * @param response
-     * @throws ServletException
-     * @throws IOException
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        System.out.println("doGet");
         
         request.getRequestDispatcher("AdminPage/addStaff.jsp").forward(request, response);
     }
@@ -40,7 +32,7 @@ public class AddStaffServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        System.out.println("doPost");
+        
         String name = request.getParameter("name");
         String role = "1";
         String phone = request.getParameter("phone");

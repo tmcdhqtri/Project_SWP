@@ -25,8 +25,8 @@ public class UpdateStaffServlet extends HttpServlet {
         
         int personnelID  = Integer.parseInt(request.getParameter("personnelID"));
         DAO dao = new DAO();
-        Personnel personnel = dao.getPersonnel(personnelID);
-        request.setAttribute("personnel", personnel);
+        Personnel staff = dao.getPersonnel(personnelID);
+        request.setAttribute("staff", staff);
         request.getRequestDispatcher("AdminPage/updateStaff.jsp").forward(request, response);
     }
 
@@ -66,8 +66,8 @@ public class UpdateStaffServlet extends HttpServlet {
         DAO dao = new DAO();
         dao.updatePersonnnel(personnelID, name, phone , email, address, dateOfBirth, "images/" + fileName);
         
-        Personnel personnel = dao.getPersonnel(personnelID);
-        request.setAttribute("personnel", personnel);
+        Personnel staff = dao.getPersonnel(personnelID);
+        request.setAttribute("personnel", staff);
         request.getRequestDispatcher("AdminPage/updateStaff.jsp").forward(request, response);
         
     }
