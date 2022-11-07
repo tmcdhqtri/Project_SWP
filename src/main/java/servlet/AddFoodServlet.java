@@ -12,6 +12,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -21,13 +22,14 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
+@MultipartConfig
 @WebServlet(name = "addfood", urlPatterns = {"/AddFoodServlet"})
 public class AddFoodServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         request.getRequestDispatcher("AdminPage/addFood.jsp").forward(request, response);
+        request.getRequestDispatcher("AdminPage/addFood.jsp").forward(request, response);
     }
 
     @Override
@@ -35,9 +37,11 @@ public class AddFoodServlet extends HttpServlet {
             throws ServletException, IOException {
         
         String foodName = request.getParameter("FOODNAME");
+        String price = request.getParameter("PRICE");
         String description = request.getParameter("DESCRIPTION");
-        Float price = Float.parseFloat(request.getParameter("PRICE"));
-
+        System.out.print(foodName);
+        System.out.print(price);
+        System.out.print(description);
 
         DAO dao = new DAO();
 
@@ -49,9 +53,8 @@ public class AddFoodServlet extends HttpServlet {
             Files.createDirectories(Path.of(photoPath));
         }
         part.write(photoPath + "/" + filename);
-        dao.addFood(foodName, description,"images/" + filename, price);
-        RequestDispatcher rd = request.getRequestDispatcher("");
-        rd.forward(request, response);
+        dao.addFood(foodName, description,"images/" + filename, Float.parseFloat(price));
+        request.getRequestDispatcher("AdminPage/listFood.jsp").forward(request, response);
     }
 
 }

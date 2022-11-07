@@ -62,8 +62,8 @@ public class LoginServlet extends HttpServlet {
             System.out.println("accPerson");
             HttpSession session = request.getSession();
             session.setAttribute("acc", accPerson);
-            if (accPerson.getRole()==false)
-                response.sendRedirect("homeAdmin");
+            if (accPerson.getRole()==true)
+                response.sendRedirect("HomeAdminServlet");
             else response.sendRedirect("home");
         }
         else

@@ -17,7 +17,7 @@
         <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>addStaffServlet</servlet-name>
+        <servlet-name>AddStaffServlet</servlet-name>
         <servlet-class>servlet.AddStaffServlet</servlet-class>
     </servlet>
     <servlet>
@@ -43,10 +43,6 @@
     <servlet>
         <servlet-name>UpdatePasswordAdminServlet</servlet-name>
         <servlet-class>servlet.UpdatePasswordAdminServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ViewHomeAdminServlet</servlet-name>
-        <servlet-class>servlet.ViewHomeAdminServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ViewAboutUsServlet</servlet-name>
@@ -96,6 +92,14 @@
         <servlet-name>viewfoodlistmember</servlet-name>
         <servlet-class>servlet.ViewFoodListMemberServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>homeadmin</servlet-name>
+        <servlet-class>servlet.HomeAdminServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteOrder</servlet-name>
+        <servlet-class>servlet.DeleteOrderServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -113,7 +117,7 @@
         <url-pattern>/detailOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>addStaffServlet</servlet-name>
+        <servlet-name>AddStaffServlet</servlet-name>
         <url-pattern>/addStaff</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -139,10 +143,6 @@
     <servlet-mapping>
         <servlet-name>UpdatePasswordAdminServlet</servlet-name>
         <url-pattern>/updatePasswordAdmin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ViewHomeAdminServlet</servlet-name>
-        <url-pattern>/homeAdmin</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewAboutUsServlet</servlet-name>
@@ -191,6 +191,14 @@
     <servlet-mapping>
         <servlet-name>viewfoodlistmember</servlet-name>
         <url-pattern>/ViewFoodListMemberServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>homeadmin</servlet-name>
+        <url-pattern>/HomeAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteOrder</servlet-name>
+        <url-pattern>/DeleteOrderServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

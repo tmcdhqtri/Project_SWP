@@ -11,6 +11,11 @@ public class OrderDetail {
         this.quantity = quantity;
     }
 
+    public OrderDetail(int foodID, int quantity) {
+        this.foodID = foodID;
+        this.quantity = quantity;
+    }
+    
     public OrderDetail() {
     }
     

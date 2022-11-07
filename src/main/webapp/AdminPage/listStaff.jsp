@@ -1,5 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="Model.Personnel"%>
+<%@page import="java.util.List"%>
+<%@page import="DAO.DAO"%><!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
@@ -105,22 +108,22 @@
             </ul>
         </div>
         <div class="shadow-bottom"></div>
-        <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="adminPage.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listFood.html"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
-                </li>
-                <li class="active nav-item"><a class="d-flex align-items-center" href="listStaff.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listMembers.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
-                </li>
-            </ul>
-        </div>
+      <div class="main-menu-content">
+                <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="HomeAdminServlet"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
+                    </li>
+                    <li class="nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    </li>
+                </ul>
+            </div>
     </div>
     <!-- END: Main Menu-->
 
@@ -149,19 +152,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <c:forEach items="${LISTSTAFF}" var="s">
                                         <tr>
                                             <td>
-                                                <span class="font-weight-bold">#12345</span>
+                                                <span class="font-weight-bold">${s.getPersonnelID()}</span>
                                             </td>
                                             <td>
-                                                <img src="./app-assets/images/portrait/small/avatar-s-7.jpg" class="mr-75" height="50" width="50" alt="Peter" />
-                                                <span class="font-weight-bold">Peter Charls</span>
+                                                <img src="${s.getPersonnelImageUrl()}" class="mr-75" height="50" width="50" alt="Peter" />
+                                                <span class="font-weight-bold">${s.getPersonnelName()}</span>
                                             </td>
                                             <td>
-                                                <span class="font-weight-bold">member@gmail.com</span>
+                                                <span class="font-weight-bold">${s.getPersonnelEmail()}</span>
                                             </td>
-                                            <td><span class="font-weight-bold">09091234567</span></td>
-                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
+                                            <td><span class="font-weight-bold">${s.getPersonnelPhone()}</span></td>
+                                            <c:if test="${s.isPersonnelStatus()==true}">
+                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">active</div></td>
+                                            </c:if>
+                                            <c:if test="${s.isPersonnelStatus()==false}">
+                                            <td><div class="badge badge-glow badge-danger" style="padding: 4px 12px;">inactive</div></td>
+                                            </c:if>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -172,7 +181,7 @@
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
+                                                        <a class="dropdown-item" href="deleteStaff?personnelID=${s.getPersonnelID()}">
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>Delete</span>
                                                         </a>
@@ -180,7 +189,8 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
+                                        </c:forEach>
+<!--                                        <tr>
                                             <td>
                                                 <span class="font-weight-bold">#12345</span>
                                             </td>
@@ -210,12 +220,12 @@
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr>-->
                                     </tbody>
                                 </table>
                             </div>
                         </div>
-                        <a href="addStaff.html" class="btn btn-primary mt-2 mr-1">Add Staff</a>
+                        <a href="addStaff" class="btn btn-primary mt-2 mr-1">Add Staff</a>
                     </div>
                 </div>
                 <!-- users list ends -->

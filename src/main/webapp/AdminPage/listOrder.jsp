@@ -1,5 +1,11 @@
+<%@page import="Model.Personnel"%>
+<%@page import="Model.Food"%>
+<%@page import="Model.OrderDetail"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="Model.Customer"%>
+<%@page import="java.util.List"%>
+<%@page import="DAO.DAO"%><!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
@@ -103,22 +109,22 @@
             </ul>
         </div>
         <div class="shadow-bottom"></div>
-        <div class="main-menu-content">
-            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-                <li class=" nav-item"><a class="d-flex align-items-center" href="adminPage.html"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listFood.html"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="listMembers.html"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
-                </li>
-                <li class="active nav-item"><a class="d-flex align-items-center" href="listOrder.html"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
-                </li>
-                <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
-                </li>
-            </ul>
-        </div>
+       <div class="main-menu-content">
+                <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="HomeAdminServlet"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
+                    </li>
+                    <li class="nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    </li>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    </li>
+                </ul>
+            </div>
     </div>
     <!-- END: Main Menu-->
 
@@ -149,31 +155,74 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${aAllOrder}" var="o">
                                         <tr>
                                             <td>
-                                                <img src="https://assets.epicurious.com/photos/57c44636082060f11022b55e/16:9/w_1280,c_limit/shutterstock_368008064.jpg" class="mr-75" height="50" width="50" alt="Peter" />
-                                                <span class="font-weight-bold">#1245</span>
+                                                <span class="font-weight-bold">${o.getOrderID()}</span>
                                             </td>
                                             <td>
                                                 <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">Pizza x 2</span>
-                                                    <span class="font-weight-bold">Hambergur x 2</span>
+                                                    <% 
+                                                        DAO dao = new DAO();
+                                                        List<OrderDetail> listDetail = dao.getAllOrderDetails();
+                                                        request.setAttribute("ORDERDETAIL", listDetail);
+                                                    %>
+                                                    <c:forEach items="${ORDERDETAIL}" var = "d">
+                                                        <c:if test="${d.getOrderID()==o.getOrderID()}">
+                                                            <% 
+                                                                List<Food> listFood = dao.getAllFoods();
+                                                                request.setAttribute("FOODLIST", listFood);
+                                                            %>
+                                                            <c:forEach items="${FOODLIST}" var = "f">
+                                                                <c:if test="${f.getFoodID() == d.getFoodID()}">
+                                                                <span class="font-weight-bold">${f.getFoodName()} x ${d.getQuantity()}</span>
+                                                                </c:if>
+                                                            </c:forEach>
+                                                        </c:if>
+                                                        
+                                                    </c:forEach>
+                                                                                                           
                                                 </div>
                                             </td>
                                             <td>
-                                                <span class="font-weight-bold">100$</span>
+                                                <span class="font-weight-bold">${o.getTotal()}</span>
                                             </td>
                                             <td>
                                                 <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">12/03/2022</span>
-                                                    <span>13:05</span>
+                                                    <span class="font-weight-bold">${o.getOrderDate()}</span>
+<!--                                                    <span>13:05</span>-->
                                                 </div>
                                             </td>
                                             <td>
-                                                <span class="badge badge-pill badge-light-warning" text-capitalized="">Delivery</span>
+                                                <c:if test="${o.getOrderStatus()==0}">
+                                                    <span class="badge badge-pill badge-light-warning" text-capitalized="">Delivery</span>
+                                                </c:if>
+                                                    <c:if test="${o.getOrderStatus()==1}">
+                                                    <span class="badge badge-pill badge-light-success" text-capitalized="">Success</span>
+                                                </c:if>
+                                                    <c:if test="${o.getOrderStatus()==2}">
+                                                    <span class="badge badge-pill badge-light-danger" text-capitalized="">Canceled</span>
+                                                </c:if>
+                                                    
                                             </td>
-                                            <td>Hieu</td>
-                                            <td><div class="badge badge-glow badge-success" style="padding: 4px 12px;">Active</div></td>
+                                            <% 
+                                                List<Personnel> listPersonnel = dao.getAllPersonnel();
+                                                request.setAttribute("PERSONNELLIST", listPersonnel);
+                                            %>
+                                            <c:forEach items="${PERSONNELLIST}" var="p">
+                                                <c:if test="${o.getID() == p.getPersonnelID()}">
+                                                    <td>${p.getPersonnelName()}</td>
+                                                </c:if>
+                                            </c:forEach>
+                                                    
+                                            <td>
+                                                <c:if test="${o.isIsActive()==true}">
+                                                <div class="badge badge-glow badge-success" style="padding: 4px 12px;">active</div>
+                                                </c:if>
+                                                <c:if test="${o.isIsActive()==false}">
+                                                <div class="badge badge-glow badge-danger" style="padding: 4px 12px;">inactive</div>
+                                                </c:if>
+                                            </td>
                                             <td>
                                                 <div class="dropdown">
                                                     <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -184,100 +233,15 @@
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
+                                                        <a class="dropdown-item" href="DeleteOrderServlet?ORDERID=${o.getOrderID()}"">
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>Delete</span>
                                                         </a>
                                                     </div>
                                                 </div>
                                             </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="https://assets.epicurious.com/photos/57c44636082060f11022b55e/16:9/w_1280,c_limit/shutterstock_368008064.jpg" class="mr-75" height="50" width="50" alt="Peter" />
-                                                <span class="font-weight-bold">#1245</span>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">Pizza x 2</span>
-                                                    <span class="font-weight-bold">Hambergur x 2</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="font-weight-bold">39.9$</span>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">12/03/2022</span>
-                                                    <span>13:05</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pill badge-light-danger" text-capitalized="">Canceled</span>
-                                            </td>
-                                            <td>Hieu</td>
-                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <img src="https://assets.epicurious.com/photos/57c44636082060f11022b55e/16:9/w_1280,c_limit/shutterstock_368008064.jpg" class="mr-75" height="50" width="50" alt="Peter" />
-                                                <span class="font-weight-bold">#1245</span>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">Pizza x 2</span>
-                                                    <span class="font-weight-bold">Hambergur x 2</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="font-weight-bold">39.9$</span>
-                                            </td>
-                                            <td>
-                                                <div class="d-flex flex-column">
-                                                    <span class="font-weight-bold">12/03/2022</span>
-                                                    <span>13:05</span>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-pill badge-light-success" text-capitalized="">Delivered</span>
-                                            </td>
-                                            <td>Hieu</td>
-                                            <td><div class="badge badge-glow badge-danger">InActive</div></td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <button type="button" class="btn btn-sm dropdown-toggle hide-arrow" data-toggle="dropdown">
-                                                        <i data-feather="more-vertical"></i>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">
-                                                            <i data-feather="edit-2" class="mr-50"></i>
-                                                            <span>Edit</span>
-                                                        </a>
-                                                        <a class="dropdown-item" href="javascript:void(0);">
-                                                            <i data-feather="trash" class="mr-50"></i>
-                                                            <span>Delete</span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        </tr>  
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>

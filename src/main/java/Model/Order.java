@@ -79,7 +79,7 @@ public class Order {
         this.orderStatus = orderStatus;
     }
 
-    public boolean getIsActive() {
+    public boolean isIsActive() {
         return isActive;
     }
 
@@ -87,6 +87,9 @@ public class Order {
         this.isActive = isActive;
     }
     
+    
+
+
     
    
 }

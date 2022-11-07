@@ -167,7 +167,7 @@ public class PaymentServlet extends HttpServlet {
                     return;
                 }
             } else {
-                response.sendRedirect("user?action=login");
+                response.sendRedirect("login");
             }
         } else {
             if (payment_method.equals("cash")) {
