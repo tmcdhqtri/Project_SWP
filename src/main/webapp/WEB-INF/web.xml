@@ -100,6 +100,10 @@
         <servlet-name>deleteOrder</servlet-name>
         <servlet-class>servlet.DeleteOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewListOrderAdminServlet</servlet-name>
+        <servlet-class>servlet.ViewListOrderAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -199,6 +203,10 @@
     <servlet-mapping>
         <servlet-name>deleteOrder</servlet-name>
         <url-pattern>/DeleteOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListOrderAdminServlet</servlet-name>
+        <url-pattern>/listOrderAdmin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
