@@ -36,7 +36,7 @@ public class DeleteOrderServlet extends HttpServlet {
         DAO dao = new DAO();
         dao.deleteOrder(orderID);
         
-        request.getRequestDispatcher("listOrder").forward(request, response);
+        request.getRequestDispatcher("listOrderAdmin").forward(request, response);
     }
 
 

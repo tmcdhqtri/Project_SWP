@@ -39,12 +39,23 @@ public class Customer {
         this.customerAddress = customerAddress;
         this.customerBirthday = customerBirthday;
     }
+
+    public Customer(int customerID, String customerName, String customerPhone, String customerEmail, String customerAddress, String customerBirthday, boolean cusStatus) {
+        this.customerID = customerID;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+        this.customerEmail = customerEmail;
+        this.customerAddress = customerAddress;
+        this.customerBirthday = customerBirthday;
+        this.cusStatus = cusStatus;
+    }
     
     public Customer(String customerUsername, String customerPassword) {
         this.customerUsername = customerUsername;
         this.customerPassword = customerPassword;
     }
     public Customer(){}
+
     public int getCustomerID() {
         return customerID;
     }

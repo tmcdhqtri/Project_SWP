@@ -31,6 +31,13 @@ public class Food {
         this.foodPrice = foodPrice;
         this.foodIsActive = foodIsActive;
     }
+
+    public Food(String foodName, String foodDescription, String foodImage, float foodPrice) {
+        this.foodName = foodName;
+        this.foodDescription = foodDescription;
+        this.foodImage = foodImage;
+        this.foodPrice = foodPrice;
+    }
     
     public int getFoodID() {
         return foodID;

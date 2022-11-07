@@ -115,9 +115,9 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
@@ -159,23 +159,23 @@
                                         <!-- general tab -->
                                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general" aria-labelledby="account-pill-general" aria-expanded="true">
                                             <!-- header media -->
-                                            <div class="media">
+<!--                                            <div class="media">
                                                 <a href="javascript:void(0);" class="mr-25">
                                                     <img src="./AdminPage/app-assets/images/portrait/small/avatar-s-17.jpg" id="account-upload-img" class="rounded mr-50" alt="profile image" height="100" width="100" />
                                                 </a>
-                                                <!-- upload and reset button -->
+                                                 upload and reset button 
                                                 <div class="media-body mt-75 ml-1">
                                                     <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
                                                     <input type="file" id="account-upload" hidden accept="image/*" />
-                                                    <!-- <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> -->
+                                                     <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> 
                                                     <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
                                                 </div>
-                                                <!--/ upload and reset button -->
-                                            </div>
+                                                / upload and reset button 
+                                            </div>-->
                                             <!--/ header media -->
 
                                             <!-- form -->
-                                            <form class="validate-form mt-2">
+                                            <form action="UpdateMemberAdminServlet" method="post" class="mt-2">
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
@@ -184,7 +184,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i data-feather="user"></i></span>
                                                                 </div>
-                                                                <input type="text" id="fname-icon" class="form-control" name="fname-icon" placeholder="Full Name" value="Holder Park" />
+                                                                <input type="text" id="fname-icon" class="form-control" name="CUSNAME" placeholder="Full Name" value="${c.getCustomerName()}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -195,7 +195,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i data-feather="mail"></i></span>
                                                                 </div>
-                                                                <input type="email" id="email-icon" class="form-control" name="email" placeholder="Email" value="nhantv@gmail.com" />
+                                                                <input type="email" id="email-icon" class="form-control" name="CUSEMAIL" placeholder="Email" value="${c.getCustomerEmail()}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -206,7 +206,7 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text"><i data-feather="map-pin"></i></span>
                                                                 </div>
-                                                                <input type="text" id="contact-icon" class="form-control" name="address" placeholder="Address" value="31B Washington DC" />
+                                                                <input type="text" id="contact-icon" class="form-control" name="CUSADDRESS" placeholder="Address" value="${c.getCustomerAddress()}" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -217,14 +217,14 @@
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text"><i data-feather="smartphone"></i></span>
                                                                     </div>
-                                                                    <input type="number" id="contact-icon" class="form-control" name="contact-icon" placeholder="Mobile" value="09999999"/>
+                                                                    <input type="text" id="contact-icon" class="form-control" name="CUSPHONE" placeholder="Mobile" value="${c.getCustomerPhone()}" />
                                                                 </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-birth-date">Birth Date</label>
-                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="dob" value="2002-10-05" />
+                                                            <input type="text" class="form-control flatpickr" placeholder="Birth Date" id="account-birth-date" name="CUSDATEOFBIRTH" value="${c.getCustomerBirthday()}" />
                                                         </div>
                                                     </div>
                                                     <!-- Náº¿u save change thÃ¬ hiá»n alert -->

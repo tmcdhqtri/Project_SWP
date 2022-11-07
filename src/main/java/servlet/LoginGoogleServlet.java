@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import GoogleAccess.GooglePojo;
 import GoogleAccess.GoogleUtils;
+import jakarta.servlet.http.HttpSession;
 @WebServlet("/Login")
 public class LoginGoogleServlet extends HttpServlet {
   private static final long serialVersionUID = 1L;
@@ -32,6 +33,7 @@ public class LoginGoogleServlet extends HttpServlet {
 //      request.setAttribute("id", googlePojo.getId());
 //      request.setAttribute("name", googlePojo.getName());
 //      request.setAttribute("email", googlePojo.getEmail());
+      
       RequestDispatcher dis = request.getRequestDispatcher("home");
       dis.forward(request, response);
     }
