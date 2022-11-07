@@ -17,7 +17,7 @@
         <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>addStaffServlet</servlet-name>
+        <servlet-name>AddStaffServlet</servlet-name>
         <servlet-class>servlet.AddStaffServlet</servlet-class>
     </servlet>
     <servlet>
@@ -117,7 +117,7 @@
         <url-pattern>/detailOrder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>addStaffServlet</servlet-name>
+        <servlet-name>AddStaffServlet</servlet-name>
         <url-pattern>/addStaff</url-pattern>
     </servlet-mapping>
     <servlet-mapping>

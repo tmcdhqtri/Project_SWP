@@ -65,43 +65,35 @@
                             </div>
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
-                                <a style="color: white; cursor: pointer;" href="/Homepage/index.html" class="login100-form-btn">
+                                <a style="color: white; cursor: pointer;" href="home" class="login100-form-btn">
                                     Home
                                 </a>
                             </div>
                         </div>
-                        <!-- 
-                                                                <div class="txt1 text-center p-t-54 p-b-20">
+                                                                 <div class="txt1 text-center p-t-54 p-b-20">
                                                                         <span>
-                                                                                Or Sign Up Using
+                                                                                Login Up Using
                                                                         </span>
                                                                 </div>
                         
-                                                                <div class="flex-c-m">
-                                                                        <a href="#" class="login100-social-item bg1">
-                                                                                <i class="fa fa-facebook"></i>
-                                                                        </a>
-                        
-                                                                        <a href="#" class="login100-social-item bg2">
-                                                                                <i class="fa fa-twitter"></i>
-                                                                        </a>
-                        
-                                                                        <a href="#" class="login100-social-item bg3">
+                                                                 <div class="flex-c-m">               
+                                                                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Project_SWP/Login&response_type=code
+                           &client_id=409601733964-72kvqd5ajhjtck17f11p5dsj04a279uu.apps.googleusercontent.com&approval_prompt=force" class="login100-social-item bg3">
                                                                                 <i class="fa fa-google"></i>
                                                                         </a>
-                                                                </div> -->
+                                                                </div> 
 
                         <div class="flex-col-c p-t-155">
                             <span class="txt1 p-b-17">
                                 Or Sign Up Using
                             </span>
 
-                            <a href="/Register/Register.html" class="txt2">
+                            <a href="register" class="txt2">
                                 Sign Up
                             </a>
                         </div>
-                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Project_SWP/Login&response_type=code
-                           &client_id=409601733964-72kvqd5ajhjtck17f11p5dsj04a279uu.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>  
+<!--                        <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/Project_SWP/Login&response_type=code
+                           &client_id=409601733964-72kvqd5ajhjtck17f11p5dsj04a279uu.apps.googleusercontent.com&approval_prompt=force">Login With Google</a>  -->
                     </form>
                 </div>
             </div>
