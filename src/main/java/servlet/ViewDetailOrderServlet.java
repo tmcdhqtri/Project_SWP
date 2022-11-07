@@ -20,7 +20,7 @@ public class ViewDetailOrderServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
 
-        int  orderID = Integer.parseInt(request.getParameter("orderid"));
+        int orderID = Integer.parseInt(request.getParameter("orderid"));
         DAO dao = new DAO();
         
         Order order = dao.getOrder(orderID); 
