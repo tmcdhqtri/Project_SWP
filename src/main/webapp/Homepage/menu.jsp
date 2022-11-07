@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
@@ -142,64 +143,26 @@
   <div class="clearfix"></div>
 
   <section class="sec-padding">
-    <div class="container">
+      <div class="container">
+         
+        
       <div class="row">
-
-        <div class="clearfix"></div>
+ <c:forEach var="o" items="${aAllFood}">
+       
         <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="./Homepage/images/menu1.jpg" alt="" class="img-responsive fit-image2" /></div>
+            <div class="image-holder"><img src="${o.foodImage}" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
-              <h4 class="old-standardtt less-mar1">Whole Wheat Waffles</h4>
-              <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
-              <h6 class="text-red-2">Price: $5</h6>
+              <h4 class="old-standardtt less-mar1">${o.foodName}</h4>
+              <span>${o.foodDescription}</span><br />
+              <h6 class="text-red-2">Price: ${o.foodPrice}</h6>
               <button class="btn btn-vh"><a href="viewFood?foodID={}}">View Detail</a></button>
             </div>
           </div>
-        </div>
+         </div>  </c:forEach> 
+      
         <!--end item-->
-
-        <div class="col-md-6 col-sm-12">
-          <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="./Homepage/images/h1.jpg" alt="" class="img-responsive fit-image2" /></div>
-            <div class="text-box-right more-padding-3 text-center">
-              <h4 class="old-standardtt less-mar1">Crepes</h4>
-              <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
-              <h6 class="text-red-2">Price: $6</h6>
-              <button class="btn btn-vh"><a href="viewDetailFood.html">View Detail</a></button>
-            </div>
-          </div>
-        </div>
         <!--end item-->
-
-        <div class="clearfix"></div>
-        <br />
-        <div class="col-md-6 col-sm-12">
-          <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="./Homepage/images/h5.jpg" alt="" class="img-responsive fit-image2" /></div>
-            <div class="text-box-right more-padding-3 text-center">
-              <h4 class="old-standardtt less-mar1">Vegetable Salad</h4>
-              <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
-              <h6 class="text-red-2">Price: $4</h6>
-              <button class="btn btn-vh"><a href="viewDetailFood.html">View Detail</a></button>
-            </div>
-          </div>
-        </div>
-        <!--end item-->
-
-        <div class="col-md-6 col-sm-12">
-          <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="./Homepage/images/menu3.jpg" alt="" class="img-responsive fit-image2" /></div>
-            <div class="text-box-right more-padding-3 text-center">
-              <h4 class="old-standardtt less-mar1">Macaroni Bolognese</h4>
-              <span>Lorem ipsum dolor sit amet consectetuer adipiscing</span><br />
-              <h6 class="text-red-2">Price: $5</h6>
-              <button class="btn btn-vh"><a href="viewDetailFood.html">View Detail</a></button>
-            </div>
-          </div>
-        </div>
-        <!--end item-->
-
       </div>
     </div>
   </section>
