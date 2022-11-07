@@ -120,6 +120,10 @@
         <servlet-name>updateMemberAdmin</servlet-name>
         <servlet-class>servlet.UpdateMemberAdminServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>servlet.CheckoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -239,6 +243,10 @@
     <servlet-mapping>
         <servlet-name>updateMemberAdmin</servlet-name>
         <url-pattern>/UpdateMemberAdminServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/CheckoutServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

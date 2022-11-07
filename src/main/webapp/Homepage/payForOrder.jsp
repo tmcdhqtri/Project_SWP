@@ -109,7 +109,7 @@
 
         <!-- end header inner -->
         <div class="clearfix"></div>
-
+        <form action="CheckoutServlet" method="post">
         <div class="row">
             <div class="col-md-6">
                 <div class="image-holder"><img src="./Homepage/images/cart1.jpg" alt="" class="img-responsive fit-image7" /></div>
@@ -162,7 +162,7 @@
             </div>
         </div>
         <!--end section-->
-
+</form>
 
 
 

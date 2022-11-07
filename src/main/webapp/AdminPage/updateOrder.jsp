@@ -179,7 +179,15 @@
                                                                 <li class="list-group-item">Name: <span class="font-weight-bold"> ${p.getPersonnelName()}</span></li>
                                                                 </c:if>
                                                             </c:forEach>
-                                                        <li class="list-group-item">Pay: <span class="font-weight-bold"> VNPAY</span></li>
+                                                                
+                                                        <li class="list-group-item">Pay: 
+                                                            <c:if test="${o.isPayment()==true}">
+                                                            <span class="font-weight-bold"> VNPAY</span>
+                                                            </c:if>
+                                                            <c:if test="${o.isPayment()==false}">
+                                                            <span class="font-weight-bold"> Cash</span>
+                                                            </c:if>
+                                                        </li>
                                                             <c:if test="${o.getOrderStatus()==0}">
                                                             <li class="list-group-item">Status: <span class="font-weight-bold"> Delivery</span></li>
                                                             </c:if>

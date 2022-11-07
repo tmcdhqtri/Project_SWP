@@ -279,15 +279,16 @@ public class DAO {
     //END DAO Food
     //BEGIN DAO Order
 
-    public boolean addOrder(int CusID, int ID, int orderID, LocalDate orderDate, float total, int status, boolean isActive) {
+    public boolean addOrder(int CusID, int ID, int orderID, LocalDate orderDate, float total,boolean payment, int status, boolean isActive) {
         try {
-            String sql = "insert into [Order] values(?, ?, ?, ?, 1)";
+            String sql = "insert into [Order] values(?, ?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
             stm.setInt(1, CusID);
             stm.setInt(2, ID);
             stm.setFloat(3, total);
-            stm.setInt(4, status);
+            stm.setBoolean(4, payment);
+            stm.setInt(5, status);
             int row = stm.executeUpdate();
             if (row > 0) {
                 return true;
@@ -309,7 +310,7 @@ public class DAO {
 
             ArrayList<Order> listOrders = new ArrayList<Order>();
             while (rs.next()) {
-                listOrders.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5), rs.getInt(6), rs.getBoolean(7)));
+                listOrders.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6), rs.getInt(7), rs.getBoolean(8)));
             }
             return listOrders;
         } catch (Exception e) {
@@ -326,7 +327,7 @@ public class DAO {
             stm.setInt(1, orderID);
             rs = stm.executeQuery();
             while (rs.next()) {
-                return new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5), rs.getInt(6), rs.getBoolean(7));
+                return new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6), rs.getInt(7), rs.getBoolean(8));
             }
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
