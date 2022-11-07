@@ -23,7 +23,7 @@ public class UpdateStatusOrderServlet extends HttpServlet {
         
         if (dao.getPersonnelByUsername(username) != null)
         {
-            request.getRequestDispatcher("detailOrder?orderid="+orderId).forward(request, response);
+            request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
         }
         else if (dao.getCustomerByUsername(username) != null)
         {

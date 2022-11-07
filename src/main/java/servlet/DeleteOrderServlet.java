@@ -6,8 +6,6 @@ package servlet;
 
 import DAO.DAO;
 import java.io.IOException;
-import java.io.PrintWriter;
-import static java.lang.Integer.parseInt;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -29,12 +27,28 @@ public class DeleteOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        int orderID = parseInt(request.getParameter("ORDERID"));
+        String orderId = request.getParameter("ORDERID");
+        String username = request.getParameter("username");
+        
+        
         DAO dao = new DAO();
-        dao.deleteOrder(orderID);
+        dao.deleteOrder(orderId);
+        
+        if (dao.getPersonnelByUsername(username) != null)
+        {
+            request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
+        }
+        else if (dao.getCustomerByUsername(username) != null)
+        {
+            request.getRequestDispatcher("detailOrder?orderid="+orderId).forward(request, response);
+        }
+        else
+        {
+            request.getRequestDispatcher("login").forward(request, response);
+        }
         
         request.getRequestDispatcher("listOrderAdmin").forward(request, response);
     }

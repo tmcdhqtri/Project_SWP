@@ -361,12 +361,12 @@ public class DAO {
         return null;
     }
 
-    public void deleteOrder(int orderID) {
+    public void deleteOrder(String orderID) {
         try {
             String query = "update [Order] set orderIsActive=0 where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
-            stm.setInt(1, orderID);
+            stm.setString(1, orderID);
             stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
