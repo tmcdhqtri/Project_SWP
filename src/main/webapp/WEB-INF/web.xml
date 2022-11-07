@@ -108,10 +108,7 @@
         <servlet-name>ViewListOrderAdminServlet</servlet-name>
         <servlet-class>servlet.ViewListOrderAdminServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>UpdateOrderAdminServlet</servlet-name>
-        <servlet-class>servlet.UpdateOrderAdminServlet</servlet-class>
-    </servlet>
+
     <servlet>
         <servlet-name>UpdateInfoServlet</servlet-name>
         <servlet-class>servlet.UpdateInfoServlet</servlet-class>
@@ -232,10 +229,7 @@
         <servlet-name>updateFood</servlet-name>
         <url-pattern>/UpdateFoodServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateOrderAdminServlet</servlet-name>
-        <url-pattern>/UpdateOrderAdminServlet</url-pattern>
-    </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>UpdateInfoServlet</servlet-name>
         <url-pattern>/updateInfo</url-pattern>

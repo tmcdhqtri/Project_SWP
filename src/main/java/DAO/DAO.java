@@ -646,6 +646,6 @@ public class DAO {
 
     public static void main(String arg[]) {
         DAO dao = new DAO();
-        dao.updateOrderStatusAdmin(4, 2);
+        
     }
 }

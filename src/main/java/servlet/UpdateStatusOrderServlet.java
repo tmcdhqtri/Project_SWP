@@ -31,7 +31,7 @@ public class UpdateStatusOrderServlet extends HttpServlet {
         }
         else
         {
-            request.getRequestDispatcher("detailOrder?orderid="+orderId).forward(request, response);
+            request.getRequestDispatcher("login").forward(request, response);
         }
         
     }
