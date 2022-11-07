@@ -77,9 +77,9 @@
           <ul class="nav red2 navbar-nav">
             <li> <a href="home" class="dropdown-toggle active">Home</a></li>
             <li> <a href="about" class="dropdown-toggle">About</a></li>
-            <li> <a href="menu.html" class="dropdown-toggle">Menu</a></li>
-            <li> <a href="./Login/Login.html" class="dropdown-toggle">My Order</a></li>
-            <li> <a href="contact.html" class="dropdown-toggle">Contact</a></li>
+            <li> <a href="menu" class="dropdown-toggle">Menu</a></li>
+            <li> <a href="login" class="dropdown-toggle">My Order</a></li>
+            <li> <a href="contact" class="dropdown-toggle">Contact</a></li>
             <span class="hideres">
               <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
               <li class="rightsec" style="width:150px;margin:0">
@@ -90,11 +90,11 @@
 
             <span class="rightsec1">
               <span class="hideres2">
-                <li class="rightsec rightsecphone "> <a class="icon1" href="./Login/Login.html"><i class="fa fa-phone"
+                <li class="rightsec rightsecphone "> <a class="icon1" href="tel:0905999999"><i class="fa fa-phone"
                       style="color:#000; font-size: 18px;"></i></a></li>
                 </li>
               </span>
-              <li class="rightsec "> <a class="icon1" href="./Login/Login.html"><i class="fa fa-user"
+              <li class="rightsec "> <a class="icon1" href="login"><i class="fa fa-user"
                     style="color:#000; font-size: 18px;"></i></a></li>
               <li class="rightsec "> <a class="icon3" href="cart.html"><i class="fa fa-shopping-cart"
                     style="color:#000; font-size: 18px;"></i></a>
