@@ -100,6 +100,14 @@
         <servlet-name>deleteOrder</servlet-name>
         <servlet-class>servlet.DeleteOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>updateFood</servlet-name>
+        <servlet-class>servlet.UpdateFoodServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateOrderAdminServlet</servlet-name>
+        <servlet-class>servlet.UpdateOrderAdminServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -199,6 +207,14 @@
     <servlet-mapping>
         <servlet-name>deleteOrder</servlet-name>
         <url-pattern>/DeleteOrderServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>updateFood</servlet-name>
+        <url-pattern>/UpdateFoodServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateOrderAdminServlet</servlet-name>
+        <url-pattern>/UpdateOrderAdminServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

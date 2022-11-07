@@ -117,7 +117,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
@@ -159,14 +159,15 @@
                                         <!-- general tab -->
                                         <div role="tabpanel" class="tab-pane active" id="account-vertical-general" aria-labelledby="account-pill-general" aria-expanded="true">
                                             <!-- header media -->
+                                    <form action="UpdateFoodServlet" method="post" enctype="multipart/form-data" class="mt-2">
                                             <div class="media">
                                                 <a href="javascript:void(0);" class="mr-25">
-                                                    <img src="https://assets.epicurious.com/photos/57c44636082060f11022b55e/16:9/w_1280,c_limit/shutterstock_368008064.jpg" id="account-upload-img" class="rounded mr-50" alt="profile image" height="120" width="120" />
+                                                    <img src="${f.getFoodImage()}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="120" width="120" />
                                                 </a>
                                                 <!-- upload and reset button -->
                                                 <div class="media-body mt-75 ml-1">
                                                     <label for="account-upload" class="btn btn-sm btn-primary mb-75 mr-75">Upload</label>
-                                                    <input type="file" id="account-upload" hidden accept="image/*" />
+                                                    <input type="file" name ="photo" id="account-upload" hidden accept="image/*" />
                                                     <!-- <button class="btn btn-sm btn-outline-secondary mb-75">Reset</button> -->
                                                     <p>Allowed JPG, GIF or PNG. Max size of 800kB</p>
                                                 </div>
@@ -175,30 +176,33 @@
                                             <!--/ header media -->
 
                                             <!-- form -->
-                                            <form action="" method="" class="validate-form mt-2">
                                                 <div class="row">
-                                                    <div class="col-12 col-sm-6">
+                                                    <div class="col-12 col-sm-4">
                                                         <div class="form-group">
-                                                            <label for="food-name">Food Name</label>
-                                                            <input type="text" class="form-control" id="account-name" name="name" placeholder="Food Name" value="Chicken Fried" />
+                                                            <label for="food-name">Food ID</label>
+                                                            <input type="text" class="form-control" id="account-name" name="FOODID" placeholder="Food Name" value="${f.getFoodID()}" readonly/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12 col-sm-6">
+                                                    <div class="col-12 col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="food-name">Food Name</label>
+                                                            <input type="text" class="form-control" id="account-name" name="FOODNAME" placeholder="Food Name" value="${f.getFoodName()}" required />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-12 col-sm-4">
                                                         <label for="food-price">Food Price</label>
                                                         <div class="input-group mb-2">
                                                             <div class="input-group-prepend">
                                                                 <span class="input-group-text">$</span>
                                                             </div>
-                                                            <input type="number" class="form-control" placeholder="Price" value="100" aria-label="Amount (to the nearest dollar)" />
-                                                            <div class="input-group-append">
-                                                                <span class="input-group-text">.00</span>
-                                                            </div>
+                                                            <input type="number" class="form-control" placeholder="Price" name="PRICE" value="${f.getFoodPrice()}" aria-label="Amount (to the nearest dollar)" required />
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-12">
                                                         <label for="food-description">Description</label>
                                                         <div class="form-label-group mb-0">
-                                                            <textarea data-length="200" class="form-control char-textarea" id="textarea-counter" rows="4" placeholder="Description"></textarea>
+                                                            <textarea data-length="200" class="form-control char-textarea" name="DESCRIPTION" id="textarea-counter" rows="4" placeholder="${f.getFoodDescription()}"></textarea>
                                                         </div>
                                                         <small class="textarea-counter-value float-right"><span class="char-count">0</span> / 200 </small>
                                                     </div>

@@ -5,7 +5,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="Model.Customer"%>
 <%@page import="java.util.List"%>
-<%@page import="DAO.DAO"%><!DOCTYPE html>
+<%@page import="DAO.DAO"%>
+<!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
 <!-- BEGIN: Head-->
 
@@ -121,7 +122,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
@@ -229,7 +230,7 @@
                                                         <i data-feather="more-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="updateOrder.html">
+                                                        <a class="dropdown-item" href="UpdateOrderAdminServlet?orderID=${o.getOrderID()}">
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>

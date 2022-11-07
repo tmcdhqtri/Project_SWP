@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -22,64 +23,22 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author Admin
  */
-@WebServlet(name = "updatefood", urlPatterns = {"/UpdateFoodServlet"})
+@MultipartConfig
+
 public class UpdateFoodServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdateFoodServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdateFoodServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-    }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        int foodID = Integer.parseInt(request.getParameter(("FOODID")));
+        String foodID = request.getParameter(("FOODID"));
         DAO dao = new DAO();
-        Food food = dao.getFood(foodID);
-       
-        request.setAttribute("c", food);
-        RequestDispatcher rd = request.getRequestDispatcher("updateFood.jsp");
+        Food food = dao.getFood(Integer.parseInt(foodID));
+        request.setAttribute("f", food);
+        RequestDispatcher rd = request.getRequestDispatcher("./AdminPage/updateFood.jsp");
         rd.forward(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException { 
@@ -96,7 +55,8 @@ public class UpdateFoodServlet extends HttpServlet {
         }
         part.write(photoPath + "/" + filename);
         dao.updateFood(foodID,foodName, description,"images/" + filename, price);
-        response.sendRedirect("");
+        response.sendRedirect("listFood");
+        
     }
 
     /**

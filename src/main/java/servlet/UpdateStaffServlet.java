@@ -65,7 +65,7 @@ public class UpdateStaffServlet extends HttpServlet {
         }
         
         DAO dao = new DAO();
-        dao.updatePersonnnel(personnelID, name, phone , email, address, dateOfBirth, image);
+        dao.updatePersonnnel(personnelID, name, phone , email, address, dateOfBirth, "images/" + fileName);
         
     }
 

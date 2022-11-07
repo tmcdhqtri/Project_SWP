@@ -117,7 +117,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
@@ -150,8 +150,10 @@
                 <!-- account setting page -->
                 <section id="page-account-settings">
                     <div class="row">
+                                    <form action="UpdateFoodServlet" method="post" enctype="multipart/form-data" class="mt-2">
 
                         <!-- right content section -->
+                        <form action="updateStaff" method="post" enctype="multipart/form-data" class="mt-2">
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
@@ -175,7 +177,6 @@
                                             <!--/ header media -->
 
                                             <!-- form -->
-                                            <form action="" method ="" class="validate-form mt-2">
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
@@ -238,7 +239,6 @@
                                                         <button type="reset" class="btn btn-outline-secondary mt-2">Cancel</button>
                                                     </div>
                                                 </div>
-                                            </form>
                                             <!--/ form -->
                                         </div>
                                         <!--/ general tab -->
@@ -246,6 +246,7 @@
                                 </div>
                             </div>
                         </div>
+                        </form>
                         <!--/ right content section -->
                     </div>
                 </section>

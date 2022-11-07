@@ -193,13 +193,32 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setInt(1, foodID);
             rs = stm.executeQuery();
+            while (rs.next()){
             return new Food(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getFloat(5), rs.getBoolean(6));
+        }
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
     }
 
+    public List<Food> getActiveFoods(){
+    try {
+            String query = "select foodName, description, image, price from Food where foodIsActive = 1 ";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+
+            List<Food> listFoods = new ArrayList<>();
+            while (rs.next()) {
+                listFoods.add((Food) new Food(rs.getString(1), rs.getString(2), rs.getString(3), rs.getFloat(4)));
+            }
+            return listFoods;
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
     public List<Food> getAllFoods() {
         try {
             String query = "select * from Food";
@@ -298,8 +317,10 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setInt(1, orderID);
             rs = stm.executeQuery();
+            while (rs.next()){
             return new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5),rs.getInt(6),rs.getBoolean(7));
-        } catch (Exception e) {
+            }
+            } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return null;
@@ -318,10 +339,24 @@ public class DAO {
 
     public void updateOrderStatus(int orderID) {
         try {
-            String query = "update [Order] set orderStatus=1 where orderID = ?";
+            String query = "update [Order] set orderStatus=? where orderID = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setInt(1, orderID);
+            stm.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+    }
+    
+    public void updateOrderStatusAdmin(int orderID, int orderStatus) {
+        try {
+            String query = "update [Order] set orderStatus=? where orderID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, orderStatus);
+            stm.setInt(2, orderID);
+            stm.executeUpdate();
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
@@ -540,6 +575,10 @@ public class DAO {
             System.out.println("SQL error in DAO " + e.getMessage());
         }
         return 0;
+    }
+        public static void main(String arg[]){
+        DAO dao = new DAO();
+        dao.updateOrderStatusAdmin(4, 2);
     }
 }
 

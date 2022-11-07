@@ -120,7 +120,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="page-account-settings.html"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
