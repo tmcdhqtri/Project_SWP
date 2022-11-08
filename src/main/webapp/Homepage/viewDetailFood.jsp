@@ -128,10 +128,11 @@
                 <div class="col-md-12 rightbadge2 ">
                     <br />
                 </div>
-               <form action="" class="row col-md-12">
+              <form action="" class="row col-md-12">
                     <div class="col-md-3 minusplus">
                         <button type="button" class="btnmp" id="minus">-</button>
-                        <span id="numberPlace" class="numeric" ><input id="numberPlace" type="hidden" value=""/>0</span>
+                        <span id="numberPlace2"  class="numeric" >0</span>
+                        <input id="numberPlace" type="hidden" value=""/>
                         <button type="button" class="btnmp" id="plus">+</button>
                     </div>
                     <div class="col-md-5">
@@ -257,6 +258,7 @@
             var minusBtn = document.getElementById("minus"),
                 plusBtn = document.getElementById("plus"),
                 numberPlace = document.getElementById("numberPlace"),
+                numberPlace2 = document.getElementById("numberPlace2"),
                 submitBtn = document.getElementById("submit"),
                 number = 0, /// number value
                 min = 0, /// min number
@@ -265,7 +267,7 @@
             minusBtn.onclick = function () {
                 if (number > min) {
                     number = number - 1; /// Minus 1 of the number
-                    numberPlace.innerText = number;
+                    numberPlace2.innerText = number;
                   numberPlace.value = number; /// Display the value in place of the number
 
                 }
@@ -281,7 +283,7 @@
             plusBtn.onclick = function () {
                 if (number < max) {
                     number = number + 1;
-                    numberPlace.innerText = number; /// Display the value in place of the number
+                    numberPlace2.innerText = number; /// Display the value in place of the number
                     numberPlace.value = number;
                 }
                 if (number == max) {
