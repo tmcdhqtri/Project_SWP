@@ -78,7 +78,7 @@
             <li> <a href="home" class="dropdown-toggle active">Home</a></li>
             <li> <a href="about" class="dropdown-toggle">About</a></li>
             <li> <a href="menu" class="dropdown-toggle">Menu</a></li>
-            <li> <a href="login" class="dropdown-toggle">My Order</a></li>
+            <li> <a href="listOrder" class="dropdown-toggle">My Order</a></li>
             <li> <a href="contact" class="dropdown-toggle">Contact</a></li>
             <span class="hideres">
               <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
@@ -96,7 +96,7 @@
               </span>
               <li class="rightsec "> <a class="icon1" href="${sessionScope.acc==null ? "login":"info"}"><i class="fa fa-user"
                     style="color:#000; font-size: 18px;"></i></a></li>
-              <li class="rightsec "> <a class="icon3" href="cart.html"><i class="fa fa-shopping-cart"
+              <li class="rightsec "> <a class="icon3" href="cart"><i class="fa fa-shopping-cart"
                     style="color:#000; font-size: 18px;"></i></a>
                 <span class="icon4">0</span>
               </li>

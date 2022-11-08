@@ -112,18 +112,17 @@
 
         <div class="row">
             <div class="col-md-6">
-                <div class="image-holder"><img src="./Homepage/images/menu2.jpg" alt="" class="img-responsive fit-image3" /></div>
+                <div class="image-holder"><img src="${food.foodImage}" alt="" class="img-responsive fit-image3" /></div>
             </div>
             <div class="row col-md-6">
                 <div class="col-md-12 rightsecofdetail">
-                    <h2>Hamburger Ladosta</h2>
+                    <h2>${food.foodName}</h2>
                 </div>
                 <div class="col-md-8">
-                    <span> Lorem ipsum dolo rLorem ipsum dolor sit amet consectetuer ipsum dolor sit amet consectetuer
-                        adipiscing</span><br />
+                    <span> ${food.foodDescription}</span><br />
                 </div>
                 <div class="col-md-12 ">
-                    <br /> <span class=rightbadge> $ 17.08</span>
+                    <br /> <span class=rightbadge> $ ${food.foodPrice}</span>
                 </div>
                 <div class="col-md-12 rightbadge2 ">
                     <br />

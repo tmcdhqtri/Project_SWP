@@ -82,7 +82,7 @@
                         </div>
                         <div class="row row-space">
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;padding: 0px 41px;" href="/Register/updateInfor.html">Update Information</a>
+                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;padding: 0px 41px;" href="updateInfo">Update Information</a>
                             </div>
                             <div class="p-t-15">
                                 <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;" href="updatePassword">Update Password</a>
