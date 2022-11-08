@@ -156,7 +156,7 @@
               <h4 class="old-standardtt less-mar1">${o.foodName}</h4>
               <span>${o.foodDescription}</span><br />
               <h6 class="text-red-2">Price: ${o.foodPrice}</h6>
-              <button class="btn btn-vh"><a href="viewFood?foodID={}}">View Detail</a></button>
+              <button class="btn btn-vh"><a href="viewdetailfood?foodID=${o.getFoodID()}">View Detail</a></button>
             </div>
           </div>
          </div>  </c:forEach> 
