@@ -117,7 +117,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
+                    <li class="active nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>

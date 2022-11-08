@@ -114,7 +114,7 @@
                     </li>
                     <li class="nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
+                    <li class="active nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
@@ -177,7 +177,7 @@
                                                         <i data-feather="more-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="updateStaff.html">
+                                                        <a class="dropdown-item" href="updateStaff?personnelID=${s.getPersonnelID()}">
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>

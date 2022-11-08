@@ -120,7 +120,7 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    <li class="active nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
@@ -239,11 +239,11 @@
                                                         <i data-feather="more-vertical"></i>
                                                     </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="UpdateOrderAdminServlet?orderID=${o.getOrderID()}">
+                                                        <a class="dropdown-item" href="viewDetailAdmin?orderid=${o.getOrderID()}">
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="DeleteOrderServlet?ORDERID=${o.getOrderID()}"">
+                                                        <a class="dropdown-item" href="DeleteOrderServlet?ORDERID=${o.getOrderID()}">
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>Delete</span>
                                                         </a>

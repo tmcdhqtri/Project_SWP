@@ -114,7 +114,7 @@
                 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
                     <li class=" nav-item"><a class="d-flex align-items-center" href="HomeAdminServlet"><i data-feather="home"></i><span class="menu-title text-truncate" data-i18n="Dashboards">Dashboards</span><span class="badge badge-light-warning badge-pill ml-auto mr-1"></span></a>
                     </li>
-                    <li class="nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
+                    <li class="active nav-item"><a class="d-flex align-items-center" href="listFood"><i data-feather="shopping-cart"></i><span class="menu-item text-truncate" data-i18n="List">List Food</span></a>
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listStaff"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Staff</span></a>
                     </li>

@@ -26,7 +26,7 @@ public class ViewDetailOrderAdminServlet extends HttpServlet {
         Order order = dao.getOrder(orderID); 
 
         request.setAttribute("order", order); 
-        request.getRequestDispatcher("./Admin/updateOrder.jsp").forward(request, response);
+        request.getRequestDispatcher("./AdminPage/updateOrder.jsp").forward(request, response);
 
 }
 
