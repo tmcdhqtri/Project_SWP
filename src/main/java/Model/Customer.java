@@ -128,4 +128,9 @@ public class Customer {
         this.cusStatus = cusStatus;
     }
     
+    public boolean isStaff()
+    {
+        return false;
+    }
+    
 }

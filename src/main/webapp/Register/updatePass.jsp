@@ -37,8 +37,8 @@
                 <div class="card-body">
                     <h2 class="title">Update Password Form</h2>
                     <form method="POST" action="updatePassword">
-                        <input type="hidden" name="id" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelID):(sessionScope.acc.customerID)}">
-                        <input type="hidden" name="username" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelUsername):(sessionScope.acc.customerUsername)}">
+                        <input type="hidden" name="id" value="${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelID):(sessionScope.acc.customerID)}">
+                        <input type="hidden" name="username" value="${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelUsername):(sessionScope.acc.customerUsername)}">
                         
                         <div class="row row-space">
                             <div class="col">

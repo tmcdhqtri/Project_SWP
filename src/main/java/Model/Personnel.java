@@ -142,4 +142,9 @@ public class Personnel {
     public void setPersonnelStatus(boolean personnelStatus) {
         this.personnelStatus = personnelStatus;
     }
+    
+    public boolean isStaff()
+    {
+        return role;
+    }
 }
