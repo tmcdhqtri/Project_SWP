@@ -128,15 +128,14 @@
                 <div class="col-md-12 rightbadge2 ">
                     <br />
                 </div>
-                <form action="addCart" class="row col-md-12" method="post">
-                    <input type="hidden" name="foodId" value="1">
+               <form action="" class="row col-md-12">
                     <div class="col-md-3 minusplus">
                         <button type="button" class="btnmp" id="minus">-</button>
-                        <span class="numeric"><input type="number" name="sl" id="numberPlace" value="1"></span>
+                        <span id="numberPlace" class="numeric" ><input id="numberPlace" type="hidden" value=""/>0</span>
                         <button type="button" class="btnmp" id="plus">+</button>
                     </div>
                     <div class="col-md-5">
-                        <button type="submit" class="addbut"><i class="fa fa-shopping-cart"></i>Add To Cart</button>
+                        <button id="btn" type="submit" class="addbut"><i  class="fa fa-shopping-cart"></i>Add To Cart</button>
                     </div>
 
                 </form>
@@ -253,7 +252,7 @@
     <script src="./Homepage/js/owl-carousel/owl.carousel.js"></script>
     <script src="./Homepage/js/owl-carousel/custom.js"></script>
     <script src="./Homepage/js/scrolltotop/totop.js"></script>
-    <script>
+   <script>
         window.onload = function () {
             var minusBtn = document.getElementById("minus"),
                 plusBtn = document.getElementById("plus"),
@@ -266,7 +265,8 @@
             minusBtn.onclick = function () {
                 if (number > min) {
                     number = number - 1; /// Minus 1 of the number
-                    numberPlace.innerText = number; /// Display the value in place of the number
+                    numberPlace.innerText = number;
+                  numberPlace.value = number; /// Display the value in place of the number
 
                 }
                 if (number == min) {
@@ -282,6 +282,7 @@
                 if (number < max) {
                     number = number + 1;
                     numberPlace.innerText = number; /// Display the value in place of the number
+                    numberPlace.value = number;
                 }
                 if (number == max) {
                     numberPlace.style.color = "red";
@@ -292,7 +293,6 @@
                     numberPlace.style.color = "black";
 
                 }
-
 
             }
 
