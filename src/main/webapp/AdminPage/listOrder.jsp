@@ -243,7 +243,7 @@
                                                             <i data-feather="edit-2" class="mr-50"></i>
                                                             <span>Edit</span>
                                                         </a>
-                                                        <a class="dropdown-item" href="DeleteOrderServlet?ORDERID=${o.getOrderID()}">
+                                                        <a class="dropdown-item" href="DeleteOrderServlet?ORDERID=${o.getOrderID()}&username=${sessionScope.acc.personnelUsername}">
                                                             <i data-feather="trash" class="mr-50"></i>
                                                             <span>Delete</span>
                                                         </a>
