@@ -41,8 +41,8 @@
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">
-                                    <label class="label">Full Name</label>
-                                    <label class="label-des">Tran Van Vip Pro</label>
+                                    <label class="label"></label>
+                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelDateOfBirth):(sessionScope.acc.customerBirthday)}</label>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group">
-                                        <label class="label-des">09/09/1999</label>
+                                        <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelName):(sessionScope.acc.customerName)}</label>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <label class="label-des">0909999999</label>
+                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelPhone):(sessionScope.acc.customerPhone)}</label>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <label class="label-des">anhungvippro@vippro.com</label>
+                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelEmail):(sessionScope.acc.customerEmail)}</label>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Address</label>
-                                    <label class="label-des">09 Tran Bach Dang</label>
+                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelAddress):(sessionScope.acc.customerAddress)}</label>
                                 </div>
                             </div>
                         </div>
