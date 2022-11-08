@@ -42,7 +42,8 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label"></label>
-                                    <label class="label-des">${(sessionScope.acc.customerName)}</label>
+
+                                    <label class="label-des">${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelName):(sessionScope.acc.customerName)}</label>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +52,8 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group">
-                                        <label class="label-des">${(sessionScope.acc.customerBirthday)}</label>
+
+                                        <label class="label-des">${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelDateOfBirth):(sessionScope.acc.customerBirthday)}</label>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +62,8 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <label class="label-des">${(sessionScope.acc.customerPhone)}</label>
+
+                                    <label class="label-des">${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelPhone):(sessionScope.acc.customerPhone)}</label>
                                 </div>
                             </div>
                         </div>
@@ -68,7 +71,8 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <label class="label-des">${(sessionScope.acc.customerEmail)}</label>
+
+                                    <label class="label-des">${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelEmail):(sessionScope.acc.customerEmail)}</label>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +80,8 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Address</label>
-                                    <label class="label-des">${(sessionScope.acc.customerAddress)}</label>
+
+                                    <label class="label-des">${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelAddress):(sessionScope.acc.customerAddress)}</label>
                                 </div>
                             </div>
                         </div>

@@ -40,7 +40,7 @@ public class UpdatePasswordServlet extends HttpServlet {
         
         int id = Integer.parseInt(request.getParameter("id"));
         String username = request.getParameter("username");
-        String old_password = request.getParameter("old-password");
+        String old_password = request.getParameter("old_password");
         String new_password = request.getParameter("new_password");
         String re_password = request.getParameter("re-password");
         
@@ -54,18 +54,18 @@ public class UpdatePasswordServlet extends HttpServlet {
         {
             if (!new_password.equals(re_password))
             {
-                String message = "New password and re-password are not the same";
-                request.setAttribute("message", message);
+                System.out.println("New password and re-password are not the same");
+//                request.setAttribute("message", message);
                 request.getRequestDispatcher("./Register/updatePass.jsp").forward(request, response);
             }
             else
             {
                 new_password = Hashing.sha256().hashString(new_password, StandardCharsets.UTF_8).toString();  
-                dao.updatePasswordCustomer(username, re_password);
+                dao.updatePasswordCustomer(username, new_password);
                 session.removeAttribute("acc");
                 Customer acc = dao.getCustomer(id);
                 session.setAttribute("acc", acc);
-                request.getRequestDispatcher("./Register/updateInfor.jsp").forward(request, response);
+                response.sendRedirect("info");
 
             }
         }
@@ -73,25 +73,24 @@ public class UpdatePasswordServlet extends HttpServlet {
         {
             if (!new_password.equals(re_password))
             {
-                String message = "New password and re-password are not the same";
-                request.setAttribute("message", message);
+                System.out.println("New password and re-password are not the same");
+//                request.setAttribute("message", message);
                 request.getRequestDispatcher("./Register/updatePass.jsp").forward(request, response);
             }
             else
             {
                 new_password = Hashing.sha256().hashString(new_password, StandardCharsets.UTF_8).toString();  
-                dao.updatePasswordCustomer(username, re_password);
+                dao.updatePasswordPersonnel(username, new_password);
                 session.removeAttribute("acc");
                 Personnel acc = dao.getPersonnel(id);
                 session.setAttribute("acc", acc);
-                request.getRequestDispatcher("./Register/updateInfor.jsp").forward(request, response);
+                response.sendRedirect("info");
 
             }
         } 
         else 
         {
-            String message = "Wrong old password";
-            request.setAttribute("message", message);
+            System.out.println("Wrong old password");
             request.getRequestDispatcher("./Register/updatePass.jsp").forward(request, response);
         }
     }

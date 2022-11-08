@@ -36,12 +36,15 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Update Password Form</h2>
-                    <form method="POST" action="">
+                    <form method="POST" action="updatePassword">
+                        <input type="hidden" name="id" value="${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelID):(sessionScope.acc.customerID)}">
+                        <input type="hidden" name="username" value="${sessionScope.acc.isStaff() ? (sessionScope.acc.personnelUsername):(sessionScope.acc.customerUsername)}">
+                        
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Old Password</label>
-                                    <input class="input--style-4" type="password" name="password">
+                                    <input class="input--style-4" type="password" name="old_password">
                                 </div>
                             </div>
                         </div>
@@ -49,7 +52,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">New Password</label>
-                                    <input class="input--style-4" type="password" name="password" id="password" required>
+                                    <input class="input--style-4" type="password" name="new_password" id="new_password" required>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +60,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Confirm New Password</label>
-                                    <input class="input--style-4" type="password" id="confirm_password" required>
+                                    <input class="input--style-4" name="re-password" type="password" id="re-password" required>
                                 </div>
                             </div>
                         </div>
