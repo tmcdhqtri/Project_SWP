@@ -36,12 +36,12 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Sign Up Form</h2>
-                    <form method="POST" action="#">
+                    <form method="post" action="register">
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Full Name</label>
-                                    <input class="input--style-4" type="text" name="full_name" required>
+                                    <input class="input--style-4" type="text" name="NAME" required>
                                 </div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                                 <div class="input-group">
                                     <label class="label">Username</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4" type="text" name="Username" required>
+                                        <input class="input--style-4" type="text" name="USERNAME" required>
                                     </div>
                                 </div>
                             </div>
@@ -59,13 +59,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" id="password" required>
+                                    <input class="input--style-4" type="password" name="PASSWORD" required>
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Confirm Password</label>
-                                    <input class="input--style-4" type="password" id="confirm_password" required>
+                                    <input class="input--style-4" type="password" name="CONFIRMPASSWORD" required>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="DATEOFBIRTH">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -97,7 +97,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone" required>
+                                    <input class="input--style-4" type="text" name="PHONE" required>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email" required>
+                                    <input class="input--style-4" type="email" name="EMAIL" required>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Address</label>
-                                    <input class="input--style-4" type="text" name="Address" required>
+                                    <input class="input--style-4" type="text" name="ADDRESS" required>
                                 </div>
                             </div>
                         </div>

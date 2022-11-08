@@ -144,6 +144,10 @@
         <servlet-name>AddToCartServlet</servlet-name>
         <servlet-class>servlet.AddToCartServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewListOrderMemberServlet</servlet-name>
+        <servlet-class>servlet.ViewListOrderMemberServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -288,7 +292,14 @@
         <servlet-name>AddToCartServlet</servlet-name>
         <url-pattern>/addCart</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewListOrderMemberServlet</servlet-name>
+        <url-pattern>/listOrderMember</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -5,6 +5,7 @@
 package servlet;
 
 import DAO.DAO;
+import Model.Customer;
 import Model.Order;
 import Model.OrderDetail;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,12 +28,16 @@ public class ViewListOrderServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
-        
+        HttpSession session = request.getSession();
+        Customer acc = null;
+        Object customer =  session.getAttribute("acc");
+        acc = (Customer) customer;
         DAO dao = new DAO();
-        ArrayList<Order> aAllOrder = dao.getAllOrders();
-        
+        List<Order> aAllOrder = dao.getOrdersByCusID(acc.getCustomerID());
+
         request.setAttribute("aAllOrder", aAllOrder);
-        request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
+        response.sendRedirect("./Homepage/cusViewOrder.jsp");
+//        request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
     }
 
 

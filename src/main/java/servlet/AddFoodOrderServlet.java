@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
@@ -25,14 +26,18 @@ public class AddFoodOrderServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//            List<Food> listFoods = new ArrayList<>();    
-//            int foodID = Integer.parseInt(request.getParameter("FOODID"));
-//            int orderID = Integer.parseInt(request.getParameter("ORDERID"));
-//            String image = request.getParameter("IMAGE");
-//            String foodName = request.getParameter("FOODNAME");
-//            float price = Float.parseFloat(request.getParameter("PRICE"));
-//            int quantity = Integer.parseInt(request.getParameter("Quantity"));
-//            int total = 
+            List<Food> listFoods = new ArrayList<>();    
+            int foodID = Integer.parseInt(request.getParameter("FOODID"));
+            int orderID = Integer.parseInt(request.getParameter("ORDERID"));
+            String image = request.getParameter("IMAGE");
+            String foodName = request.getParameter("FOODNAME");
+            String description = request.getParameter("DESCRIPTION");
+            float price = Float.parseFloat(request.getParameter("PRICE"));
+            int quantity = Integer.parseInt(request.getParameter("Quantity"));
+            float total = Float.parseFloat(request.getParameter("TOTAL"));
+            listFoods.add(new Food(foodID, foodName, description, image, price));
+            HttpSession session = request.getSession();
+            session.setAttribute("listFoodOrder", listFoods);
     }
 
     @Override

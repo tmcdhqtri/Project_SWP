@@ -301,8 +301,8 @@ public class DAO {
     // END DAO Food
     // BEGIN DAO Order
 
-    public boolean addOrder(int CusID, int ID, int orderID, LocalDate orderDate, float total, boolean payment,
-            int status, boolean isActive) {
+    public boolean addOrder(int CusID, int ID, float total, boolean payment,
+            int status) {
         try {
             String sql = "insert into [Order] values(?, ?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
@@ -343,7 +343,26 @@ public class DAO {
         }
         return null;
     }
+    
+    public ArrayList<Order> getOrdersByCusID(int cusID) {
+        try {
+            String query = "select * from [Order] where cusID = ?";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            stm.setInt(1, cusID);
+            rs = stm.executeQuery();
+            ArrayList<Order> listOrders = new ArrayList<Order>();
+            while (rs.next()) {
+                listOrders.add(new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5),
+                        rs.getBoolean(6), rs.getInt(7), rs.getBoolean(8)));
 
+            }
+            return listOrders;
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    } 
     public Order getOrder(int orderID) {
         try {
             String query = "select * from [Order] where orderID = ?";
@@ -460,7 +479,7 @@ public class DAO {
         }
         return null;
     }
-
+    
     public boolean addPersonnel(String name, String role, String phone, String email, String address,
             String dateOfBirth,
             String username, String password, String image, String perStatus) {
@@ -650,6 +669,7 @@ public class DAO {
 
     public static void main(String arg[]) {
         DAO dao = new DAO();
-
+        List<Order> listOrder = dao.getOrdersByCusID(22);
+        System.out.print(listOrder);
     }
 }

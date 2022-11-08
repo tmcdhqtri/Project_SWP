@@ -135,7 +135,7 @@
 
     <!--end section-->
     <div class="clearfix"></div>
-    <form action="CheckoutServlet" method="post">
+    <form action="AddOrderServlet" method="post">
           <table class="table">
             <thead>
                 <tr>
@@ -171,12 +171,12 @@
             <div class="col-md-12">
                 <span>Payment: </span>
                 <span class="choose4"> </span>
-                <input type="radio" id="html" name="payment" value="HTML">
+                <input type="radio" id="html" name="payment" value="VNPAY">
                   <label for="html">VNPAY</label>
                 <span class="choose5"> </span>
-                <input type="radio" id="html" name="payment" value="HTML">
+                <input type="radio" id="html" name="payment" value="CASH">
                   <label class="choose3" for="html">Cash</label>
-            </div>
+            </div><!--
             <div class="col-md-12">
                 <span>Delivery: </span>
                 <span class="choose2"> </span>
@@ -184,7 +184,7 @@
                  <label for="html">Restaurant</label>
                 <input type="radio" id="html" name="delivery" value="HTML">
                   <label for="html">Home Delivery</label>
-            </div>
+            </div>-->
         </div>
         <div class="totalmoneyy">$ ${total}</div>
         <button type="submit" class="btn btnorder"><a class="orderbtt">Order</a></button>

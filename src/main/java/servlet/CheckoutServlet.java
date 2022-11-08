@@ -55,7 +55,7 @@ public class CheckoutServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
-        HttpSession session = request.getSession(true);
+        HttpSession session = request.getSession();
         Order o = (Order) session.getAttribute("order");
         boolean payment = o.isPayment();
         String payment_method = null;
@@ -106,17 +106,15 @@ public class CheckoutServlet extends HttpServlet {
                 }
                 vnp_Params.put("vnp_ReturnUrl", Config.vnp_Returnurl);
                 vnp_Params.put("vnp_IpAddr", vnp_IpAddr);
+                
                 Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
-                Date dt = new Date();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-                String dateString = formatter.format(dt);
-                String vnp_CreateDate = dateString;
-                String vnp_TransDate = vnp_CreateDate;
+                String vnp_CreateDate = formatter.format(cld.getTime());
                 vnp_Params.put("vnp_CreateDate", vnp_CreateDate);
                 cld.add(Calendar.MINUTE, 15);
                 String vnp_ExpireDate = formatter.format(cld.getTime());
-                //Add Params of 2.0.1 Version
                 vnp_Params.put("vnp_ExpireDate", vnp_ExpireDate);
+
                 //Build data to hash and querystring
                 List fieldNames = new ArrayList(vnp_Params.keySet());
                 Collections.sort(fieldNames);
@@ -148,7 +146,7 @@ public class CheckoutServlet extends HttpServlet {
                 request.setAttribute("code", "00");
                 request.setAttribute("message", "success");
                 request.setAttribute("data", paymentUrl);
-                response.sendRedirect(paymentUrl);
+//                response.sendRedirect(paymentUrl);
 //                }
             } else {
                 response.sendRedirect("login");

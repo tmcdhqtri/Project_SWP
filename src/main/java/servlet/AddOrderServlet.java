@@ -5,43 +5,50 @@
 package servlet;
 
 import DAO.DAO;
-import Model.Food;
-import jakarta.servlet.RequestDispatcher;
+import Model.Customer;
+import Model.Item;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 
+/**
+ *
+ * @author Admin
+ */
+@WebServlet(name = "AddOrderServlet", urlPatterns = {"/addOrder"})
+public class AddOrderServlet extends HttpServlet {
 
-public class ViewFoodListMemberServlet extends HttpServlet {
-
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-    }
-
+  
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        DAO dao = new DAO();
-        HttpSession session = request.getSession();
-        List<Food> listFood = (List<Food>) session.getAttribute("listFoodOrder");
-        request.setAttribute("FOODLIST", listFood);
-        RequestDispatcher rd = request.getRequestDispatcher("./Homepage/cart.jsp");
-        rd.forward(request, response);   
+    DAO dao = new DAO();
+    HttpSession session = request.getSession();
+    Customer customer = null;
+    Object o = session.getAttribute("acc");
+    customer = (Customer) o;
+    float total = 0;
+    int orderStatus = 0;
+    ArrayList<Item> cart = (ArrayList<Item>) session.getAttribute("cart");
+    int cusID = customer.getCustomerID();
+    for(Item item : cart){
+        total += item.getSl() * item.getFood().getFoodPrice();
+    }
+    dao.addOrder(cusID, 1, total, true, orderStatus);
+    request.getRequestDispatcher("CheckoutServlet").forward(request, response);
     }
 
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
     }
 
 
