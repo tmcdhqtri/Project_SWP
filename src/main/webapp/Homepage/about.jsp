@@ -42,7 +42,7 @@
 <link rel="stylesheet" media="screen" href="./Homepage/css/responsive-leyouts.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="./Homepage/css/Simple-Line-Icons-Webfont/simple-line-icons.css" media="screen" />
 <link rel="stylesheet" href="./Homepage/css/et-line-font/et-line-font.css">
-<link rel="stylesheet" href="css/colors/yellow.css" />
+<link rel="stylesheet" href="./Homepage/css/colors/yellow.css" />
 
 </head>
 <div id="header">

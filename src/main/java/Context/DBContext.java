@@ -3,10 +3,6 @@ package Context;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-/**
- *
- * @author Admin
- */
 public class DBContext {
     public Connection getConnection() throws Exception{
     String connectionUrl = "jdbc:sqlserver://localhost:1433;"
@@ -16,4 +12,3 @@ public class DBContext {
     return con;
     }
 }
-

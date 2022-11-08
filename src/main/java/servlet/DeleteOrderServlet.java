@@ -39,11 +39,11 @@ public class DeleteOrderServlet extends HttpServlet {
         
         if (dao.getPersonnelByUsername(username) != null)
         {
-            request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
+            request.getRequestDispatcher("listOrderAdmin").forward(request, response);
         }
         else if (dao.getCustomerByUsername(username) != null)
         {
-            request.getRequestDispatcher("detailOrder?orderid="+orderId).forward(request, response);
+            request.getRequestDispatcher("listOrder").forward(request, response);
         }
         else
         {

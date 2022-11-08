@@ -73,7 +73,7 @@ public class DAO {
                         rs.getString(6), rs.getBoolean(7));
             }
         } catch (Exception e) {
-            System.out.println("SQL error in DAO " + e.getMessage());
+            System.out.println("SQL error in DAO getCustomer" + e.getMessage());
         }
         return null;
     }
@@ -85,9 +85,10 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setString(1, username);
             rs = stm.executeQuery();
-            return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+            while (rs.next())
+                return new Customer(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
         } catch (Exception e) {
-            System.out.println("SQL error in DAO " + e.getMessage());
+            System.out.println("SQL error in DAO getCustomerByUsername" + e.getMessage());
         }
         return null;
     }
@@ -453,8 +454,8 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setInt(1, personnelID);
             rs = stm.executeQuery();
-
-            return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5),
+            while(rs.next())
+                return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5),
                     rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10),
                     rs.getBoolean(11));
         } catch (Exception e) {
@@ -470,8 +471,8 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setString(1, username);
             rs = stm.executeQuery();
-
-            return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5),
+            while (rs.next())
+                return new Personnel(rs.getInt(1), rs.getString(2), rs.getBoolean(3), rs.getString(4), rs.getString(5),
                     rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10),
                     rs.getBoolean(11));
         } catch (Exception e) {
