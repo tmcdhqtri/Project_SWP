@@ -42,7 +42,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label"></label>
-                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelDateOfBirth):(sessionScope.acc.customerBirthday)}</label>
+                                    <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelName):(sessionScope.acc.customerName)}</label>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group">
-                                        <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelName):(sessionScope.acc.customerName)}</label>
+                                        <label class="label-des">${sessionScope.acc.role!=null ? (sessionScope.acc.personnelDateOfBirth):(sessionScope.acc.customerBirthday)}</label>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="row row-space">
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;padding: 0px 41px;" href="/Register/updateInfor.html">Update Information</a>
+                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;padding: 0px 41px;" href="updateInfo">Update Information</a>
                             </div>
                             <div class="p-t-15">
                                 <a class="btn btn--radius-2 btn--blue" style="text-decoration: none;" href="updatePassword">Update Password</a>

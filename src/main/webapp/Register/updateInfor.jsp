@@ -37,11 +37,14 @@
                 <div class="card-body">
                     <h2 class="title">Update Information Form</h2>
                     <form method="POST" action="">
+                        <input type="hidden" name="id" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelID):(sessionScope.acc.customerID)}">
+                        <input type="hidden" name="username" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelUsername):(sessionScope.acc.customerUsername)}">
+                        <input type="hidden" name="password" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelPassword):(sessionScope.acc.customerPassword)}">
                         <div class="row row-space">
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Full Name</label>
-                                    <input class="input--style-4" type="text" name="full_name">
+                                    <input class="input--style-4" type="text" name="name" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelName):(sessionScope.acc.customerName)}">
                                 </div>
                             </div>
                         </div>
@@ -50,7 +53,7 @@
                                 <div class="input-group">
                                     <label class="label">Birthday</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="text" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="text" name="dob" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelDateOfBirth):(sessionScope.acc.customerBirthday)}">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -58,7 +61,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Phone Number</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="phone" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelPhone):(sessionScope.acc.customerPhone)}">
                                 </div>
                             </div>
                         </div>
@@ -66,7 +69,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Email</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelEmail):(sessionScope.acc.customerEmail)}">
                                 </div>
                             </div>
                         </div>
@@ -74,7 +77,7 @@
                             <div class="col">
                                 <div class="input-group">
                                     <label class="label">Address</label>
-                                    <input class="input--style-4" type="text" name="Address">
+                                    <input class="input--style-4" type="text" name="address" value="${sessionScope.acc.role!=null ? (sessionScope.acc.personnelAddress):(sessionScope.acc.customerAddress)}">
                                 </div>
                             </div>
                         </div>
