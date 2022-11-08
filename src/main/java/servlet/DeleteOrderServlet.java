@@ -49,8 +49,6 @@ public class DeleteOrderServlet extends HttpServlet {
         {
             request.getRequestDispatcher("login").forward(request, response);
         }
-        
-        request.getRequestDispatcher("listOrderAdmin").forward(request, response);
     }
 
 
