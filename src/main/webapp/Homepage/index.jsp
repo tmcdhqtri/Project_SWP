@@ -78,16 +78,13 @@
             <li> <a href="home" class="dropdown-toggle active">Home</a></li>
             <li> <a href="about" class="dropdown-toggle">About</a></li>
             <li> <a href="menu" class="dropdown-toggle">Menu</a></li>
-<<<<<<< HEAD
             <c:if test="${sessionScope.acc==null}">
                  <li><a href="login" class="dropdown-toggle">My Order</a></li>
             </c:if>
             <c:if test="${sessionScope.acc!=null}">
                  <li><a href="listOrder" class="dropdown-toggle">My Order</a></li>
             </c:if>
-=======
-            <li> <a href="listOrder" class="dropdown-toggle">My Order</a></li>
->>>>>>> fbc6841aa58b03b0c202034ceeaf8e0a288c9185
+
             <li> <a href="contact" class="dropdown-toggle">Contact</a></li>
             <span class="hideres">
               <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
@@ -105,11 +102,7 @@
               </span>
               <li class="rightsec "> <a class="icon1" href="${sessionScope.acc==null ? "login":"info"}"><i class="fa fa-user"
                     style="color:#000; font-size: 18px;"></i></a></li>
-<<<<<<< HEAD
-              <li class="rightsec "> <a class="icon3" href="ViewFoodListMemberServlet"><i class="fa fa-shopping-cart"
-=======
               <li class="rightsec "> <a class="icon3" href="cart"><i class="fa fa-shopping-cart"
->>>>>>> fbc6841aa58b03b0c202034ceeaf8e0a288c9185
                     style="color:#000; font-size: 18px;"></i></a>
                 <span class="icon4">0</span>
               </li>

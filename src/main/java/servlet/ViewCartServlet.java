@@ -20,8 +20,7 @@ public class ViewCartServlet extends HttpServlet {
         ArrayList<Item> cart = (ArrayList<Item>) session.getAttribute("cart");
         System.out.println(cart.get(0).getFood().getFoodName());
         request.setAttribute("cart", cart);
-//        request.getRequestDispatcher("Homepage/cart.jsp").forward(request, response);
-    response.sendRedirect("Homepage/cart.jsp");
+        request.getRequestDispatcher("Homepage/cart.jsp").forward(request, response);
         
     }
 
