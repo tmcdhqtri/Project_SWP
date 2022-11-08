@@ -200,31 +200,31 @@
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-name">Full Name</label>
-                                                            <input type="text" class="form-control" id="account-name" name="name" placeholder="Full Name" value="John Doe" />
+                                                            <input type="text" class="form-control" id="account-name" name="name" placeholder="Full Name" value="${sessionScope.acc.personnelName}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-e-mail">E-mail</label>
-                                                            <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="granger007@hogward.com" />
+                                                            <input type="email" class="form-control" id="account-e-mail" name="email" placeholder="Email" value="${sessionScope.acc.personnelEmail}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-address">Address</label>
-                                                            <input type="text" class="form-control" id="account-company" name="address" placeholder="Address" value="31B Washington DC" />
+                                                            <input type="text" class="form-control" id="account-company" name="address" placeholder="Address" value="${sessionScope.acc.personnelAddress}" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-phone">Phone</label>
-                                                            <input type="text" class="form-control" id="account-phone" placeholder="Phone number" value="(+656) 254 2568" name="phone" />
+                                                            <input type="text" class="form-control" id="account-phone" placeholder="Phone number" value="${sessionScope.acc.personnelPhone}" name="phone" />
                                                         </div>
                                                     </div>
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
                                                             <label for="account-birth-date">Birth date</label>
-                                                            <input type="text" class="form-control flatpickr" placeholder="Birth date" id="account-birth-date" name="dob" />
+                                                            <input type="text" class="form-control flatpickr" placeholder="Birth date" id="account-birth-date" name="dob" value="${sessionScope.acc.personnelDateOfBirth}" />
                                                         </div>
                                                     </div>
                                                     <!-- Náº¿u save change thÃ¬ hiá»n alert -->
