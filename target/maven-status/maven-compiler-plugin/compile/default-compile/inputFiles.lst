@@ -1,7 +1,7 @@
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\GoogleAccess\Constants.java
-D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateOrderAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Customer.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewListMemberServlet.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewDetailOrderAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteStaffServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Order.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdateFoodServlet.java
@@ -14,6 +14,7 @@ D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFoodOrderServl
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\AddFoodServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\DeleteMemberServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\ViewListOrderServlet.java
+D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\LogoutServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdatePasswordAdminServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\servlet\UpdatePasswordServlet.java
 D:\FPT\MainCourse\Fall22\SWP\Project_SWP\src\main\java\Model\Food.java

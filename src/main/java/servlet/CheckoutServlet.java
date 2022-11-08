@@ -9,6 +9,8 @@ import Model.Order;
 import Model.Customer;
 import java.io.IOException;
 import VNPay.Config;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
@@ -28,21 +30,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class CheckoutServlet extends HttpServlet {
-
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -99,7 +90,7 @@ public class CheckoutServlet extends HttpServlet {
                 vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
                 vnp_Params.put("vnp_Amount", String.valueOf(amount));
                 vnp_Params.put("vnp_CurrCode", "VND");
-                String bank_code = "";
+                String bank_code = "TPBVVNVX";
                 if (bank_code != null && bank_code.isEmpty()) {
                     vnp_Params.put("vnp_BankCode", bank_code);
                 }
@@ -115,14 +106,17 @@ public class CheckoutServlet extends HttpServlet {
                 }
                 vnp_Params.put("vnp_ReturnUrl", Config.vnp_Returnurl);
                 vnp_Params.put("vnp_IpAddr", vnp_IpAddr);
-
+                Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
                 Date dt = new Date();
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
                 String dateString = formatter.format(dt);
                 String vnp_CreateDate = dateString;
                 String vnp_TransDate = vnp_CreateDate;
                 vnp_Params.put("vnp_CreateDate", vnp_CreateDate);
-
+                cld.add(Calendar.MINUTE, 15);
+                String vnp_ExpireDate = formatter.format(cld.getTime());
+                //Add Params of 2.0.1 Version
+                vnp_Params.put("vnp_ExpireDate", vnp_ExpireDate);
                 //Build data to hash and querystring
                 List fieldNames = new ArrayList(vnp_Params.keySet());
                 Collections.sort(fieldNames);
@@ -148,15 +142,13 @@ public class CheckoutServlet extends HttpServlet {
                     }
                 }
                 String queryUrl = query.toString();
-                String vnp_SecureHash = Config.Sha256(Config.vnp_HashSecret + hashData.toString());
-//                    queryUrl += "&vnp_SecureHashType=SHA256&vnp_SecureHash=" + vnp_SecureHash;        queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
+                String vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
                 queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
                 String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
-//                    request.setAttribute("code", "00");
-//                    request.setAttribute("message", "success");
-//                    request.setAttribute("data", paymentUrl);
+                request.setAttribute("code", "00");
+                request.setAttribute("message", "success");
+                request.setAttribute("data", paymentUrl);
                 response.sendRedirect(paymentUrl);
-                return;
 //                }
             } else {
                 response.sendRedirect("login");
