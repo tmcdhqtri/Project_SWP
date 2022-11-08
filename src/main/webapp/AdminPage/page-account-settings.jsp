@@ -59,7 +59,7 @@
             <ul class="nav navbar-nav align-items-center ml-auto">
                 <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li>
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="./AdminPage/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
+                        <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">${sessionScope.acc.personnelName}</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="${sessionScope.acc.personnelImageUrl}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="updatePasswordAdmin"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="logout"><i class="mr-50" data-feather="power"></i> Logout</a>
@@ -181,7 +181,7 @@
                                             <!-- header media -->
                                             <div class="media">
                                                 <a href="javascript:void(0);" class="mr-25">
-                                                    <img src="./AdminPage/app-assets/images/portrait/small/avatar-s-11.jpg" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
+                                                    <img src="${sessionScope.acc.personnelImageUrl}" id="account-upload-img" class="rounded mr-50" alt="profile image" height="80" width="80" />
                                                 </a>
                                                 <!-- upload and reset button -->
                                                 <div class="media-body mt-75 ml-1">

@@ -271,7 +271,7 @@
                                             </div>
                                                 <button name="action" value="cancel" type="submit" class="btn btn-danger mt-2 mr-1">Cancel</button>
                                                 <button name="action" value="success" type="submit" class="btn btn-success mt-2 mr-1">Success</button>
-                                            <a href="listOrder" class="btn btn-outline-secondary mt-2">Back</a>
+                                            <a href="listOrderAdmin" class="btn btn-outline-secondary mt-2">Back</a>
                                         </div>
                                     </div>
                                 </div>
