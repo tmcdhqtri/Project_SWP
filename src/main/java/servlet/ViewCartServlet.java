@@ -1,12 +1,13 @@
 package servlet;
 
+import Model.Item;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class ViewCartServlet extends HttpServlet {
 
@@ -15,7 +16,10 @@ public class ViewCartServlet extends HttpServlet {
             throws ServletException, IOException {
         
         HttpSession session = request.getSession();
-        System.out.println(session.getAttribute("cart"));
+        
+        ArrayList<Item> cart = (ArrayList<Item>) session.getAttribute("cart");
+        System.out.println(cart.get(0).getFood().getFoodName());
+        request.setAttribute("cart", cart);
         request.getRequestDispatcher("Homepage/cart.jsp").forward(request, response);
         
     }

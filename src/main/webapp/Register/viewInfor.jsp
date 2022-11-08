@@ -92,7 +92,7 @@
                             </div>
 
                             <div class="p-t-15">
-                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none; background-color: black;padding: 0px 35px;">Sign out</a>
+                                <a class="btn btn--radius-2 btn--blue" style="text-decoration: none; background-color: black;padding: 0px 35px;" href="logout">Sign out</a>
                             </div>
                         </div>
                     </form>

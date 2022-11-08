@@ -41,7 +41,7 @@ public class AddToCartServlet extends HttpServlet {
         
         for (int i=0; i<cart.size(); i++)
         {
-            if (cart.get(i).getFood().equals(food)) //Neu food da ton tai trong gio
+            if (cart.get(i).getFood().getFoodID() == foodId) //Neu food da ton tai trong gio
             {
                 System.out.println("Food da ton tai trong gio");
                 Item item = new Item(food, sl + cart.get(i).getSl());
@@ -51,6 +51,7 @@ public class AddToCartServlet extends HttpServlet {
                 session.setAttribute("cart", cart);
                 
                 request.getRequestDispatcher("viewdetailfood?foodID=" + foodId).forward(request, response);
+                return;
             }
         }
         

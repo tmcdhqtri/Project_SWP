@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
@@ -146,48 +147,24 @@
                 </tr>
             </thead>
             <tbody>
+                <c:set var="total" value="0"/>
+                <c:forEach items="${sessionScope.cart}" var="i">
                 <tr>
-                    <td><img src="./Homepage/images/cart1.jpg" alt="" class="img-responsive fit-image4" /></td>
-                    <td class="text-center">Spaghetti</td>
-                    <td class="text-center">$ 17.00</td>
+                    <td><img src="${i.food.foodImage}" alt="" class="img-responsive fit-image4" /></td>
+                    <td class="text-center">${i.food.foodName}</td>
+                    <td class="text-center">$ ${i.food.foodPrice}</td>
                     <td class="text-center">
                         <div class=" minusplus">
                             <button type="button" class="btnmp" id="minus">-</button>
-                            <span class="numeric" id="numberPlace">0</span>
+                            <span class="numeric" id="numberPlace">${i.sl}</span>
                             <button type="button" class="btnmp" id="plus">+</button>
                         </div>
                     </td>
-                    <td class="text-center">$ 17.00</td>
+                    <td class="text-center">$ ${i.food.foodPrice * i.sl}</td>
                     <td class="text-center"><i class="fa fa-trash"></i></td>
                 </tr>
-                <tr>
-                    <td><img src="./Homepage/images/food/Food13.png" alt="" class="img-responsive fit-image4" /></td>
-                    <td class="text-center">Spaghetti</td>
-                    <td class="text-center">$ 17.00</td>
-                    <td class="text-center">
-                        <div class=" minusplus">
-                            <button type="button" class="btnmp" id="minus">-</button>
-                            <span class="numeric" id="numberPlace">0</span>
-                            <button type="button" class="btnmp" id="plus">+</button>
-                        </div>
-                    </td>
-                    <td class="text-center">$ 17.00</td>
-                    <td class="text-center"><i class="fa fa-trash"></i></td>
-                </tr>
-                <tr>
-                    <td><img src="./Homepage/images/menu2.jpg" alt="" class="img-responsive fit-image4" /></td>
-                    <td class="text-center">Spaghetti</td>
-                    <td class="text-center">$ 17.00</td>
-                    <td class="text-center">
-                        <div class=" minusplus">
-                            <button type="button" class="btnmp" id="minus">-</button>
-                            <span class="numeric" id="numberPlace">0</span>
-                            <button type="button" class="btnmp" id="plus">+</button>
-                        </div>
-                    </td>
-                    <td class="text-center">$ 17.00</td>
-                    <td class="text-center"><i class="fa fa-trash"></i></td>
-                </tr>
+                <c:set var="total" value="${total + (i.food.foodPrice * i.sl)}"/>
+                </c:forEach>
             </tbody>
         </table>
         <div class="row choose1">
@@ -209,7 +186,7 @@
                   <label for="html">Home Delivery</label>
             </div>
         </div>
-        <div class="totalmoneyy">$ 444.34</div>
+        <div class="totalmoneyy">$ ${total}</div>
         <button type="submit" class="btn btnorder"><a class="orderbtt" href="PayForOrder.html">Order</a></button>
     </form>
 

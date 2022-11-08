@@ -128,11 +128,12 @@
                 <div class="col-md-12 rightbadge2 ">
                     <br />
                 </div>
-              <form action="" class="row col-md-12">
+              <form action="addCart" class="row col-md-12" method="">
+                    <input type="hidden" name="foodId" value="${food.foodID}">
                     <div class="col-md-3 minusplus">
                         <button type="button" class="btnmp" id="minus">-</button>
                         <span id="numberPlace2"  class="numeric" >0</span>
-                        <input id="numberPlace" type="hidden" value=""/>
+                        <input name="sl" id="numberPlace" type="hidden" value=""/>
                         <button type="button" class="btnmp" id="plus">+</button>
                     </div>
                     <div class="col-md-5">

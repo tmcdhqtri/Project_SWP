@@ -36,7 +36,6 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         
-        System.out.println("doPost");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         System.out.println("username: " + username);
