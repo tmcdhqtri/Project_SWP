@@ -136,7 +136,7 @@
                                 <h2 class="content-header-title float-left mb-0">Add Food</h2>
                                 <div class="breadcrumb-wrapper">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="listFood.html">List Food</a>
+                                        <li class="breadcrumb-item"><a href="listFood">List Food</a>
                                         </li>
                                         <li class="breadcrumb-item active"> Add Food
                                         </li>
