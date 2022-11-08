@@ -66,7 +66,7 @@
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="./AdminPage/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-account-settings.html"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="updatePasswordAdmin"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="power"></i> Logout</a>
                     </div>
                 </li>
@@ -80,7 +80,7 @@
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="adminPage.html"><span class="brand-logo">
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="HomeAdminServlet"><span class="brand-logo">
                             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">

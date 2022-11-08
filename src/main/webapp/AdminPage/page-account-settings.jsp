@@ -61,7 +61,7 @@
                 <li class="nav-item dropdown dropdown-user"><a class="nav-link dropdown-toggle dropdown-user-link" id="dropdown-user" href="javascript:void(0);" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="user-nav d-sm-flex d-none"><span class="user-name font-weight-bolder">John Doe</span><span class="user-status">Admin</span></div><span class="avatar"><img class="round" src="./AdminPage/app-assets/images/portrait/small/avatar-s-11.jpg" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="page-account-settings.html"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user"><a class="dropdown-item" href="updatePasswordAdmin"><i class="mr-50" data-feather="user"></i> Settings</a><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="user"></i> Home</a>
                         <div class="dropdown-divider"></div><a class="dropdown-item" href="/Homepage/index.html"><i class="mr-50" data-feather="power"></i> Logout</a>
                     </div>
                 </li>
@@ -75,7 +75,7 @@
     <div class="main-menu menu-fixed menu-dark menu-accordion menu-shadow" data-scroll-to-active="true">
         <div class="navbar-header">
             <ul class="nav navbar-nav flex-row">
-                <li class="nav-item mr-auto"><a class="navbar-brand" href="adminPage.html"><span class="brand-logo">
+                <li class="nav-item mr-auto"><a class="navbar-brand" href="HomeAdminServlet"><span class="brand-logo">
                             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24">
                                 <defs>
                                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -115,9 +115,9 @@
                     </li>
                     <li class=" nav-item"><a class="d-flex align-items-center" href="listMember"><i data-feather="user"></i><span class="menu-title text-truncate" data-i18n="User">List Member</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrder"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
+                    <li class=" nav-item"><a class="d-flex align-items-center" href="listOrderAdmin"><i data-feather="check-square"></i><span class="menu-title text-truncate" data-i18n="User">List Order</span></a>
                     </li>
-                    <li class=" nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
+                    <li class="active nav-item"><a class="d-flex align-items-center" href="updatePasswordAdmin"><i data-feather="settings"></i><span class="menu-item text-truncate" data-i18n="Account Settings">Account Settings</span></a>
                     </li>
                 </ul>
             </div>
@@ -136,7 +136,7 @@
                             <h2 class="content-header-title float-left mb-0">Account Settings</h2>
                             <div class="breadcrumb-wrapper">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="adminPage.html">Home</a>
+                                    <li class="breadcrumb-item"><a href="HomeAdminServlet">Home</a>
                                     </li>
                                     <li class="breadcrumb-item active"> Account Settings
                                     </li>
