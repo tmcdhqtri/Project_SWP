@@ -54,7 +54,8 @@ public class AddFoodServlet extends HttpServlet {
         }
         part.write(photoPath + "/" + filename);
         dao.addFood(foodName, description,"images/" + filename, Float.parseFloat(price));
-        request.getRequestDispatcher("AdminPage/listFood.jsp").forward(request, response);
+//        request.getRequestDispatcher("AdminPage/listFood.jsp").forward(request, response);
+        response.sendRedirect("listFood");
     }
 
 }
