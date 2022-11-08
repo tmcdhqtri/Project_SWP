@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("acc", accPerson);
             session.setAttribute("cart", cart);
-            if (accPerson.getRole()==true)
+            if (accPerson.getRole()==false)
                 response.sendRedirect("HomeAdminServlet");
             else response.sendRedirect("home");
         }

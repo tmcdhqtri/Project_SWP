@@ -135,7 +135,7 @@
 
     <!--end section-->
     <div class="clearfix"></div>
-    <form action="" method="">
+    <form action="CheckoutServlet" method="post">
           <table class="table">
             <thead>
                 <tr>
@@ -187,7 +187,7 @@
             </div>
         </div>
         <div class="totalmoneyy">$ ${total}</div>
-        <button type="submit" class="btn btnorder"><a class="orderbtt" href="PayForOrder.html">Order</a></button>
+        <button type="submit" class="btn btnorder"><a class="orderbtt">Order</a></button>
     </form>
 
 
