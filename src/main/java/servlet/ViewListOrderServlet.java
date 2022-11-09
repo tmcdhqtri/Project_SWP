@@ -29,15 +29,14 @@ public class ViewListOrderServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         HttpSession session = request.getSession();
-        Customer acc = null;
+        Customer acc;
         Object customer =  session.getAttribute("acc");
         acc = (Customer) customer;
         DAO dao = new DAO();
-        List<Order> aAllOrder = dao.getOrdersByCusID(acc.getCustomerID());
+        List<Order> aAllOrder = dao.getOrdersByCusID(22);
 
         request.setAttribute("aAllOrder", aAllOrder);
-        response.sendRedirect("./Homepage/cusViewOrder.jsp");
-//        request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
+       request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
     }
 
 

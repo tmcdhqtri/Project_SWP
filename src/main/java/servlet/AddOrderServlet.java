@@ -36,13 +36,18 @@ public class AddOrderServlet extends HttpServlet {
     customer = (Customer) o;
     float total = 0;
     int orderStatus = 0;
+    boolean pay;
     ArrayList<Item> cart = (ArrayList<Item>) session.getAttribute("cart");
     int cusID = customer.getCustomerID();
+    String payment = request.getParameter("payment");
+    if (payment.equals("VNPAY")) 
+        pay = true;
+    else pay = false;
     for(Item item : cart){
         total += item.getSl() * item.getFood().getFoodPrice();
     }
-    dao.addOrder(cusID, 1, total, true, orderStatus);
-    request.getRequestDispatcher("CheckoutServlet").forward(request, response);
+    dao.addOrder(cusID, 1, total, pay, orderStatus);
+    request.getRequestDispatcher("./Homepage/payForOrder.jsp").forward(request, response);
     }
 
 
