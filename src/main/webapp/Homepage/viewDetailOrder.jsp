@@ -64,51 +64,54 @@
 
         <div class="clearfix"></div>
 
-        <div id="header">
-            <div class="container" style="display: flex;">
-                <div class="navbar yellow navbar-default red2 yamm">
-                    <div class="navbar-header">
-                        <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid"
-                            class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span
-                                class="icon-bar"></span></button>
-                        <a href="home" class="navbar-brand"><img src="./Homepage/images/Logo2.png" alt="" /></a>
-                    </div>
-                    <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
-                        <ul class="nav red2 navbar-nav">
-                            <li> <a href="home" class="dropdown-toggle active">Home</a></li>
-                            <li> <a href="about" class="dropdown-toggle">About</a></li>
-                            <li> <a href="menu" class="dropdown-toggle">Menu</a></li>
-                            <li> <a href="#" class="dropdown-toggle">Special</a></li>
-                            <!-- <li> <a href="reservation.html" class="dropdown-toggle">Order Now</a></li> -->
-                            <li> <a href="contact" class="dropdown-toggle">Contact</a></li>
-                            <span class="hideres">
-                                <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
-                                <li class="rightsec" style="width:150px;margin:0">
-                                    <div>Call and Oder in</div>
-                                    <strong style="color: #ffc222;font-size: 19px;font-weight: 900;">+84
-                                        905-999-999</strong>
-                                </li>
-                            </span>
-
-                            <span class="rightsec1">
-                                <span class="hideres2">
-                                    <li class="rightsec rightsecphone "> <a class="icon1" href="tel:0905999999"><i class="fa fa-phone"
-                                        style="color:#000; font-size: 18px;"></i></a></li>
-                                    </li>
-                                </span>
-                                <li class="rightsec "> <a class="icon1" href="viewinfo"><i class="fa fa-user"
-                                            style="color:#000; font-size: 18px;"></i></a></li>
-                                <li class="rightsec "> <a class="icon3" href="cart.html"><i class="fa fa-shopping-cart"
-                                            style="color:#000; font-size: 18px;"></i></a>
-                                    <span class="icon4">0</span>
-                                </li>
-                            </span>
-                            <!-- <li> <a href="\" style="border: 1px solid #ccc;padding: 12px 14px;margin-top: 18px;border-radius: 26px;margin-left: 12px;"><i class="fa fa-search" style="color:#000; font-size: 18px;"></i></a></li> -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div id="header">
+    <div class="container" style="display: flex;">
+      <div class="navbar yellow navbar-default red2 yamm">
+        <div class="navbar-header">
+          <button type="button" data-toggle="collapse" data-target="#navbar-collapse-grid" class="navbar-toggle"><span
+              class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+          <a href="index.html" class="navbar-brand"><img src="./Homepage/images/Logo2.png" alt="" /></a>
         </div>
+        <div id="navbar-collapse-grid" class="navbar-collapse collapse pull-right">
+          <ul class="nav red2 navbar-nav">
+            <li> <a href="home" class="dropdown-toggle">Home</a></li>
+            <li> <a href="about" class="dropdown-toggle">About</a></li>
+            <li> <a href="menu" class="dropdown-toggle ">Menu</a></li>
+            <c:if test="${sessionScope.acc==null}">
+                 <li><a href="login" class="dropdown-toggle ">My Order</a></li>
+            </c:if>
+            <c:if test="${sessionScope.acc!=null}">
+                 <li><a href="listOrder" class="dropdown-toggle active">My Order</a></li>
+            </c:if>
+
+            <li> <a href="contact" class="dropdown-toggle">Contact</a></li>
+            <span class="hideres">
+              <a class="navbar-brand "><img src="./Homepage/images/Deliver.png" alt="" /></a>
+              <li class="rightsec" style="width:150px;margin:0">
+                <div>Call and Oder in</div>
+                <strong style="color: #ffc222;font-size: 19px;font-weight: 900;">+84 905-999-999</strong>
+              </li>
+            </span>
+
+            <span class="rightsec1">
+              <span class="hideres2">
+                <li class="rightsec rightsecphone "> <a class="icon1" href="tel:0905999999"><i class="fa fa-phone"
+                      style="color:#000; font-size: 18px;"></i></a></li>
+                </li>
+              </span>
+              <li class="rightsec "> <a class="icon1" href="${sessionScope.acc==null ? "login":"info"}"><i class="fa fa-user"
+                    style="color:#000; font-size: 18px;"></i></a></li>
+              <li class="rightsec "> <a class="icon3" href="cart"><i class="fa fa-shopping-cart"
+                    style="color:#000; font-size: 18px;"></i></a>
+                <span class="icon4">0</span>
+              </li>
+            </span>
+            <!-- <li> <a href="\" style="border: 1px solid #ccc;padding: 12px 14px;margin-top: 18px;border-radius: 26px;margin-left: 12px;"><i class="fa fa-search" style="color:#000; font-size: 18px;"></i></a></li> -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
         <!--end menu-->
         <div class="clearfix"></div>
 
@@ -215,7 +218,7 @@
 <div class="row align-items-center">
         <div class="col-md-3"></div>
         <div class="col-md-2">
-            <button type="submit" class="btn btnorder"><a class="orderbtt" href="viewOrderHisStaff.html">Return</a></button>
+            <button type="submit" class="btn btnorder"><a class="orderbtt" href="listOrder">Return</a></button>
         </div>
         <c:if test="${order.orderStatus == 0}" >
         <div class="col-md-2">
