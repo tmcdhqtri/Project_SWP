@@ -50,7 +50,7 @@ public class AddToCartServlet extends HttpServlet {
                 session.removeAttribute("cart");
                 session.setAttribute("cart", cart);
                 
-                request.getRequestDispatcher("viewdetailfood?foodID=" + foodId).forward(request, response);
+                response.sendRedirect("menu");
                 return;
             }
         }
@@ -63,7 +63,7 @@ public class AddToCartServlet extends HttpServlet {
         session.removeAttribute("cart");
         session.setAttribute("cart", cart);
 
-        request.getRequestDispatcher("viewdetailfood?foodID=" + foodId).forward(request, response);
+        response.sendRedirect("menu");
           
     }
 

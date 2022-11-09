@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
@@ -210,9 +211,11 @@
         <div class="col-md-2">
             <button type="submit" class="btn btnorder1"><a class="orderbtt" href="#">Delivery Success</a></button>
         </div>
+        <c:if test="${sessionScope.acc.isStaff()}" >
         <div class="col-md-2">
             <button type="submit" class="btn btnorder2"><a class="orderbtt" href="#">Cancel</a></button>
         </div>
+        </c:if>
      </div>    </div>
     <!--end section-->
     <div class="clearfix"></div>

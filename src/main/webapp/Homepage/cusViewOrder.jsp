@@ -188,43 +188,12 @@
                             <td class="text-center"> Order is successfully deliver</td>
                         </c:if>
                         <td class="text-center">
-                            <button class="bt3cham btview"><a href="detailOrder">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
+                            <button class="bt3cham btview"><a href="detailOrder?orderid=${o.getOrderID()}">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
                         </td>
                     </tr>
                 </c:forEach>
             </form>
-            <!--                <tr>
-                                <td><img src="./Homepage/images/cart1.jpg" alt="" class="img-responsive fit-image4" /></td>
-                              
-                                <td class="text-center nhieuclassqua"><p>Spaghetti x2</p>
-                                <p>Noodles x2</p>
-                                <p>Chicken x2</p></td>
-                                <td class="text-center">$ 17.00</td>
-                                <td class="text-center">
-                                    21/2/2033<br>13:50
-                                </td>
-                                <td class="text-center"> Order is canceled</td>
-                              
-                                <td class="text-center">
-                                    <button class="bt3cham btview"><a href="CusViewDetailOrder.html">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="./Homepage/images/cart2.jpg" alt="" class="img-responsive fit-image4" /></td>
-                              
-                                <td class="text-center nhieuclassqua"><p>Spaghetti x2</p>
-                                    <p>Noodles x2</p>
-                                    <p>Chicken x2</p></td>
-                                <td class="text-center">$ 17.00</td>
-                                <td class="text-center">
-                                    21/2/2033<br>13:50
-                                </td>
-                                <td class="text-center"> Order is canceled</td>
-                       
-                                <td class="text-center">
-                                    <button class="bt3cham btview"><a href="CusViewDetailOrder.html">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
-                                </td>
-                            </tr>-->
+            
             </tbody>
         </table>
 
