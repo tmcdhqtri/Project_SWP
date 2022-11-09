@@ -244,6 +244,7 @@
                                                 <div class="col-6">
                                                     <h4 class="card-title mb-1">Earnings</h4>
                                                     <div class="font-small-2">This Month</div>
+                                                    <%--  Đổi lại JDBC để chạy bình thường --%>
                                                     <%
               String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
               Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
