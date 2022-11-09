@@ -1,12 +1,15 @@
 package servlet;
 
 import DAO.DAO;
+import Model.Customer;
 import Model.Order;
+import Model.OrderDetail;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  *
@@ -23,9 +26,13 @@ public class ViewDetailOrderServlet extends HttpServlet {
         int orderID = Integer.parseInt(request.getParameter("orderid"));
         DAO dao = new DAO();
         
-        Order order = dao.getOrder(orderID); 
+        Order order = dao.getOrder(orderID);
+        List<OrderDetail> aOrderDetail = dao.getOrderDetail(orderID);
+        Customer cus = (Customer) dao.getCustomer(order.getCusID());
 
-        request.setAttribute("order", order); 
+        request.setAttribute("order", order);
+        request.setAttribute("aOrderDetail", aOrderDetail);
+        request.setAttribute("cus", cus);
         request.getRequestDispatcher("./Homepage/viewDetailOrder.jsp").forward(request, response);
 
 }

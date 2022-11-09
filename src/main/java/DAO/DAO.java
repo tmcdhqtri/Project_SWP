@@ -447,18 +447,19 @@ public class DAO {
 
     public List<OrderDetail> getOrderDetail(int orderID) {
         try {
-            String query = "select foodID, quantity from OrderDetail where orderID=?";
+            String query = "select * from OrderDetail where orderID=?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
+            stm.setInt(1, orderID);
             rs = stm.executeQuery();
 
             List<OrderDetail> listOrderDetails = new ArrayList<OrderDetail>();
             while (rs.next()) {
-                listOrderDetails.add(new OrderDetail(rs.getInt(2), rs.getInt(3)));
+                listOrderDetails.add(new OrderDetail(rs.getInt(1), rs.getInt(2), rs.getInt(3)));
             }
             return listOrderDetails;
         } catch (Exception e) {
-            System.out.println("SQL error in DAO " + e.getMessage());
+            System.out.println("SQL error in DAO getOrderDetail " + e.getMessage());
         }
         return null;
     }
@@ -705,6 +706,6 @@ public class DAO {
 
     public static void main(String arg[]) {
         DAO dao = new DAO();
-        dao.addOrder(6, 7, 96, true, 0);
+        System.out.println(dao.getOrderDetail(14));
     }
 }
