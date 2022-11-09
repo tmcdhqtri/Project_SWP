@@ -133,4 +133,8 @@ public class Customer {
         return false;
     }
     
+    public String getUsername() {
+        return customerUsername;
+    }
+    
 }

@@ -80,7 +80,7 @@ public class DAO {
 
     public Customer getCustomerByUsername(String username) {
         try {
-            String query = "select * from CustomerInfo where username = ?";
+            String query = "select * from CustomerInfo where cusUsername = ?";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(query);
             stm.setString(1, username);
@@ -419,6 +419,7 @@ public class DAO {
             stm = con.prepareStatement(query);
             stm.setInt(1, status);
             stm.setInt(2, orderID);
+            stm.executeUpdate();
 
         } catch (Exception e) {
             System.out.println("SQL error in DAO " + e.getMessage());

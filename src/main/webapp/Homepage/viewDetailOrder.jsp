@@ -222,12 +222,12 @@
         </div>
         <c:if test="${order.orderStatus == 0}" >
         <div class="col-md-2">
-            <button type="submit" class="btn btnorder1"><a class="orderbtt" href="">Delivery Success</a></button>
+            <button type="submit" class="btn btnorder1"><a class="orderbtt" href="updateStatus?orderid=${order.orderID}&status=1&username=${sessionScope.acc.getUsername()}">Delivery Success</a></button>
         </div>
         </c:if>
         <c:if test="${sessionScope.acc.isStaff()}" >
         <div class="col-md-2">
-            <button type="submit" class="btn btnorder2"><a class="orderbtt" href="#">Cancel</a></button>
+            <button type="submit" class="btn btnorder2"><a class="orderbtt" href="updateStatus?orderid=${order.orderID}&status=2&username=${sessionScope.acc.getUsername()}">Cancel</a></button>
         </div>
         </c:if>
      </div>    </div>

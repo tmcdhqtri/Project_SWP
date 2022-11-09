@@ -147,4 +147,8 @@ public class Personnel {
     {
         return role;
     }
+    
+    public String getUsername() {
+        return personnelUsername;
+    }
 }

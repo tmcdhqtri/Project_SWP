@@ -1,6 +1,8 @@
 package servlet;
 
 import DAO.DAO;
+import Model.Customer;
+import Model.Personnel;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -17,21 +19,29 @@ public class UpdateStatusOrderServlet extends HttpServlet {
         String status = request.getParameter("status");
         String username = request.getParameter("username");
         
-        
         DAO dao = new DAO();
         dao.updateOrderStatus(Integer.parseInt(orderId), Integer.parseInt(status));
         
-        if (dao.getPersonnelByUsername(username) != null)
+        Personnel personnel = dao.getPersonnelByUsername(username);
+        Customer customer = dao.getCustomerByUsername(username);
+        System.out.println(username);
+        
+        if (personnel != null) //Neu nguoi cap nhap la Personnel
         {
-            request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
+            System.out.println("Personnel update");
+            if (personnel.getRole())
+                response.sendRedirect("detailOrder?orderid="+orderId);
+            else request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
         }
-        else if (dao.getCustomerByUsername(username) != null)
+        else if (customer != null) //Neu nguoi cap nhap la Customer
         {
-            request.getRequestDispatcher("detailOrder?orderid="+orderId).forward(request, response);
+            System.out.println("User update");
+            response.sendRedirect("detailOrder?orderid="+orderId);
         }
         else
         {
-            request.getRequestDispatcher("login").forward(request, response);
+            System.out.println("Not cus nor personel");
+            response.sendRedirect("login");
         }
         
     }
