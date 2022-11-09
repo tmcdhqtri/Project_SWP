@@ -158,6 +158,7 @@
   <section class="sec-padding">
       <div class="container">
       <div class="row">
+          <%--  Đổi lại JDBC để chạy bình thường --%>
           <%
               String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
               Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
