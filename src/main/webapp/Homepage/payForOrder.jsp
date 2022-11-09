@@ -1,3 +1,9 @@
+<%@page import="Model.OrderDetail"%>
+<%@page import="DAO.DAO"%>
+<%@page import="java.util.List"%>
+<%@page import="Model.Food"%>
+<%@page import="Model.Food"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
@@ -110,6 +116,7 @@
         <!-- end header inner -->
         <div class="clearfix"></div>
         <form action="CheckoutServlet" method="post">
+        <c:set var="o" value="${order}" scope="session" />
         <div class="row">
             <div class="col-md-6">
                 <div class="image-holder"><img src="./Homepage/images/cart1.jpg" alt="" class="img-responsive fit-image7" /></div>
@@ -117,27 +124,52 @@
             <div class="row col-md-6">
                 <div class="col-md-12 rightsecofdetail row">
                     <div class="col-md-3 "style="font-weight: bold;color:black"> ID</div>
-                    <div class="col-md-6"><a href="">#123</a></div>
+                    <div class="col-md-6"><a href="">${o.getOrderID()}</a></div>
                 </div>
                 <div class="col-md-12 rightbadge2 "></div>
                 <div class="col-md-12 rightsecofdetail row">
                     <div class="col-md-3 " style="font-weight: bold;color:black"> Food</div>
-                    <div class="col-md-6 nhieuclassqua"><p>Spaghetti x2</p>
+                    <div class="col-md-6 rightsecofdetail">
+                        <%
+                            DAO dao = new DAO();
+                            List<OrderDetail> listDetail = dao.getAllOrderDetails();
+                            request.setAttribute("ORDERDETAIL", listDetail);
+                        %>
+                            <c:forEach items="${ORDERDETAIL}" var = "d">
+                                <c:if test="${d.getOrderID()==o.getOrderID()}">
+                                    <%
+                                        List<Food> listFood = dao.getAllFoods();
+                                        request.setAttribute("FOODLIST", listFood);
+                                    %>
+                                    <c:forEach items="${FOODLIST}" var = "f">
+                                        <c:if test="${f.getFoodID() == d.getFoodID()}">
+                                            <p>${f.getFoodName()} x ${d.getQuantity()}</p>
+                                        </c:if>
+                                    </c:forEach>
+                                </c:if>
+                            </c:forEach>
+<!--                        <p>Spaghetti x2</p>
                         <p>Noodles x2</p>
-                        <p>Chicken x2</p></div>
+                        <p>Chicken x2</p>-->
+                    </div>
                 </div>
               
                 <div class="col-md-12 rightbadge2 "></div>
                 <div class="col-md-12 rightsecofdetail row">
                     <div class="col-md-3" style="font-weight: bold;color:black" > Total</div>
-                    <div class="col-md-6"><a href="">$ 120.099</a></div>
+                    <div class="col-md-6"><a href="">${sessionScope.order.getTotal()}</a></div>
                 </div>
            
                 <div class="col-md-12 rightbadge2 "></div>
                 <div class="col-md-12 rightsecofdetail row">
                     <div class="col-md-3" 
                     style="font-weight: bold;color:black" > Payment</div>
-                    <div class="col-md-6"><a href="">VNPAY</a></div>
+                    <c:if test="${sessionScope.order.isPayment()==true}">
+                        <div class="col-md-6"><a href="">VNPAY</a></div>
+                    </c:if>
+                    <c:if test="${sessionScope.order.isPayment()==false}">
+                        <div class="col-md-6"><a href="">CASH</a></div>
+                    </c:if>
                 </div>
            
                 <div class="col-md-12 rightbadge2 "></div>

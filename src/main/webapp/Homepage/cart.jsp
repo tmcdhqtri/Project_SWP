@@ -135,7 +135,7 @@
 
     <!--end section-->
     <div class="clearfix"></div>
-    <form action="AddOrderServlet" method="post">
+    <form action="addOrder" method="get">
           <table class="table">
             <thead>
                 <tr>
@@ -171,10 +171,10 @@
             <div class="col-md-12">
                 <span>Payment: </span>
                 <span class="choose4"> </span>
-                <input type="radio" id="html" name="payment" value="VNPAY">
+                <input type="radio" name="payment" value="VNPAY">
                   <label for="html">VNPAY</label>
                 <span class="choose5"> </span>
-                <input type="radio" id="html" name="payment" value="CASH">
+                <input type="radio" name="payment" value="CASH">
                   <label class="choose3" for="html">Cash</label>
             </div><!--
             <div class="col-md-12">

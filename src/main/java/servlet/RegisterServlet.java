@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package servlet;
 
 import DAO.DAO;
@@ -19,6 +23,8 @@ import java.nio.charset.StandardCharsets;
  */
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
+
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -49,5 +55,7 @@ public class RegisterServlet extends HttpServlet {
         request.setAttribute("MESSAGE2", "Success");
         response.sendRedirect("login");
         }
-   
+    
+
+
 }

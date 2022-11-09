@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("acc", accCus);
             session.setAttribute("cart", cart);
-            response.sendRedirect("./home");
+            response.sendRedirect("home");
         }
         else if (accPerson != null)
         {
@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("cart", cart);
             if (accPerson.getRole()==false)
                 response.sendRedirect("HomeAdminServlet");
-            else response.sendRedirect("./home");
+            else response.sendRedirect("home");
         }
         else
         {

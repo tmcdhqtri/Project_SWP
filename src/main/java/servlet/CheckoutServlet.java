@@ -41,7 +41,7 @@ public class CheckoutServlet extends HttpServlet {
 
         HttpSession session = request.getSession(true);
         Customer u = (Customer) session.getAttribute("acc");
-        if (u == null) {
+        if (u != null) {
             request.getRequestDispatcher("./Homepage/payForOrder.jsp").forward(request, response);
         } else {
             response.sendRedirect("login");
@@ -56,16 +56,12 @@ public class CheckoutServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession();
-        Order o = (Order) session.getAttribute("order");
-        boolean payment = o.isPayment();
-        String payment_method = null;
-        DAO dao = new DAO();
-
+//        DAO dao = new DAO();
         Object u = session.getAttribute("acc");
         if (u != null) {
-
-            int orderStatus = 0;
-            boolean orderIsActive = true;
+            Order o = (Order) session.getAttribute("order");
+            boolean payment = o.isPayment();
+            String payment_method = null;
             if (payment == true) {
                 payment_method = "vnpay";
             } else if (payment == false) {
@@ -90,7 +86,7 @@ public class CheckoutServlet extends HttpServlet {
                 vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
                 vnp_Params.put("vnp_Amount", String.valueOf(amount));
                 vnp_Params.put("vnp_CurrCode", "VND");
-                String bank_code = "TPBVVNVX";
+                String bank_code = "";
                 if (bank_code != null && bank_code.isEmpty()) {
                     vnp_Params.put("vnp_BankCode", bank_code);
                 }
@@ -146,7 +142,7 @@ public class CheckoutServlet extends HttpServlet {
                 request.setAttribute("code", "00");
                 request.setAttribute("message", "success");
                 request.setAttribute("data", paymentUrl);
-//                response.sendRedirect(paymentUrl);
+                response.sendRedirect(paymentUrl);
 //                }
             } else {
                 response.sendRedirect("login");

@@ -1,15 +1,12 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package VNPay;
 
-/**
- *
- * @author Admin
- */
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -18,22 +15,17 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import jakarta.servlet.http.HttpServletRequest;
-import java.nio.charset.StandardCharsets;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
+import jakarta.servlet.http.HttpServletRequest;
 
-/**
- *
- * @author Khuong Hung
- */
 public class Config {
 
-    public static String vnp_PayUrl = "http://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-    public static String vnp_Returnurl = "http://localhost:8080/reid/home";
+    public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
+    public static String vnp_Returnurl = "http://localhost:8080/Project_SWP/home";
     public static String vnp_TmnCode = "QT7ZVYMC";
     public static String vnp_HashSecret = "WAPEPDHPXJQYHDKVBIMQCDBTPCOLIDLN";
-    public static String vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
+    public static String vnp_apiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
 
     public static String md5(String message) {
         String digest = null;
@@ -128,7 +120,7 @@ public class Config {
                 sb.append("&");
             }
         }
-        return hmacSHA512(Config.vnp_HashSecret, sb.toString());
+        return hmacSHA512(VNPay.Config.vnp_HashSecret, sb.toString());
     }
 
     public static String getIpAddress(HttpServletRequest request) {

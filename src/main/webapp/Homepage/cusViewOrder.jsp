@@ -151,41 +151,45 @@
                 <c:forEach items="${aAllOrder}" var="o">
                     <tr>
                         <td class="text-center">${o.getOrderID()}</td>
+     
+                        <td class="text-center">
                         <%
                             DAO dao = new DAO();
                             List<OrderDetail> listDetail = dao.getAllOrderDetails();
                             request.setAttribute("ORDERDETAIL", listDetail);
                         %>
-                        <c:forEach items="${ORDERDETAIL}" var = "d">
-                            <c:if test="${d.getOrderID()==o.getOrderID()}">
-                                <%
-                                    List<Food> listFood = dao.getAllFoods();
-                                    request.setAttribute("FOODLIST", listFood);
-                                %>
-                                <c:forEach items="${FOODLIST}" var = "f">
-                                    <c:if test="${f.getFoodID() == d.getFoodID()}">
-                                    <td class="text-center">${f.getFoodName()} x ${d.getQuantity()}</td>
+                            <c:forEach items="${ORDERDETAIL}" var = "d">
+                                <c:if test="${d.getOrderID()==o.getOrderID()}">
+                                    <%
+                                        List<Food> listFood = dao.getAllFoods();
+                                        request.setAttribute("FOODLIST", listFood);
+                                    %>
+                                    <c:forEach items="${FOODLIST}" var = "f">
+                                        <c:if test="${f.getFoodID() == d.getFoodID()}">
+                                            <p>${f.getFoodName()} x ${d.getQuantity()}</p>
+                                        </c:if>
+                                    </c:forEach>
                                 </c:if>
-                                </c:forEach>
-                            </c:if>
-                    </c:forEach>
+                            </c:forEach>
+                        </td>
 
-                    <td class="text-center">${o.getTotal()}</td>
-                    <td class="text-center">
-                        ${o.getOrderDate()}
-                    </td>
-                    <c:if test="${o.getOrderStatus()==0}">
-                        <td class="text-center"> Order is delivering</td>
-                    </c:if>
-                    <c:if test="${o.getOrderStatus()==2}">
-                        <td class="text-center"> Order is canceled</td>
-                    </c:if>
-                    <c:if test="${o.getOrderStatus()==1}">
-                        <td class="text-center"> Order is successfully deliver</td>
-                    </c:if>
-                    <td class="text-center">
-                        <button class="bt3cham btview"><a href="detailOrder">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
-                    </td>
+
+                        <td class="text-center">${o.getTotal()}</td>
+                        <td class="text-center">
+                            ${o.getOrderDate()}
+                        </td>
+                        <c:if test="${o.getOrderStatus()==0}">
+                            <td class="text-center"> Order is delivering</td>
+                        </c:if>
+                        <c:if test="${o.getOrderStatus()==2}">
+                            <td class="text-center"> Order is canceled</td>
+                        </c:if>
+                        <c:if test="${o.getOrderStatus()==1}">
+                            <td class="text-center"> Order is successfully deliver</td>
+                        </c:if>
+                        <td class="text-center">
+                            <button class="bt3cham btview"><a href="detailOrder">view detail  <i class="fa fa-check-square-o" aria-hidden="true" ></i></a></button>
+                        </td>
                     </tr>
                 </c:forEach>
             </form>

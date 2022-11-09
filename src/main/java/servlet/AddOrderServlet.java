@@ -7,6 +7,7 @@ package servlet;
 import DAO.DAO;
 import Model.Customer;
 import Model.Item;
+import Model.Order;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -31,7 +32,7 @@ public class AddOrderServlet extends HttpServlet {
             throws ServletException, IOException {
     DAO dao = new DAO();
     HttpSession session = request.getSession();
-    Customer customer = null;
+    Customer customer;
     Object o = session.getAttribute("acc");
     customer = (Customer) o;
     float total = 0;
@@ -47,6 +48,15 @@ public class AddOrderServlet extends HttpServlet {
         total += item.getSl() * item.getFood().getFoodPrice();
     }
     dao.addOrder(cusID, 1, total, pay, orderStatus);
+    Order order = dao.getLatestOrder();
+    
+    for (int i=0; i<cart.size(); i++)
+        {
+            dao.addOrderDetail(order.getOrderID(), cart.get(i).getFood().getFoodID(), cart.get(i).getFood().getFoodID());
+        }
+    
+    session.setAttribute("order", order);
+    request.setAttribute("order", order);
     request.getRequestDispatcher("./Homepage/payForOrder.jsp").forward(request, response);
     }
 

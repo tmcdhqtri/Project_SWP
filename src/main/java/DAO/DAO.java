@@ -307,7 +307,7 @@ public class DAO {
     public boolean addOrder(int CusID, int ID, float total, boolean payment,
             int status) {
         try {
-            String sql = "insert into [Order] values(?, ?, ?, ?, ?, 1)";
+            String sql = "insert into [Order] (cusID, ID, total, payment,orderStatus, orderIsActive) values(?, ?, ?, ?, ?, 1)";
             con = new DBContext().getConnection();
             stm = con.prepareStatement(sql);
             stm.setInt(1, CusID);
@@ -366,6 +366,22 @@ public class DAO {
         }
         return null;
     } 
+    public Order getLatestOrder(){
+        try {
+            String query = "  SELECT TOP 1 * FROM [Order] ORDER BY date DESC";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(query);
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                return new Order(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getString(4), rs.getFloat(5),
+                        rs.getBoolean(6), rs.getInt(7), rs.getBoolean(8));
+
+            }
+        } catch (Exception e) {
+            System.out.println("SQL error in DAO " + e.getMessage());
+        }
+        return null;
+    }
     public Order getOrder(int orderID) {
         try {
             String query = "select * from [Order] where orderID = ?";
@@ -446,7 +462,24 @@ public class DAO {
         }
         return null;
     }
-
+    public boolean addOrderDetail(int orderID, int foodID, int quantity)
+    {
+        try{
+        String sql = "insert into OrderDetail values(?,?,?)";
+            con = new DBContext().getConnection();
+            stm = con.prepareStatement(sql);
+            stm.setInt(1, orderID);
+            stm.setInt(2, foodID);
+            stm.setInt(3, quantity);
+            int row = stm.executeUpdate();
+            if (row > 0) {
+                return true;
+            }
+        } catch (Exception e) {
+            System.out.println("SQL er  ror in DAO " + e.getMessage());    
+    }
+        return false;
+}
     // END DAO OrderDetail
     // BEGIN DAO Personnel
     public Personnel getPersonnel(int personnelID) {
@@ -672,7 +705,6 @@ public class DAO {
 
     public static void main(String arg[]) {
         DAO dao = new DAO();
-        List<Order> listOrder = dao.getOrdersByCusID(22);
-        System.out.print(listOrder);
+        dao.addOrder(6, 7, 96, true, 0);
     }
 }

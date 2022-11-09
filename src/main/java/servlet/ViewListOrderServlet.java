@@ -33,8 +33,7 @@ public class ViewListOrderServlet extends HttpServlet {
         Object customer =  session.getAttribute("acc");
         acc = (Customer) customer;
         DAO dao = new DAO();
-        List<Order> aAllOrder = dao.getOrdersByCusID(22);
-
+        List<Order> aAllOrder = dao.getOrdersByCusID(acc.getCustomerID());
         request.setAttribute("aAllOrder", aAllOrder);
        request.getRequestDispatcher("./Homepage/cusViewOrder.jsp").forward(request, response);
     }
