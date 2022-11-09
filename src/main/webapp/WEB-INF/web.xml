@@ -17,10 +17,6 @@
         <servlet-class>servlet.ViewDetailOrderServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddStaffServlet</servlet-name>
-        <servlet-class>servlet.AddStaffServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ViewListStaffServlet</servlet-name>
         <servlet-class>servlet.ViewListStaffServlet</servlet-class>
     </servlet>
@@ -148,6 +144,10 @@
         <servlet-name>ViewListOrderMemberServlet</servlet-name>
         <servlet-class>servlet.ViewListOrderMemberServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <servlet-class>servlet.AddStaffServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -163,10 +163,6 @@
     <servlet-mapping>
         <servlet-name>ViewDetailOrderServlet</servlet-name>
         <url-pattern>/detailOrder</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddStaffServlet</servlet-name>
-        <url-pattern>/addStaff</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ViewListStaffServlet</servlet-name>
@@ -295,6 +291,10 @@
     <servlet-mapping>
         <servlet-name>ViewListOrderMemberServlet</servlet-name>
         <url-pattern>/listOrderMember</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddStaffServlet</servlet-name>
+        <url-pattern>/addStaff</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

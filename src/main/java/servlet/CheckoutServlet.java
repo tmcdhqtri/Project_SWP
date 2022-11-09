@@ -57,7 +57,7 @@ public class CheckoutServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         HttpSession session = request.getSession();
 //        DAO dao = new DAO();
-        Object u = session.getAttribute("acc");
+        Customer u = (Customer) session.getAttribute("acc");
         if (u != null) {
             Order o = (Order) session.getAttribute("order");
             boolean payment = o.isPayment();
@@ -74,12 +74,12 @@ public class CheckoutServlet extends HttpServlet {
                 String vnp_Version = "2.1.0";
                 String vnp_Command = "pay";
                 String vnp_OrderInfo = "Thanh toan don hang" + o.getOrderID();
-                String orderType = "orderpayment";
+                String orderType = "Orderpayment";
                 String vnp_TxnRef = Config.getRandomNumber(8);
                 String vnp_IpAddr = Config.getIpAddress(request);
                 String vnp_TmnCode = Config.vnp_TmnCode;
 
-                int amount = Math.round(o.getTotal()) * 100;
+                int amount = (int) o.getTotal()*240000;
                 Map<String, String> vnp_Params = new HashMap<>();
                 vnp_Params.put("vnp_Version", vnp_Version);
                 vnp_Params.put("vnp_Command", vnp_Command);
@@ -87,14 +87,14 @@ public class CheckoutServlet extends HttpServlet {
                 vnp_Params.put("vnp_Amount", String.valueOf(amount));
                 vnp_Params.put("vnp_CurrCode", "VND");
                 String bank_code = "";
-                if (bank_code != null && bank_code.isEmpty()) {
+                if (bank_code != null && !bank_code.isEmpty()) {
                     vnp_Params.put("vnp_BankCode", bank_code);
                 }
                 vnp_Params.put("vnp_TxnRef", vnp_TxnRef);
                 vnp_Params.put("vnp_OrderInfo", vnp_OrderInfo);
                 vnp_Params.put("vnp_OrderType", orderType);
 
-                String locate = "vi";
+                String locate = "";
                 if (locate != null && !locate.isEmpty()) {
                     vnp_Params.put("vnp_Locale", locate);
                 } else {
@@ -102,15 +102,37 @@ public class CheckoutServlet extends HttpServlet {
                 }
                 vnp_Params.put("vnp_ReturnUrl", Config.vnp_Returnurl);
                 vnp_Params.put("vnp_IpAddr", vnp_IpAddr);
-                
                 Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
+
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
                 String vnp_CreateDate = formatter.format(cld.getTime());
+
                 vnp_Params.put("vnp_CreateDate", vnp_CreateDate);
                 cld.add(Calendar.MINUTE, 15);
                 String vnp_ExpireDate = formatter.format(cld.getTime());
+                //Add Params of 2.0.1 Version
                 vnp_Params.put("vnp_ExpireDate", vnp_ExpireDate);
+                //Billing
+                vnp_Params.put("vnp_Bill_Mobile", u.getCustomerPhone());
+                vnp_Params.put("vnp_Bill_Email", u.getCustomerEmail());
+                String fullName = (u.getCustomerName().trim());
+                if (fullName != null && !fullName.isEmpty()) {
+                    int idx = fullName.indexOf(' ');
+                    String firstName = fullName.substring(0, idx);
+                    String lastName = fullName.substring(fullName.lastIndexOf(' ') + 1);
+                    vnp_Params.put("vnp_Bill_FirstName", firstName);
+                    vnp_Params.put("vnp_Bill_LastName", lastName);
 
+                }
+                vnp_Params.put("vnp_Bill_Address", u.getCustomerAddress());
+                // Invoice
+//                vnp_Params.put("vnp_Inv_Phone", req.getParameter("txt_inv_mobile"));
+//                vnp_Params.put("vnp_Inv_Email", req.getParameter("txt_inv_email"));
+//                vnp_Params.put("vnp_Inv_Customer", req.getParameter("txt_inv_customer"));
+//                vnp_Params.put("vnp_Inv_Address", req.getParameter("txt_inv_addr1"));
+//                vnp_Params.put("vnp_Inv_Company", req.getParameter("txt_inv_company"));
+//                vnp_Params.put("vnp_Inv_Taxcode", req.getParameter("txt_inv_taxcode"));
+//                vnp_Params.put("vnp_Inv_Type", req.getParameter("cbo_inv_type"));
                 //Build data to hash and querystring
                 List fieldNames = new ArrayList(vnp_Params.keySet());
                 Collections.sort(fieldNames);
@@ -124,7 +146,7 @@ public class CheckoutServlet extends HttpServlet {
                         //Build hash data
                         hashData.append(fieldName);
                         hashData.append('=');
-                        hashData.append(fieldValue);
+                        hashData.append(URLEncoder.encode(fieldValue, StandardCharsets.US_ASCII.toString()));
                         //Build query
                         query.append(URLEncoder.encode(fieldName, StandardCharsets.US_ASCII.toString()));
                         query.append('=');
@@ -139,9 +161,6 @@ public class CheckoutServlet extends HttpServlet {
                 String vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
                 queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
                 String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
-                request.setAttribute("code", "00");
-                request.setAttribute("message", "success");
-                request.setAttribute("data", paymentUrl);
                 response.sendRedirect(paymentUrl);
 //                }
             } else {
