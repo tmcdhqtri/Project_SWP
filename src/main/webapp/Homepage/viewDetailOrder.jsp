@@ -1,5 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="Model.Food"%>
+<%@page import="Model.OrderDetail"%>
+<%@page import="java.util.List"%>
+<%@page import="DAO.DAO"%>
 <!DOCTYPE html>
 <!--[if IE 7 ]>    <html lang="en-gb" class="isie ie7 oldie no-js"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="en-gb" class="isie ie8 oldie no-js"> <![endif]-->
@@ -146,57 +150,62 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td><img src="./Homepage/images/cart3.jpg" alt="" class="img-responsive fit-image4" /></td>
-
-                            <td class="text-center">Spaghetti</td>
-                            <td class="text-center">$ 34.00</td>
-                            <td class="text-center">
-                                2
-                            </td>
-                            <td class="text-center"> $ 68.00</td>
-
-
-                        </tr>
-                        <tr>
-                            <td><img src="./Homepage/images/cart1.jpg" alt="" class="img-responsive fit-image4" /></td>
-
-                            <td class="text-center">Spaghetti</td>
-                            <td class="text-center">$ 34.00</td>
-                            <td class="text-center">
-                                2
-                            </td>
-                            <td class="text-center"> $ 68.00</td>
-
-
-                        </tr>
-                        <tr>
-                            <td><img src="./Homepage/images/cart2.jpg" alt="" class="img-responsive fit-image4" /></td>
-
-                            <td class="text-center">Spaghetti</td>
-                            <td class="text-center">$ 34.00</td>
-                            <td class="text-center">
-                                2
-                            </td>
-                            <td class="text-center"> $ 68.00</td>
-
-
-                        </tr>
+                    <c:forEach items="${aOrderDetail}" var="o">
+                        <%
+                            DAO dao = new DAO();
+                           
+                            List<Food> listFood = dao.getAllFoods();
+                            request.setAttribute("aFood", listFood);
+                                   
+                        %>
+                        <c:forEach items="${aFood}" var="food">
+                            <tr>
+                                <c:if test="${o.getFoodID()==food.getFoodID()}" >
+                                    <td><img src="${food.foodImage}" alt="" class="img-responsive fit-image4" /></td>
+                                </c:if>
+                                <c:if test="${o.foodID == food.foodID}" >
+                                    <td class="text-center">${food.foodName}</td>
+                                </c:if>
+                                <c:if test="${o.foodID == food.foodID}" >
+                                    <td class="text-center">$ ${food.foodPrice}</td>
+                                </c:if>
+                                <c:if test="${o.foodID == food.foodID}" >
+                                    <td class="text-center">
+                                        ${o.quantity}
+                                    </td>
+                                </c:if>
+                                <c:if test="${o.foodID == food.foodID}" >
+                                    <td class="text-center"> $ ${o.quantity * food.foodPrice}</td>
+                                </c:if>
+                            </tr>
+                        </c:forEach>
+                    </c:forEach>
+                        
                     </tbody>
                 </table>
             </div>
             <div class="col-md-3  detailcard">
                 <h6>ID</h6>
-                <p>#123</p>
+                <p>#${order.orderID}</p>
 
                 <h6>Customer Name</h6>
-                <p>John</p>
+                <p>${cus.customerName}</p>
 
                 <h6>Payment</h6>
-                <p>VNPAY</p>
+                <p>${order.payment ? "VNPAY":"Cash"}</p>
 
                 <h6>Status</h6>
-                <p>Success</p>
+                <p>
+                    <c:if test="${order.orderStatus==0}" >
+                    Delivering
+                    </c:if>
+                    <c:if test="${order.orderStatus==1}" >
+                    Delivered
+                    </c:if>
+                    <c:if test="${order.orderStatus==2}" >
+                    Canceled
+                    </c:if>
+                </p>
 
 
             </div>
@@ -208,9 +217,11 @@
         <div class="col-md-2">
             <button type="submit" class="btn btnorder"><a class="orderbtt" href="viewOrderHisStaff.html">Return</a></button>
         </div>
+        <c:if test="${order.orderStatus == 0}" >
         <div class="col-md-2">
-            <button type="submit" class="btn btnorder1"><a class="orderbtt" href="#">Delivery Success</a></button>
+            <button type="submit" class="btn btnorder1"><a class="orderbtt" href="">Delivery Success</a></button>
         </div>
+        </c:if>
         <c:if test="${sessionScope.acc.isStaff()}" >
         <div class="col-md-2">
             <button type="submit" class="btn btnorder2"><a class="orderbtt" href="#">Cancel</a></button>
