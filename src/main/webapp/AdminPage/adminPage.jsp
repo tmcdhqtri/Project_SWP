@@ -1,3 +1,10 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html class="loading dark-layout" lang="en" data-layout="dark-layout" data-textdirection="ltr">
@@ -238,7 +245,21 @@
                                                 <div class="col-6">
                                                     <h4 class="card-title mb-1">Earnings</h4>
                                                     <div class="font-small-2">This Month</div>
-                                                    <h5 class="mb-1">$4055.56</h5>
+                                                    <%
+              String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
+              Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+              Connection con = DriverManager.getConnection(connectionUrl);;
+              Statement stat = null;
+              ResultSet res = null;
+              stat = con.createStatement();
+              String data = "SELECT ROUND(SUM(total), 3) AS sumTotal FROM [Order]";
+              res = stat.executeQuery(data);
+              while(res.next()){
+          %>
+                                                    <h5 class="mb-1">$<%=res.getString("sumTotal")%></h5>
+                                                    <%
+                                                        }
+                                                    %>
                                                     <p class="card-text text-muted font-small-2">
                                                         <span class="font-weight-bolder">68.2%</span><span> more earnings than last month.</span>
                                                     </p>

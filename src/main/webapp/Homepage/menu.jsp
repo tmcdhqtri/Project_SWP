@@ -1,3 +1,9 @@
+<%@page import="Context.DBContext"%>
+<%@page import="java.sql.Statement"%>
+<%@page import= "java.sql.DriverManager"%>
+<%@page import= "java.sql.Connection"%>
+<%@page import= "java.sql.ResultSet"%>
+<%@page import= "java.sql.PreparedStatement"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -127,8 +133,10 @@
   </div>
   </section>
   <div class="search">
+    <form action = "" method="get">
     <button class="btn-search"><a href=""><i class="fa fa-search" id="search_icon"></i></a></button>
-    <input type="text" placeholder="Type foods you are looking for..." id="search">
+    <input type="text" placeholder="Type foods you are looking for..." name="q">
+    </form>
     <div class="search_bx2">
       <!-- <a href="#">
             <img src="mimg/a perfact.jpg" alt="">
@@ -147,20 +155,43 @@
          
         
       <div class="row">
- <c:forEach var="o" items="${aAllFood}">
+          <%
+              String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
+              Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+              Connection con = DriverManager.getConnection(connectionUrl);;
+              Statement stat = null;
+              ResultSet res = null;
+              stat = con.createStatement();
+              String query = request.getParameter("q");
+              String data;
+              if(query != null){
+                data = "SELECT * FROM Food where foodName LIKE '%"+query+"%'";
+              }
+              else{
+                data = "SELECT * FROM Food";
+              }
+              res = stat.executeQuery(data);
+              while(res.next()){
+          %>
+          <%--  <c:forEach var="o" items="${aAllFood}"> --%>
+
        
-        <div class="col-md-6 col-sm-12">
+       <div class="col-md-6 col-sm-12">
           <div class="feature-box34 bmargin">
-            <div class="image-holder"><img src="${o.foodImage}" alt="" class="img-responsive fit-image2" /></div>
+              <div class="image-holder"><img src="<%=res.getString("image")%>" alt="" class="img-responsive fit-image2" /></div>
             <div class="text-box-right more-padding-3 text-center">
-              <h4 class="old-standardtt less-mar1">${o.foodName}</h4>
-              <span>${o.foodDescription}</span><br />
-              <h6 class="text-red-2">Price: ${o.foodPrice}</h6>
-              <button class="btn btn-vh"><a href="viewdetailfood?foodID=${o.getFoodID()}">View Detail</a></button>
+              <h4 class="old-standardtt less-mar1"><%=res.getString("foodName")%></h4>
+              <span><%=res.getString("description")%></span><br />
+              <h6 class="text-red-2">Price: <%=res.getString("price")%>
+              </h6>
+              <button class="btn btn-vh"><a href="viewdetailfood?foodID=<%=res.getString("foodID")%>">View Detail</a></button>
             </div>
           </div>
-         </div>  </c:forEach> 
-      
+         </div>
+              <%--  </c:forEach> --%>
+      <%
+          }
+      %>
         <!--end item-->
         <!--end item-->
       </div>
