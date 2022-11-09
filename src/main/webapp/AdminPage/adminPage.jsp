@@ -130,7 +130,6 @@
             </div>
     </div>
     <!-- END: Main Menu-->
-
     <!-- BEGIN: Content-->
     <div class="app-content content ">
         <div class="content-overlay"></div>

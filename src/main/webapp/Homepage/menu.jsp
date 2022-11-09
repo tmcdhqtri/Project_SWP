@@ -157,8 +157,6 @@
 
   <section class="sec-padding">
       <div class="container">
-         
-        
       <div class="row">
           <%
               String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
