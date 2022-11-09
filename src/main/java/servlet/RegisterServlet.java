@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
- */
 package servlet;
 
 import DAO.DAO;
@@ -14,6 +10,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -23,15 +20,16 @@ import java.nio.charset.StandardCharsets;
 @WebServlet(name = "RegisterServlet", urlPatterns = {"/register"})
 public class RegisterServlet extends HttpServlet {
 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8"); 
-    }
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("utf-8");
+        
+        HttpSession session = request.getSession();
+        if (session.getAttribute("acc") != null)
+            request.getRequestDispatcher("./Homepage/index.jsp").forward(request, response);
+        else request.getRequestDispatcher("./Register/Register.jsp").forward(request, response);
     }
 
     @Override
@@ -39,26 +37,16 @@ public class RegisterServlet extends HttpServlet {
             throws ServletException, IOException {
         String cusName = request.getParameter("NAME");
         String cusPhone = request.getParameter("PHONE");
-        String cusEmail = request.getParameter("DES");
+        String cusEmail = request.getParameter("EMAIL");
         String cusAddress = request.getParameter("ADDRESS");
         String cusDateOfBirth = request.getParameter("DATEOFBIRTH");
         String cusUsername = request.getParameter("USERNAME");
         String cusPassword = request.getParameter("PASSWORD");
         String confirmPassword = request.getParameter("CONFIRMPASSWORD");
         DAO dao = new DAO();
-        if (cusPassword == null ? confirmPassword != null : !cusPassword.equals(confirmPassword)){}
-        else{
         cusPassword = Hashing.sha256().hashString(cusPassword, StandardCharsets.UTF_8).toString();
         dao.registeredCustomer(cusName, cusPhone, cusEmail, cusAddress, cusDateOfBirth, cusUsername, cusPassword, true);
         request.setAttribute("MESSAGE2", "Success");
-        RequestDispatcher rd = request.getRequestDispatcher("login");
-        rd.forward(request, response);
+        response.sendRedirect("login");
         }
-    }
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }
