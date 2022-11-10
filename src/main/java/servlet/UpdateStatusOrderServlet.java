@@ -28,19 +28,18 @@ public class UpdateStatusOrderServlet extends HttpServlet {
         
         if (personnel != null) //Neu nguoi cap nhap la Personnel
         {
-            System.out.println("Personnel update");
-            if (personnel.getRole())
+
+            if (personnel.getRole())  //Neu la Admin
                 response.sendRedirect("detailOrder?orderid="+orderId);
-            else request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
+            else //Neu la staff
+                request.getRequestDispatcher("viewDetailAdmin?orderid="+orderId).forward(request, response);
         }
         else if (customer != null) //Neu nguoi cap nhap la Customer
         {
-            System.out.println("User update");
             response.sendRedirect("detailOrder?orderid="+orderId);
         }
         else
         {
-            System.out.println("Not cus nor personel");
             response.sendRedirect("login");
         }
         
