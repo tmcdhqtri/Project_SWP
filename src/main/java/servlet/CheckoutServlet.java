@@ -125,15 +125,6 @@ public class CheckoutServlet extends HttpServlet {
 
                 }
                 vnp_Params.put("vnp_Bill_Address", u.getCustomerAddress());
-                // Invoice
-//                vnp_Params.put("vnp_Inv_Phone", req.getParameter("txt_inv_mobile"));
-//                vnp_Params.put("vnp_Inv_Email", req.getParameter("txt_inv_email"));
-//                vnp_Params.put("vnp_Inv_Customer", req.getParameter("txt_inv_customer"));
-//                vnp_Params.put("vnp_Inv_Address", req.getParameter("txt_inv_addr1"));
-//                vnp_Params.put("vnp_Inv_Company", req.getParameter("txt_inv_company"));
-//                vnp_Params.put("vnp_Inv_Taxcode", req.getParameter("txt_inv_taxcode"));
-//                vnp_Params.put("vnp_Inv_Type", req.getParameter("cbo_inv_type"));
-                //Build data to hash and querystring
                 List fieldNames = new ArrayList(vnp_Params.keySet());
                 Collections.sort(fieldNames);
                 StringBuilder hashData = new StringBuilder();
@@ -162,6 +153,8 @@ public class CheckoutServlet extends HttpServlet {
                 queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
                 String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
                 response.sendRedirect(paymentUrl);
+                session.removeAttribute("cart");
+                session.removeAttribute("order");
 //                }
             } else {
                 response.sendRedirect("login");

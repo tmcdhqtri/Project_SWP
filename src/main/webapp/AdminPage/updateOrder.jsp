@@ -242,7 +242,7 @@
                                                                     </c:if>
                                                                 </tr>
                                                             </c:forEach>
-                                                        <td>
+<!--                                                        <td>
                                                             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg/800px-Eq_it-na_pizza-margherita_sep2005_sml.jpg" class="mr-75" height="50" width="50" alt="Peter" />
                                                             <span class="font-weight-bold">Pizza</span>
                                                         </td>
@@ -251,8 +251,8 @@
                                                         </td>
                                                         <td>
                                                             <span class="font-weight-bold" style="padding-left: 10px;">50$</span>
-                                                        </td>
-                                                        </tr>
+                                                        </td>-->
+<!--                                                        </tr>-->
                                                         <!--                                                        <tr>
                                                                                                                     <td>
                                                                                                                         <img src="https://c4.wallpaperflare.com/wallpaper/143/223/715/food-burgers-hamburgers-fast-food-wallpaper-preview.jpg" class="mr-75" height="50" width="50" alt="Peter" />

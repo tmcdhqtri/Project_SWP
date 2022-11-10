@@ -179,6 +179,15 @@
                                                 <div class="row">
                                                     <div class="col-12 col-sm-6">
                                                         <div class="form-group">
+                                                            <label for="account-name">Customer ID</label>
+                                                            <div class="input-group input-group-merge">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text"><i data-feather="user"></i></span>
+                                                                </div>
+                                                                <input type="text" id="fname-icon" class="form-control" name="CUSID" placeholder="ID" value="${c.getCustomerID()}" readonly/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="account-name">Full Name</label>
                                                             <div class="input-group input-group-merge">
                                                                 <div class="input-group-prepend">
