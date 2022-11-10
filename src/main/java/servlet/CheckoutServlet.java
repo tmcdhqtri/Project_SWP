@@ -153,6 +153,8 @@ public class CheckoutServlet extends HttpServlet {
                 queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
                 String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
                 response.sendRedirect(paymentUrl);
+                session.removeAttribute("cart");
+                session.removeAttribute("order");
 //                }
             } else {
                 response.sendRedirect("login");
