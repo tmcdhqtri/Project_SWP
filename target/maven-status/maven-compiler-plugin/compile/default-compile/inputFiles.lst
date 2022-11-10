@@ -19,6 +19,7 @@ D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\Model\Item.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\servlet\LogoutServlet.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\servlet\ViewMenuServlet.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\GoogleAccess\Constants.java
+D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\servlet\UpdateOrderAdminServlet.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\servlet\AddOrderServlet.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\servlet\LoginGoogleServlet.java
 D:\FPT\MainCourse\Fall22\Project_SWP\src\main\java\Model\Order.java

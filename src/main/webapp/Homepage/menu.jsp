@@ -160,8 +160,9 @@
       <div class="row">
           <%--  Đổi lại JDBC để chạy bình thường --%>
           <%
-              String connectionUrl = "jdbc:sqlserver://CUONGTM\\CUONGTM:1433;databaseName=Fast_Food;User=sa;Password=@Manhcuong22";
-              Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+              String connectionUrl = "jdbc:sqlserver://localhost:1433;"
+            + "databaseName=ProjectSWP;User=sa;Password=nhan203";
+    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
               Connection con = DriverManager.getConnection(connectionUrl);;
               Statement stat = null;
               ResultSet res = null;
